@@ -1,6 +1,6 @@
 f_s = 100; %samples/sec
 
-ECG = x_train(2,:,1);
+ECG = x_train(500,:,1);
 
 %% PREPROCESSING
 
@@ -78,4 +78,11 @@ for i=2:1:length(preprocessed4)
 end
 
 figure;
-stem(out);
+hold on;
+plot(preprocessed4);
+stem(out'.*preprocessed4);
+hold off;
+
+figure;
+
+pan_tompkin(ECG, f_s, 1);

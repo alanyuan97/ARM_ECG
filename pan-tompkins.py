@@ -7,6 +7,8 @@ x_test = np.load('x_test.npy', allow_pickle=True)
 y_train = np.load('y_train.npy', allow_pickle=True)
 y_test = np.load('y_test.npy', allow_pickle=True)
 
+####NEEED TO CHANGE FILTER COEFFICIENTS BECAUSE OF DIFFERENT SAMPLLING FREQUENCY
+
 f_s = 100 #samples/sec
 
 #YOU CAN CHOOSE ANY INPUT FROM THE DATABASE

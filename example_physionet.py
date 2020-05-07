@@ -40,12 +40,12 @@ Y['diagnostic_superclass'] = Y.scp_codes.apply(aggregate_diagnostic)
 test_fold = 10
 # Train
 X_train = X[np.where(Y.strat_fold != test_fold)]
-X_test = Y[(Y.strat_fold != test_fold)].diagnostic_superclass
+y_train = Y[(Y.strat_fold != test_fold)].diagnostic_superclass
 # Test
-y_train = X[np.where(Y.strat_fold == test_fold)]
+X_test = X[np.where(Y.strat_fold == test_fold)]
 y_test = Y[Y.strat_fold == test_fold].diagnostic_superclass
 
-#save to csv format
+#save to npy format
 np.save('x_train', X_train)
 np.save('x_test', X_test)
 np.save('y_train', y_train)

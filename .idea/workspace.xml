@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pan-tompkins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ARM_ECG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ARM_ECG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_physionet.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_physionet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pan-tompkins.py" beforeDir="false" afterPath="$PROJECT_DIR$/pan-tompkins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prova.m" beforeDir="false" afterPath="$PROJECT_DIR$/prova.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.pan-tompkins">
+  <component name="RunManager" selected="Python.load_data">
     <configuration name="example_physionet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ARM_ECG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,6 +67,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example_physionet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ARM_ECG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,8 +119,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pan-tompkins" />
+        <item itemvalue="Python.load_data" />
         <item itemvalue="Python.example_physionet" />
+        <item itemvalue="Python.pan-tompkins" />
       </list>
     </recent_temporary>
   </component>
@@ -121,42 +148,36 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="337" y="15" key="#example_physionet" timestamp="1588870916948">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="15" key="#example_physionet/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870916948" />
+    <state x="337" y="15" key="#load_data" timestamp="1588885262371">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="337" y="15" key="#load_data/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588885262371" />
     <state x="337" y="15" key="#pan-tompkins" timestamp="1588870803096">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="15" key="#pan-tompkins/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870803096" />
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1588871391027">
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1588891190925">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588871391027" />
-    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1588871391025">
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190925" />
+    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1588891190922">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588871391025" />
-    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1588871391024">
+    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190922" />
+    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1588891190921">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588871391024" />
-    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1588871391026">
+    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190921" />
+    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1588891190924">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588871391026" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pan-tompkins.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190924" />
   </component>
 </project>
