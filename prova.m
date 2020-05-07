@@ -32,11 +32,50 @@ plot(preprocessed4);
 %% BEAT DETECTION
 state = 0;
 previous_sample = 0;
+increasing = 1;
 initial_period = 2*f_s;
-THR = 0;
+THR1 = 0;
+THR2 = 0;
 NPK = 0;
 SPK = 0;
+out = zeros(length(preprocessed4),1);
+refractory_period = 0.2*f_s;
+count = 0;
+previous_count = 0;
+RR = [];
 
-for i=1:1:length(preprocessed4)
-    
+for i=2:1:length(preprocessed4)  
+    if length(RR) > 8
+        RR_ave = mean(RR(end-7:end));
+    else
+        RR_ave = mean(RR(1:end));
+    end
+    if (increasing == 1) && (preprocessed4(i)<preprocessed4(i-1))
+        if ((preprocessed4(i-1)>THR1) || ((preprocessed4(i-1)>THR2) && (count>=1.16*RR_ave))) && (count>refractory_period)
+            if i<200
+                SPK = preprocessed4(i-1);  
+            else
+                SPK = 0.125*preprocessed4(i-1) + 0.875*SPK;
+                RR = [RR; count];
+            end
+            out(i-1) = 1;
+            count = 0;
+        else
+            if i<200
+                NPK = preprocessed4(i-1);  
+            else
+                NPK = 0.125*preprocessed4(i-1) + 0.875*NPK;
+            end
+        end
+        increasing = 0;
+    end
+    if (increasing == 0) && (preprocessed4(i)>=preprocessed4(i-1))
+        increasing = 1;
+    end
+    THR1 = NPK + 0.25*(SPK-NPK);
+    THR2 = THR1/8;
+    count = count + 1;
 end
+
+figure;
+stem(out);
