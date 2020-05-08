@@ -1,15 +1,16 @@
 f_s = 100; %samples/sec
-
+load ('data.mat')
 ECG = data;
 
 %% PREPROCESSING
 
 %Low pass filter (need to use hexadecimal and account for FPGA accuracy)
 h = [-15, -13, 7, 38, 66, 38, 7, -13, -15];
-preprocessed1 = conv(ECG, h);
+preprocessed1 = filtfilt(h,[1],ECG);
+% conv(ECG, h);
 
 %Derivative filter
-preprocessed2 = filter([2 1 0 -1 -2],[1],preprocessed1)/8;
+preprocessed2 = filtfilt([2 1 0 -1 -2],[1],preprocessed1)/8;
 
 %Squaring function
 preprocessed3 = preprocessed2.^2;
@@ -76,7 +77,7 @@ for i=2:1:length(preprocessed4)
     end
     
     THR1 = NPK + 0.25*(SPK-NPK);
-    THR2 = THR1/2;
+    THR2 = THR1/8;
     count = count + 1;
 end
 
@@ -86,3 +87,4 @@ hold on
 grid on
 grid minor
 plot(preprocessed4(1:1000))
+pan_tompkin
