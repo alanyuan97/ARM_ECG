@@ -1,5 +1,0 @@
-%Wn = 12*2/f_s;
-%b = Wn*sinc(Wn*(-5:5));
-%fvtool(b,1)
-
-fvtool([], [])

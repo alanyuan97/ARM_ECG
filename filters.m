@@ -1,5 +1,4 @@
-Wn = 5*2/f_s;
-N = 50;                                                          
-[a,b] = fir1(N,Wn,'high',rectwin(51));                                   
-preprocessed2 = filter(a,b,preprocessed1); 
-fvtool(b,a);
+%THIS FILE IS JUST FOR LOOKING AT THE FREQUENCY RESPONSE OF FILTERS
+N = 39;                                                                     % order of 3 less processing
+[a,b] = fir1(N,15*2/fs,rectwin(N+1));  
+fvtool(a,b);
