@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ARM_ECG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ARM_ECG.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example_physionet.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_physionet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filters.m" beforeDir="false" afterPath="$PROJECT_DIR$/filters.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pan-tompkins.py" beforeDir="false" afterPath="$PROJECT_DIR$/pan-tompkins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prova.m" beforeDir="false" afterPath="$PROJECT_DIR$/prova.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,21 +161,21 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="15" key="#pan-tompkins/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870803096" />
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1588891190925">
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1588930886559">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190925" />
-    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1588891190922">
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886559" />
+    <state width="1259" height="212" key="GridCell.Tab.0.center" timestamp="1588930886556">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190922" />
-    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1588891190921">
+    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886556" />
+    <state width="1259" height="212" key="GridCell.Tab.0.left" timestamp="1588930886555">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190921" />
-    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1588891190924">
+    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886555" />
+    <state width="1259" height="212" key="GridCell.Tab.0.right" timestamp="1588930886557">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588891190924" />
+    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886557" />
   </component>
 </project>

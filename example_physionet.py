@@ -13,7 +13,7 @@ def load_raw_data(df, sampling_rate, path):
     return data
 
 path = os.getcwd()+"/dataset/"
-sampling_rate=100
+sampling_rate=500
 
 # load and convert annotation data
 Y = pd.read_csv(path+'ptbxl_database.csv', index_col='ecg_id')
