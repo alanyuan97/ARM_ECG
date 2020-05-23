@@ -1,2 +1,4 @@
 all:
-	./gencode.py 1 1 > output.v
+	rm -r ./src/
+	./gen.sh
+
