@@ -10,10 +10,11 @@ def main(argv):
     # weights[0] has dim of (187*5)
     idx1 = int(argv[0])
     idx2 = int(argv[1])
+    idx3 = int(argv[2])
     layerW = weights[(2*idx1-2)]
     LISTSIZE = layerW.shape[0]
     # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(int((idx1+1)/2)) + "_"+ str(idx2) + "("
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "("
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
             STRBUF += "A"+str(i)+","
@@ -26,7 +27,7 @@ def main(argv):
     STRBUF += "\toutput [31:0] N1;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [31:0] W{0}=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
+        STRBUF += "\tparameter [31:0] W{0}=32'b{1};\n".format(i,binary(layerW[idx2-1,idx3-1]))
     # TODO parameter [31:0] bias = 32b'xxx
     # Start of wire declare
     for i in range(LISTSIZE):

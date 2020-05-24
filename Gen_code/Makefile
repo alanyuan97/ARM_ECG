@@ -1,4 +1,4 @@
 all:
-	rm -r ./src/
 	./gen.sh
-
+clean:
+	rm -r ./src/
