@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 layers_num=8
 NNnum="187 5 10 15 30 15 10 1"
+LAYER="5 10 15 30 15 10 1"
 i=1
 MYPATH="./src/"
 echo "Start Code gen ..."
@@ -15,7 +16,7 @@ else
     echo "Directory ./src exists."
 fi
 
-for a in $NNnum;do
+for a in $LAYER;do
     inn_idx="layer"
     CURRENTPATH="$MYPATH$inn_idx$i"
 
@@ -25,11 +26,11 @@ for a in $NNnum;do
     
     echo $CURRENTPATH
     mkdir $CURRENTPATH
-    N="$(cut -d ' ' -f$(($i+1)) <<<"$NNnum")"
+    N="$(cut -d ' ' -f$i <<<"$NNnum")"
     # echo $N
     for j in $(seq 1 $a);do
         # echo $i $j
-        ./gencode.py $i $j $N > $CURRENTPATH/node_$i$j.v
+        ./gencode.py $i $j > $CURRENTPATH/node-$i-$j.v
     done
     echo "Layer $i finished generate"
     i=$(($i+1))
