@@ -15,7 +15,7 @@ def main(argv):
     ADDERCOUNT = 0
     inputs = [ f"in{i}" for i in range(LISTSIZE)]
     # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "(N1"
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "(N1,"
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
             STRBUF += "A"+str(i)+","

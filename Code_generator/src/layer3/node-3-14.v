@@ -1,4 +1,4 @@
-module node3_14(N1A0,A1,A2,A3,A4,A5,A6,A7,A8,A9);
+module node3_14(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9);
 	input [31:0] A0;
 	input [31:0] A1;
 	input [31:0] A2;
