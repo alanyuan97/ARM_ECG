@@ -27,7 +27,7 @@ def main(argv):
     # Start of input declare
     for i in range(LISTSIZE):
         STRBUF += "\tinput [31:0] A" + str(i) + ";\n"
-    STRBUF += "\toutput [31:0] N1;\n\n"
+    STRBUF += "\toutput [31:0] N1;\n\treg [31:0] N1 \n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
         STRBUF += "\tparameter [31:0] W{0}=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
