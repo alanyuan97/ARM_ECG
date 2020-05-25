@@ -15,7 +15,7 @@ module node6_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 	input [31:0] A13x;
 	input [31:0] A14x;
 	output [31:0] N1x;
-	reg [31:0] N1x 
+	reg [31:0] N1x; 
 
 	parameter [31:0] W0x=32'b10111110000100100111011011101011;
 	parameter [31:0] W1x=32'b10111110000111010110010010100100;

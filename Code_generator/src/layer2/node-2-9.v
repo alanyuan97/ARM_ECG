@@ -5,7 +5,7 @@ module node2_9(N1x,A0x,A1x,A2x,A3x,A4x);
 	input [31:0] A3x;
 	input [31:0] A4x;
 	output [31:0] N1x;
-	reg [31:0] N1x 
+	reg [31:0] N1x; 
 
 	parameter [31:0] W0x=32'b10111101110011011000011101010000;
 	parameter [31:0] W1x=32'b10111110001011111101000101101000;

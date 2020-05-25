@@ -30,7 +30,7 @@ module node5_11(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 	input [31:0] A28x;
 	input [31:0] A29x;
 	output [31:0] N1x;
-	reg [31:0] N1x 
+	reg [31:0] N1x; 
 
 	parameter [31:0] W0x=32'b00111110001100100110111010100110;
 	parameter [31:0] W1x=32'b00111110101111011011110101001110;

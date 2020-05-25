@@ -15,7 +15,7 @@ module node4_10(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 	input [31:0] A13x;
 	input [31:0] A14x;
 	output [31:0] N1x;
-	reg [31:0] N1x 
+	reg [31:0] N1x; 
 
 	parameter [31:0] W0x=32'b00111101111001011110011110111111;
 	parameter [31:0] W1x=32'b00111110100010011100111010000000;
