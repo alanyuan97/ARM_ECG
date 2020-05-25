@@ -17,7 +17,7 @@ def main(argv):
     inputs = [ f"in{i}x" for i in range(LISTSIZE)]
     inputs.append("B0x")
     # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(N{idx2}x,"
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(clk,N{idx2}x,"
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
             STRBUF += "A"+str(i)+"x,"
@@ -26,7 +26,7 @@ def main(argv):
     STRBUF += ");\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
+        STRBUF += "\tinput clk;\n\tinput [31:0] A" + str(i) + "x;\n"
     STRBUF += f"\toutput [31:0] N{idx2}x;\n\treg [31:0] N{idx2}x; \n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
@@ -54,9 +54,9 @@ def main(argv):
     # otherwise if odd number of neurons, add bias at start
     STRBUF+=gentree(inputs, "sum", "sumout")
     if(2*idx1 == len(weights)): # reached sigmoid node
-        STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=32'd1;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
+        STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=32'd1;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
     else:
-        STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=sumout;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
+        STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=sumout;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
     STRBUF+= "\n\tend"
     STRBUF+= "\nendmodule"
     print(STRBUF)

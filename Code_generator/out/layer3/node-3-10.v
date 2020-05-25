@@ -1,13 +1,23 @@
-module node3_10(N10x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
+module node3_10(clk,N10x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
+	input clk;
 	input [31:0] A0x;
+	input clk;
 	input [31:0] A1x;
+	input clk;
 	input [31:0] A2x;
+	input clk;
 	input [31:0] A3x;
+	input clk;
 	input [31:0] A4x;
+	input clk;
 	input [31:0] A5x;
+	input clk;
 	input [31:0] A6x;
+	input clk;
 	input [31:0] A7x;
+	input clk;
 	input [31:0] A8x;
+	input clk;
 	input [31:0] A9x;
 	output [31:0] N10x;
 	reg [31:0] N10x; 
@@ -164,7 +174,7 @@ module node3_10(N10x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 		.Out_test(),
 		.shift(),
 		.c_out());
-always@(*)
+always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
 			N10x=sumout;

@@ -1,18 +1,33 @@
-module node4_13(N13x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
+module node4_13(clk,N13x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
+	input clk;
 	input [31:0] A0x;
+	input clk;
 	input [31:0] A1x;
+	input clk;
 	input [31:0] A2x;
+	input clk;
 	input [31:0] A3x;
+	input clk;
 	input [31:0] A4x;
+	input clk;
 	input [31:0] A5x;
+	input clk;
 	input [31:0] A6x;
+	input clk;
 	input [31:0] A7x;
+	input clk;
 	input [31:0] A8x;
+	input clk;
 	input [31:0] A9x;
+	input clk;
 	input [31:0] A10x;
+	input clk;
 	input [31:0] A11x;
+	input clk;
 	input [31:0] A12x;
+	input clk;
 	input [31:0] A13x;
+	input clk;
 	input [31:0] A14x;
 	output [31:0] N13x;
 	reg [31:0] N13x; 
@@ -244,7 +259,7 @@ module node4_13(N13x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x
 		.Out_test(),
 		.shift(),
 		.c_out());
-always@(*)
+always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
 			N13x=sumout;
