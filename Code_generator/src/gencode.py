@@ -23,10 +23,10 @@ def main(argv):
             STRBUF += "A"+str(i)+"x,"
         else:
             STRBUF += "A"+str(i)+'x'
-    STRBUF += ");\n"
+    STRBUF += ");\n\tinput clk;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput clk;\n\tinput [31:0] A" + str(i) + "x;\n"
+        STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
     STRBUF += f"\toutput [31:0] N{idx2}x;\n\treg [31:0] N{idx2}x; \n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):

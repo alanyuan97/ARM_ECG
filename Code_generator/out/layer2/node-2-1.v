@@ -1,13 +1,9 @@
 module node2_1(clk,N1x,A0x,A1x,A2x,A3x,A4x);
 	input clk;
 	input [31:0] A0x;
-	input clk;
 	input [31:0] A1x;
-	input clk;
 	input [31:0] A2x;
-	input clk;
 	input [31:0] A3x;
-	input clk;
 	input [31:0] A4x;
 	output [31:0] N1x;
 	reg [31:0] N1x; 
