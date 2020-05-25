@@ -1,4 +1,4 @@
-module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x,A15x,A16x,A17x,A18x,A19x,A20x,A21x,A22x,A23x,A24x,A25x,A26x,A27x,A28x,A29x);
+module node5_12(N12x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x,A15x,A16x,A17x,A18x,A19x,A20x,A21x,A22x,A23x,A24x,A25x,A26x,A27x,A28x,A29x);
 	input [31:0] A0x;
 	input [31:0] A1x;
 	input [31:0] A2x;
@@ -29,8 +29,8 @@ module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 	input [31:0] A27x;
 	input [31:0] A28x;
 	input [31:0] A29x;
-	output [31:0] N1x;
-	reg [31:0] N1x; 
+	output [31:0] N12x;
+	reg [31:0] N12x; 
 
 	parameter [31:0] W0x=32'b00111110110110001101101101011000;
 	parameter [31:0] W1x=32'b10111110100000101000110001010001;
@@ -123,6 +123,7 @@ module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 	wire [31:0] sum27x;
 	wire [31:0] sum28x;
 
+	wire [31:0] sumout;
 	float_mult mult0(
 		.x(A0x),
 		.y(W0x),
@@ -245,120 +246,120 @@ module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 		.z(in29x));
 
 	float_adder add0(
-		.a(in0xx),
-		.b(in1xx),
+		.a(in0x),
+		.b(in1x),
 		.Out(sum0x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add1(
-		.a(in2xx),
-		.b(in3xx),
+		.a(in2x),
+		.b(in3x),
 		.Out(sum1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add2(
-		.a(in4xx),
-		.b(in5xx),
+		.a(in4x),
+		.b(in5x),
 		.Out(sum2x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add3(
-		.a(in6xx),
-		.b(in7xx),
+		.a(in6x),
+		.b(in7x),
 		.Out(sum3x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add4(
-		.a(in8xx),
-		.b(in9xx),
+		.a(in8x),
+		.b(in9x),
 		.Out(sum4x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add5(
-		.a(in10xx),
-		.b(in11xx),
+		.a(in10x),
+		.b(in11x),
 		.Out(sum5x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add6(
-		.a(in12xx),
-		.b(in13xx),
+		.a(in12x),
+		.b(in13x),
 		.Out(sum6x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add7(
-		.a(in14xx),
-		.b(in15xx),
+		.a(in14x),
+		.b(in15x),
 		.Out(sum7x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add8(
-		.a(in16xx),
-		.b(in17xx),
+		.a(in16x),
+		.b(in17x),
 		.Out(sum8x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add9(
-		.a(in18xx),
-		.b(in19xx),
+		.a(in18x),
+		.b(in19x),
 		.Out(sum9x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add10(
-		.a(in20xx),
-		.b(in21xx),
+		.a(in20x),
+		.b(in21x),
 		.Out(sum10x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add11(
-		.a(in22xx),
-		.b(in23xx),
+		.a(in22x),
+		.b(in23x),
 		.Out(sum11x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add12(
-		.a(in24xx),
-		.b(in25xx),
+		.a(in24x),
+		.b(in25x),
 		.Out(sum12x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add13(
-		.a(in26xx),
-		.b(in27xx),
+		.a(in26x),
+		.b(in27x),
 		.Out(sum13x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add14(
-		.a(in28xx),
-		.b(in29xx),
+		.a(in28x),
+		.b(in29x),
 		.Out(sum14x),
 		.Out_test(),
 		.shift(),
@@ -422,7 +423,7 @@ module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 
 	float_adder add22(
 		.a(sum14x),
-		.b(B0x),
+		.b(B0),
 		.Out(sum22x),
 		.Out_test(),
 		.shift(),
@@ -479,15 +480,15 @@ module node5_12(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,
 	float_adder add29(
 		.a(sum27x),
 		.b(sum28x),
-		.Out(N1x),
+		.Out(sumout),
 		.Out_test(),
 		.shift(),
 		.c_out());
 always@(*)
 	begin 
-		if(N1x[31]==0)
-			N1x=N1x;
+		if(sumout[31]==0)
+			N12x=sumout;
 		else
-			N1x=32'd0;
+			N12x=32'd0;
 	end
 endmodule

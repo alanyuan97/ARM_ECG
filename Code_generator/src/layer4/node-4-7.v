@@ -1,4 +1,4 @@
-module node4_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
+module node4_7(N7x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
 	input [31:0] A0x;
 	input [31:0] A1x;
 	input [31:0] A2x;
@@ -14,8 +14,8 @@ module node4_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 	input [31:0] A12x;
 	input [31:0] A13x;
 	input [31:0] A14x;
-	output [31:0] N1x;
-	reg [31:0] N1x; 
+	output [31:0] N7x;
+	reg [31:0] N7x; 
 
 	parameter [31:0] W0x=32'b00111101011100011110011110010101;
 	parameter [31:0] W1x=32'b00111110001110011000000100100111;
@@ -63,6 +63,7 @@ module node4_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 	wire [31:0] sum12x;
 	wire [31:0] sum13x;
 
+	wire [31:0] sumout;
 	float_mult mult0(
 		.x(A0x),
 		.y(W0x),
@@ -125,64 +126,64 @@ module node4_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 		.z(in14x));
 
 	float_adder add0(
-		.a(in0xx),
-		.b(in1xx),
+		.a(in0x),
+		.b(in1x),
 		.Out(sum0x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add1(
-		.a(in2xx),
-		.b(in3xx),
+		.a(in2x),
+		.b(in3x),
 		.Out(sum1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add2(
-		.a(in4xx),
-		.b(in5xx),
+		.a(in4x),
+		.b(in5x),
 		.Out(sum2x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add3(
-		.a(in6xx),
-		.b(in7xx),
+		.a(in6x),
+		.b(in7x),
 		.Out(sum3x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add4(
-		.a(in8xx),
-		.b(in9xx),
+		.a(in8x),
+		.b(in9x),
 		.Out(sum4x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add5(
-		.a(in10xx),
-		.b(in11xx),
+		.a(in10x),
+		.b(in11x),
 		.Out(sum5x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add6(
-		.a(in12xx),
-		.b(in13xx),
+		.a(in12x),
+		.b(in13x),
 		.Out(sum6x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add7(
-		.a(in14xx),
-		.b(B0x),
+		.a(in14x),
+		.b(B0),
 		.Out(sum7x),
 		.Out_test(),
 		.shift(),
@@ -239,15 +240,15 @@ module node4_7(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 	float_adder add14(
 		.a(sum12x),
 		.b(sum13x),
-		.Out(N1x),
+		.Out(sumout),
 		.Out_test(),
 		.shift(),
 		.c_out());
 always@(*)
 	begin 
-		if(N1x[31]==0)
-			N1x=N1x;
+		if(sumout[31]==0)
+			N7x=sumout;
 		else
-			N1x=32'd0;
+			N7x=32'd0;
 	end
 endmodule

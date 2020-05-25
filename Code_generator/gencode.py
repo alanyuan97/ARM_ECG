@@ -17,7 +17,7 @@ def main(argv):
     inputs = [ f"in{i}x" for i in range(LISTSIZE)]
     inputs.append("B0")
     # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "(N1x,"
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(N{idx2}x,"
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
             STRBUF += "A"+str(i)+"x,"
@@ -27,7 +27,7 @@ def main(argv):
     # Start of input declare
     for i in range(LISTSIZE):
         STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
-    STRBUF += "\toutput [31:0] N1x;\n\treg [31:0] N1x; \n\n"
+    STRBUF += f"\toutput [31:0] N{idx2}x;\n\treg [31:0] N{idx2}x; \n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
         STRBUF += "\tparameter [31:0] W{0}x=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
@@ -38,7 +38,7 @@ def main(argv):
         STRBUF += "\twire [31:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
         STRBUF += "\twire [31:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n"
+    STRBUF += "\n\twire [31:0] sumout;\n"
 
     # # Start of mult & add V1.
     for i in range (LISTSIZE):
@@ -52,8 +52,8 @@ def main(argv):
     # Start of mult & add V2.
     # TODO include bias adder here, so if even number neurons, add bias at the end,
     # otherwise if odd number of neurons, add bias at start
-    STRBUF+=gentree(inputs, "sum", "N1")
-    STRBUF += "always@(*)\n\tbegin \n\t\tif(N1x[31]==0)\n\t\t\tN1x=N1x;\n\t\telse\n\t\t\tN1x=32'd0;"
+    STRBUF+=gentree(inputs, "sum", "sumout")
+    STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=sumout;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
     STRBUF+= "\n\tend"
     STRBUF+= "\nendmodule"
     print(STRBUF)
@@ -101,11 +101,11 @@ class Gen:
         if outname:
             intermiteate=outname
         else:
-            intermiteate = f"{self.perfix}{self.counter}"
+            intermiteate = f"{self.perfix}{self.counter}x"
  
         
  
-        tmp = f"\tfloat_adder add{self.counter}(\n\t\t.a({a}x),\n\t\t.b({b}x),\n\t\t.Out({intermiteate}x),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n"
+        tmp = f"\tfloat_adder add{self.counter}(\n\t\t.a({a}),\n\t\t.b({b}),\n\t\t.Out({intermiteate}),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n"
         self.counter += 1
         self.output = self.output + '\n' + tmp
  

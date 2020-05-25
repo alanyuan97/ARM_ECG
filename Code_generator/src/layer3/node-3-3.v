@@ -1,4 +1,4 @@
-module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
+module node3_3(N3x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input [31:0] A0x;
 	input [31:0] A1x;
 	input [31:0] A2x;
@@ -9,8 +9,8 @@ module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input [31:0] A7x;
 	input [31:0] A8x;
 	input [31:0] A9x;
-	output [31:0] N1x;
-	reg [31:0] N1x; 
+	output [31:0] N3x;
+	reg [31:0] N3x; 
 
 	parameter [31:0] W0x=32'b10111101001001100010000001110011;
 	parameter [31:0] W1x=32'b10111111001001011011101010111000;
@@ -43,6 +43,7 @@ module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	wire [31:0] sum7x;
 	wire [31:0] sum8x;
 
+	wire [31:0] sumout;
 	float_mult mult0(
 		.x(A0x),
 		.y(W0x),
@@ -85,40 +86,40 @@ module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 		.z(in9x));
 
 	float_adder add0(
-		.a(in0xx),
-		.b(in1xx),
+		.a(in0x),
+		.b(in1x),
 		.Out(sum0x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add1(
-		.a(in2xx),
-		.b(in3xx),
+		.a(in2x),
+		.b(in3x),
 		.Out(sum1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add2(
-		.a(in4xx),
-		.b(in5xx),
+		.a(in4x),
+		.b(in5x),
 		.Out(sum2x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add3(
-		.a(in6xx),
-		.b(in7xx),
+		.a(in6x),
+		.b(in7x),
 		.Out(sum3x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add4(
-		.a(in8xx),
-		.b(in9xx),
+		.a(in8x),
+		.b(in9x),
 		.Out(sum4x),
 		.Out_test(),
 		.shift(),
@@ -142,7 +143,7 @@ module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 
 	float_adder add7(
 		.a(sum4x),
-		.b(B0x),
+		.b(B0),
 		.Out(sum7x),
 		.Out_test(),
 		.shift(),
@@ -159,15 +160,15 @@ module node3_3(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	float_adder add9(
 		.a(sum8x),
 		.b(sum7x),
-		.Out(N1x),
+		.Out(sumout),
 		.Out_test(),
 		.shift(),
 		.c_out());
 always@(*)
 	begin 
-		if(N1x[31]==0)
-			N1x=N1x;
+		if(sumout[31]==0)
+			N3x=sumout;
 		else
-			N1x=32'd0;
+			N3x=32'd0;
 	end
 endmodule

@@ -23,6 +23,7 @@ module node2_1(N1x,A0x,A1x,A2x,A3x,A4x);
 	wire [31:0] sum2x;
 	wire [31:0] sum3x;
 
+	wire [31:0] sumout;
 	float_mult mult0(
 		.x(A0x),
 		.y(W0x),
@@ -45,24 +46,24 @@ module node2_1(N1x,A0x,A1x,A2x,A3x,A4x);
 		.z(in4x));
 
 	float_adder add0(
-		.a(in0xx),
-		.b(in1xx),
+		.a(in0x),
+		.b(in1x),
 		.Out(sum0x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add1(
-		.a(in2xx),
-		.b(in3xx),
+		.a(in2x),
+		.b(in3x),
 		.Out(sum1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add2(
-		.a(in4xx),
-		.b(B0x),
+		.a(in4x),
+		.b(B0),
 		.Out(sum2x),
 		.Out_test(),
 		.shift(),
@@ -79,14 +80,14 @@ module node2_1(N1x,A0x,A1x,A2x,A3x,A4x);
 	float_adder add4(
 		.a(sum3x),
 		.b(sum2x),
-		.Out(N1x),
+		.Out(sumout),
 		.Out_test(),
 		.shift(),
 		.c_out());
 always@(*)
 	begin 
-		if(N1x[31]==0)
-			N1x=N1x;
+		if(sumout[31]==0)
+			N1x=sumout;
 		else
 			N1x=32'd0;
 	end
