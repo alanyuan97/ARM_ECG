@@ -143,7 +143,7 @@ module node3_5(N5x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 
 	float_adder add7(
 		.a(sum4x),
-		.b(B0),
+		.b(B0x),
 		.Out(sum7x),
 		.Out_test(),
 		.shift(),

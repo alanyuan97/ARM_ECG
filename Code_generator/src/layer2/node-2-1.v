@@ -63,7 +63,7 @@ module node2_1(N1x,A0x,A1x,A2x,A3x,A4x);
 
 	float_adder add2(
 		.a(in4x),
-		.b(B0),
+		.b(B0x),
 		.Out(sum2x),
 		.Out_test(),
 		.shift(),

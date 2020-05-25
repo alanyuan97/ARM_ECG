@@ -45,4 +45,7 @@ output = np.matmul(inputM, inputN)
 print(f"Input1 dimension: {inputM.shape} \nInput2 dimension: {inputN.shape} \n")
 
 for i in range(len(output)):
-    print(f"Output{i} : 32b'{binary(output[i]+B1[i])}")
+    temp = output[i]+B1[i]
+    if temp<0:
+        temp=0
+    print(f"Output{i} : 32b'{binary(temp)}")

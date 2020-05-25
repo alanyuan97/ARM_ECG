@@ -2247,7 +2247,7 @@ module node1_1(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 
 	float_adder add93(
 		.a(in186x),
-		.b(B0),
+		.b(B0x),
 		.Out(sum93x),
 		.Out_test(),
 		.shift(),

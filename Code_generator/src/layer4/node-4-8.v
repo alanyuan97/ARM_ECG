@@ -183,7 +183,7 @@ module node4_8(N8x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A
 
 	float_adder add7(
 		.a(in14x),
-		.b(B0),
+		.b(B0x),
 		.Out(sum7x),
 		.Out_test(),
 		.shift(),

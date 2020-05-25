@@ -423,7 +423,7 @@ module node5_11(N11x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x
 
 	float_adder add22(
 		.a(sum14x),
-		.b(B0),
+		.b(B0x),
 		.Out(sum22x),
 		.Out_test(),
 		.shift(),

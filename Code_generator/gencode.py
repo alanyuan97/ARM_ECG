@@ -15,7 +15,7 @@ def main(argv):
     LISTSIZE = layerW.shape[0]
     ADDERCOUNT = 0
     inputs = [ f"in{i}x" for i in range(LISTSIZE)]
-    inputs.append("B0")
+    inputs.append("B0x")
     # Start of module, TODO add function call from bash., add keras table
     STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(N{idx2}x,"
     for i in range(LISTSIZE):
