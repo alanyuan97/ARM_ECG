@@ -37,6 +37,7 @@ def binary(num):
 data_in = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata.npy')
 weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/weight.npy",allow_pickle=True)
 L1w = weights[0]
+B1 = weights[1]
 
 inputM = np.transpose(np.array(data_in))
 inputN = np.array(L1w)
@@ -44,4 +45,4 @@ output = np.matmul(inputM, inputN)
 print(f"Input1 dimension: {inputM.shape} \nInput2 dimension: {inputN.shape} \n")
 
 for i in range(len(output)):
-    print(f"Output{i} : 32b'{binary(output[i])}")
+    print(f"Output{i} : 32b'{binary(output[i]+B1[i])}")
