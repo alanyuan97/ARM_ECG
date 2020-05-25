@@ -3,26 +3,22 @@ layers_num=8
 NNnum="187 5 10 15 30 15 10 1"
 LAYER="5 10 15 30 15 10 1"
 i=1
-MYPATH="./src/"
+MYPATH="./out/"
 echo "Start Code gen ..."
 
 if [ ! -d $MYPATH ]
 then
-    echo "Directory ./src NOT exists."
+    echo "Directory ./out NOT exists."
     mkdir $MYPATH
 else
     rm -r $MYPATH
     mkdir $MYPATH
-    echo "Directory ./src exists."
+    echo "Directory ./out exists."
 fi
 
 for a in $LAYER;do
     inn_idx="layer"
     CURRENTPATH="$MYPATH$inn_idx$i"
-
-    if [[ "$a" == 1 ]]; then
-        break
-    fi
     
     echo $CURRENTPATH
     mkdir $CURRENTPATH
@@ -30,8 +26,13 @@ for a in $LAYER;do
     # echo $N
     for j in $(seq 1 $a);do
         # echo $i $j
-        ./gencode.py $i $j > $CURRENTPATH/node-$i-$j.v
+        ./src/gencode.py $i $j > $CURRENTPATH/node-$i-$j.v
     done
     echo "Layer $i finished generate"
     i=$(($i+1))
 done
+
+mkdir $MYPATH/ROM
+mkdir $MYPATH/SIM
+./src/rom.py > $MYPATH/ROM/rom_input.txt
+./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt

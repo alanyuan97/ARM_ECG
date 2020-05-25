@@ -53,7 +53,10 @@ def main(argv):
     # TODO include bias adder here, so if even number neurons, add bias at the end,
     # otherwise if odd number of neurons, add bias at start
     STRBUF+=gentree(inputs, "sum", "sumout")
-    STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=sumout;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
+    if(2*idx1 == len(weights)): # reached sigmoid node
+        STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=32'd1;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
+    else:
+        STRBUF += f"always@(*)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x=sumout;\n\t\telse\n\t\t\tN{idx2}x=32'd0;"
     STRBUF+= "\n\tend"
     STRBUF+= "\nendmodule"
     print(STRBUF)

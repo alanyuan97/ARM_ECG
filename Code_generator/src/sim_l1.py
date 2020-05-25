@@ -48,4 +48,4 @@ for i in range(len(output)):
     temp = output[i]+B1[i]
     if temp<0:
         temp=0
-    print(f"Output{i} : 32b'{binary(temp)}")
+    print(f"Output{i} : Float 32b'{binary(temp)} Decimal {temp}")
