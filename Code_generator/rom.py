@@ -37,15 +37,15 @@ data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata.npy')
 
 STRBUFF = "module rom_input("
 for i in range(186):
-    STRBUFF+=f"I{i},"
-STRBUFF += "I186);\n"
+    STRBUFF+=f"I{i}x,"
+STRBUFF += "I186x);\n"
 STRBUFF += "\toutput [31:0]"
 for i in range(186):
-    STRBUFF += f"I{i},"
-STRBUFF += "I186\n"
+    STRBUFF += f"I{i}x,"
+STRBUFF += "I186x\n"
 
 for i in range(187):
-    STRBUFF += f"\tI{i} = 32'b{binary(data[i])};\n"
+    STRBUFF += f"\tI{i}x = 32'b{binary(data[i])};\n"
 STRBUFF +="endmodule"
 print(STRBUFF)
 

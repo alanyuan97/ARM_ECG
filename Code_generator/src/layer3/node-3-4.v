@@ -1,173 +1,173 @@
-module node3_4(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9);
-	input [31:0] A0;
-	input [31:0] A1;
-	input [31:0] A2;
-	input [31:0] A3;
-	input [31:0] A4;
-	input [31:0] A5;
-	input [31:0] A6;
-	input [31:0] A7;
-	input [31:0] A8;
-	input [31:0] A9;
-	output [31:0] N1;
-	reg [31:0] N1 
+module node3_4(N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
+	input [31:0] A0x;
+	input [31:0] A1x;
+	input [31:0] A2x;
+	input [31:0] A3x;
+	input [31:0] A4x;
+	input [31:0] A5x;
+	input [31:0] A6x;
+	input [31:0] A7x;
+	input [31:0] A8x;
+	input [31:0] A9x;
+	output [31:0] N1x;
+	reg [31:0] N1x 
 
-	parameter [31:0] W0=32'b00111101010111010010010101001011;
-	parameter [31:0] W1=32'b00111110110010010011110010111011;
-	parameter [31:0] W2=32'b10111111010100100000011000011100;
-	parameter [31:0] W3=32'b10111110101110110101010100001000;
-	parameter [31:0] W4=32'b10111111000000111111000101101111;
-	parameter [31:0] W5=32'b10111110110110000110101111110100;
-	parameter [31:0] W6=32'b00111110110000010000010100101010;
-	parameter [31:0] W7=32'b00111110101100101000011110100010;
-	parameter [31:0] W8=32'b00111110100111110110100101111011;
-	parameter [31:0] W9=32'b00111111000101111001110010011000;
-	parameter [31:0] B0=32'b00111100111001000100001011110111;
-	wire [31:0] in0;
-	wire [31:0] in1;
-	wire [31:0] in2;
-	wire [31:0] in3;
-	wire [31:0] in4;
-	wire [31:0] in5;
-	wire [31:0] in6;
-	wire [31:0] in7;
-	wire [31:0] in8;
-	wire [31:0] in9;
-	wire [31:0] sum0;
-	wire [31:0] sum1;
-	wire [31:0] sum2;
-	wire [31:0] sum3;
-	wire [31:0] sum4;
-	wire [31:0] sum5;
-	wire [31:0] sum6;
-	wire [31:0] sum7;
-	wire [31:0] sum8;
+	parameter [31:0] W0x=32'b00111101010111010010010101001011;
+	parameter [31:0] W1x=32'b00111110110010010011110010111011;
+	parameter [31:0] W2x=32'b10111111010100100000011000011100;
+	parameter [31:0] W3x=32'b10111110101110110101010100001000;
+	parameter [31:0] W4x=32'b10111111000000111111000101101111;
+	parameter [31:0] W5x=32'b10111110110110000110101111110100;
+	parameter [31:0] W6x=32'b00111110110000010000010100101010;
+	parameter [31:0] W7x=32'b00111110101100101000011110100010;
+	parameter [31:0] W8x=32'b00111110100111110110100101111011;
+	parameter [31:0] W9x=32'b00111111000101111001110010011000;
+	parameter [31:0] B0x=32'b00111100111001000100001011110111;
+	wire [31:0] in0x;
+	wire [31:0] in1x;
+	wire [31:0] in2x;
+	wire [31:0] in3x;
+	wire [31:0] in4x;
+	wire [31:0] in5x;
+	wire [31:0] in6x;
+	wire [31:0] in7x;
+	wire [31:0] in8x;
+	wire [31:0] in9x;
+	wire [31:0] sum0x;
+	wire [31:0] sum1x;
+	wire [31:0] sum2x;
+	wire [31:0] sum3x;
+	wire [31:0] sum4x;
+	wire [31:0] sum5x;
+	wire [31:0] sum6x;
+	wire [31:0] sum7x;
+	wire [31:0] sum8x;
 
 	float_mult mult0(
-		.x(A0),
-		.y(W0),
-		.z(in0));
+		.x(A0x),
+		.y(W0x),
+		.z(in0x));
 	float_mult mult1(
-		.x(A1),
-		.y(W1),
-		.z(in1));
+		.x(A1x),
+		.y(W1x),
+		.z(in1x));
 	float_mult mult2(
-		.x(A2),
-		.y(W2),
-		.z(in2));
+		.x(A2x),
+		.y(W2x),
+		.z(in2x));
 	float_mult mult3(
-		.x(A3),
-		.y(W3),
-		.z(in3));
+		.x(A3x),
+		.y(W3x),
+		.z(in3x));
 	float_mult mult4(
-		.x(A4),
-		.y(W4),
-		.z(in4));
+		.x(A4x),
+		.y(W4x),
+		.z(in4x));
 	float_mult mult5(
-		.x(A5),
-		.y(W5),
-		.z(in5));
+		.x(A5x),
+		.y(W5x),
+		.z(in5x));
 	float_mult mult6(
-		.x(A6),
-		.y(W6),
-		.z(in6));
+		.x(A6x),
+		.y(W6x),
+		.z(in6x));
 	float_mult mult7(
-		.x(A7),
-		.y(W7),
-		.z(in7));
+		.x(A7x),
+		.y(W7x),
+		.z(in7x));
 	float_mult mult8(
-		.x(A8),
-		.y(W8),
-		.z(in8));
+		.x(A8x),
+		.y(W8x),
+		.z(in8x));
 	float_mult mult9(
-		.x(A9),
-		.y(W9),
-		.z(in9));
+		.x(A9x),
+		.y(W9x),
+		.z(in9x));
 
 	float_adder add0(
-		.a(in0),
-		.b(in1),
-		.Out(sum0),
+		.a(in0xx),
+		.b(in1xx),
+		.Out(sum0x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add1(
-		.a(in2),
-		.b(in3),
-		.Out(sum1),
+		.a(in2xx),
+		.b(in3xx),
+		.Out(sum1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add2(
-		.a(in4),
-		.b(in5),
-		.Out(sum2),
+		.a(in4xx),
+		.b(in5xx),
+		.Out(sum2x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add3(
-		.a(in6),
-		.b(in7),
-		.Out(sum3),
+		.a(in6xx),
+		.b(in7xx),
+		.Out(sum3x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add4(
-		.a(in8),
-		.b(in9),
-		.Out(sum4),
+		.a(in8xx),
+		.b(in9xx),
+		.Out(sum4x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add5(
-		.a(sum0),
-		.b(sum1),
-		.Out(sum5),
+		.a(sum0x),
+		.b(sum1x),
+		.Out(sum5x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add6(
-		.a(sum2),
-		.b(sum3),
-		.Out(sum6),
+		.a(sum2x),
+		.b(sum3x),
+		.Out(sum6x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add7(
-		.a(sum4),
-		.b(B0),
-		.Out(sum7),
+		.a(sum4x),
+		.b(B0x),
+		.Out(sum7x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add8(
-		.a(sum5),
-		.b(sum6),
-		.Out(sum8),
+		.a(sum5x),
+		.b(sum6x),
+		.Out(sum8x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add9(
-		.a(sum8),
-		.b(sum7),
-		.Out(N1),
+		.a(sum8x),
+		.b(sum7x),
+		.Out(N1x),
 		.Out_test(),
 		.shift(),
 		.c_out());
 always@(*)
 	begin 
-		if(N1[31]==0)
-			N1=N1;
+		if(N1x[31]==0)
+			N1x=N1x;
 		else
-			N1=32'd0;
+			N1x=32'd0;
 	end
 endmodule

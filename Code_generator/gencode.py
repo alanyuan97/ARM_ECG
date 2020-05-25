@@ -14,35 +14,35 @@ def main(argv):
     layerB = weights[2*(idx1-1)+1]
     LISTSIZE = layerW.shape[0]
     ADDERCOUNT = 0
-    inputs = [ f"in{i}" for i in range(LISTSIZE)]
+    inputs = [ f"in{i}x" for i in range(LISTSIZE)]
     inputs.append("B0")
     # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "(N1,"
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + "(N1x,"
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
-            STRBUF += "A"+str(i)+","
+            STRBUF += "A"+str(i)+"x,"
         else:
-            STRBUF += "A"+str(i)
+            STRBUF += "A"+str(i)+'x'
     STRBUF += ");\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput [31:0] A" + str(i) + ";\n"
-    STRBUF += "\toutput [31:0] N1;\n\treg [31:0] N1 \n\n"
+        STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
+    STRBUF += "\toutput [31:0] N1x;\n\treg [31:0] N1x \n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [31:0] W{0}=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
-    STRBUF += "\tparameter [31:0] B{0}=32'b{1};\n".format(0,binary(layerB[idx2-1]))
+        STRBUF += "\tparameter [31:0] W{0}x=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
+    STRBUF += "\tparameter [31:0] B{0}x=32'b{1};\n".format(0,binary(layerB[idx2-1]))
     # TODO parameter [31:0] bias = 32b'xxx
     # Start of wire declare
     for i in range(LISTSIZE):
-        STRBUF += "\twire [31:0] in"+ str(i)+";\n"
+        STRBUF += "\twire [31:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\twire [31:0] sum"+ str(i)+";\n"
+        STRBUF += "\twire [31:0] sum"+ str(i)+"x;\n"
     STRBUF += "\n"
 
     # # Start of mult & add V1.
     for i in range (LISTSIZE):
-        STRBUF += "\tfloat_mult mult{0}(\n\t\t.x(A{1}),\n\t\t.y(W{2}),\n\t\t.z(in{3}));\n".format(i,i,i,i)
+        STRBUF += "\tfloat_mult mult{0}(\n\t\t.x(A{1}x),\n\t\t.y(W{2}x),\n\t\t.z(in{3}x));\n".format(i,i,i,i)
     # for i in range (LISTSIZE-1):
     #     if i ==0:
     #         STRBUF += "\tfloat_adder add{0}(\n\t\t.a(in{1}),\n\t\t.b(in{2}),\n\t\t.Out(sum{3}),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n".format(i,i,i+1,i)
@@ -53,7 +53,7 @@ def main(argv):
     # TODO include bias adder here, so if even number neurons, add bias at the end,
     # otherwise if odd number of neurons, add bias at start
     STRBUF+=gentree(inputs, "sum", "N1")
-    STRBUF += "always@(*)\n\tbegin \n\t\tif(N1[31]==0)\n\t\t\tN1=N1;\n\t\telse\n\t\t\tN1=32'd0;"
+    STRBUF += "always@(*)\n\tbegin \n\t\tif(N1x[31]==0)\n\t\t\tN1x=N1x;\n\t\telse\n\t\t\tN1x=32'd0;"
     STRBUF+= "\n\tend"
     STRBUF+= "\nendmodule"
     print(STRBUF)
@@ -105,7 +105,7 @@ class Gen:
  
         
  
-        tmp = f"\tfloat_adder add{self.counter}(\n\t\t.a({a}),\n\t\t.b({b}),\n\t\t.Out({intermiteate}),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n"
+        tmp = f"\tfloat_adder add{self.counter}(\n\t\t.a({a}x),\n\t\t.b({b}x),\n\t\t.Out({intermiteate}x),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n"
         self.counter += 1
         self.output = self.output + '\n' + tmp
  
