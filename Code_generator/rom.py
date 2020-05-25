@@ -45,7 +45,7 @@ for i in range(186):
 STRBUFF += "R186\n"
 
 for i in range(187):
-    STRBUFF += f"\tR{i} = 32b'{binary(data[i])};\n"
+    STRBUFF += f"\tR{i} = 32'b{binary(data[i])};\n"
 STRBUFF +="endmodule"
 print(STRBUFF)
 
