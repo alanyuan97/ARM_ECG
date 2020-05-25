@@ -375,6 +375,7 @@ module node1_5(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,
 	parameter [31:0] W184=32'b10111111001101110000011001011111;
 	parameter [31:0] W185=32'b10111111000101001110101100010001;
 	parameter [31:0] W186=32'b00111110001000011000000101110101;
+	parameter [31:0] B0=32'b00111101111001010000111011011110;
 	wire [31:0] in0;
 	wire [31:0] in1;
 	wire [31:0] in2;
@@ -2243,656 +2244,656 @@ module node1_5(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,
 		.c_out());
 
 	float_adder add93(
-		.a(sum0),
-		.b(sum1),
+		.a(in186),
+		.b(B0),
 		.Out(sum93),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add94(
-		.a(sum2),
-		.b(sum3),
+		.a(sum0),
+		.b(sum1),
 		.Out(sum94),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add95(
-		.a(sum4),
-		.b(sum5),
+		.a(sum2),
+		.b(sum3),
 		.Out(sum95),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add96(
-		.a(sum6),
-		.b(sum7),
+		.a(sum4),
+		.b(sum5),
 		.Out(sum96),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add97(
-		.a(sum8),
-		.b(sum9),
+		.a(sum6),
+		.b(sum7),
 		.Out(sum97),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add98(
-		.a(sum10),
-		.b(sum11),
+		.a(sum8),
+		.b(sum9),
 		.Out(sum98),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add99(
-		.a(sum12),
-		.b(sum13),
+		.a(sum10),
+		.b(sum11),
 		.Out(sum99),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add100(
-		.a(sum14),
-		.b(sum15),
+		.a(sum12),
+		.b(sum13),
 		.Out(sum100),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add101(
-		.a(sum16),
-		.b(sum17),
+		.a(sum14),
+		.b(sum15),
 		.Out(sum101),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add102(
-		.a(sum18),
-		.b(sum19),
+		.a(sum16),
+		.b(sum17),
 		.Out(sum102),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add103(
-		.a(sum20),
-		.b(sum21),
+		.a(sum18),
+		.b(sum19),
 		.Out(sum103),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add104(
-		.a(sum22),
-		.b(sum23),
+		.a(sum20),
+		.b(sum21),
 		.Out(sum104),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add105(
-		.a(sum24),
-		.b(sum25),
+		.a(sum22),
+		.b(sum23),
 		.Out(sum105),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add106(
-		.a(sum26),
-		.b(sum27),
+		.a(sum24),
+		.b(sum25),
 		.Out(sum106),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add107(
-		.a(sum28),
-		.b(sum29),
+		.a(sum26),
+		.b(sum27),
 		.Out(sum107),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add108(
-		.a(sum30),
-		.b(sum31),
+		.a(sum28),
+		.b(sum29),
 		.Out(sum108),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add109(
-		.a(sum32),
-		.b(sum33),
+		.a(sum30),
+		.b(sum31),
 		.Out(sum109),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add110(
-		.a(sum34),
-		.b(sum35),
+		.a(sum32),
+		.b(sum33),
 		.Out(sum110),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add111(
-		.a(sum36),
-		.b(sum37),
+		.a(sum34),
+		.b(sum35),
 		.Out(sum111),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add112(
-		.a(sum38),
-		.b(sum39),
+		.a(sum36),
+		.b(sum37),
 		.Out(sum112),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add113(
-		.a(sum40),
-		.b(sum41),
+		.a(sum38),
+		.b(sum39),
 		.Out(sum113),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add114(
-		.a(sum42),
-		.b(sum43),
+		.a(sum40),
+		.b(sum41),
 		.Out(sum114),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add115(
-		.a(sum44),
-		.b(sum45),
+		.a(sum42),
+		.b(sum43),
 		.Out(sum115),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add116(
-		.a(sum46),
-		.b(sum47),
+		.a(sum44),
+		.b(sum45),
 		.Out(sum116),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add117(
-		.a(sum48),
-		.b(sum49),
+		.a(sum46),
+		.b(sum47),
 		.Out(sum117),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add118(
-		.a(sum50),
-		.b(sum51),
+		.a(sum48),
+		.b(sum49),
 		.Out(sum118),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add119(
-		.a(sum52),
-		.b(sum53),
+		.a(sum50),
+		.b(sum51),
 		.Out(sum119),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add120(
-		.a(sum54),
-		.b(sum55),
+		.a(sum52),
+		.b(sum53),
 		.Out(sum120),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add121(
-		.a(sum56),
-		.b(sum57),
+		.a(sum54),
+		.b(sum55),
 		.Out(sum121),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add122(
-		.a(sum58),
-		.b(sum59),
+		.a(sum56),
+		.b(sum57),
 		.Out(sum122),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add123(
-		.a(sum60),
-		.b(sum61),
+		.a(sum58),
+		.b(sum59),
 		.Out(sum123),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add124(
-		.a(sum62),
-		.b(sum63),
+		.a(sum60),
+		.b(sum61),
 		.Out(sum124),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add125(
-		.a(sum64),
-		.b(sum65),
+		.a(sum62),
+		.b(sum63),
 		.Out(sum125),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add126(
-		.a(sum66),
-		.b(sum67),
+		.a(sum64),
+		.b(sum65),
 		.Out(sum126),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add127(
-		.a(sum68),
-		.b(sum69),
+		.a(sum66),
+		.b(sum67),
 		.Out(sum127),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add128(
-		.a(sum70),
-		.b(sum71),
+		.a(sum68),
+		.b(sum69),
 		.Out(sum128),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add129(
-		.a(sum72),
-		.b(sum73),
+		.a(sum70),
+		.b(sum71),
 		.Out(sum129),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add130(
-		.a(sum74),
-		.b(sum75),
+		.a(sum72),
+		.b(sum73),
 		.Out(sum130),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add131(
-		.a(sum76),
-		.b(sum77),
+		.a(sum74),
+		.b(sum75),
 		.Out(sum131),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add132(
-		.a(sum78),
-		.b(sum79),
+		.a(sum76),
+		.b(sum77),
 		.Out(sum132),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add133(
-		.a(sum80),
-		.b(sum81),
+		.a(sum78),
+		.b(sum79),
 		.Out(sum133),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add134(
-		.a(sum82),
-		.b(sum83),
+		.a(sum80),
+		.b(sum81),
 		.Out(sum134),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add135(
-		.a(sum84),
-		.b(sum85),
+		.a(sum82),
+		.b(sum83),
 		.Out(sum135),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add136(
-		.a(sum86),
-		.b(sum87),
+		.a(sum84),
+		.b(sum85),
 		.Out(sum136),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add137(
-		.a(sum88),
-		.b(sum89),
+		.a(sum86),
+		.b(sum87),
 		.Out(sum137),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add138(
-		.a(sum90),
-		.b(sum91),
+		.a(sum88),
+		.b(sum89),
 		.Out(sum138),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add139(
-		.a(sum92),
-		.b(in186),
+		.a(sum90),
+		.b(sum91),
 		.Out(sum139),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add140(
-		.a(sum93),
-		.b(sum94),
+		.a(sum92),
+		.b(sum93),
 		.Out(sum140),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add141(
-		.a(sum95),
-		.b(sum96),
+		.a(sum94),
+		.b(sum95),
 		.Out(sum141),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add142(
-		.a(sum97),
-		.b(sum98),
+		.a(sum96),
+		.b(sum97),
 		.Out(sum142),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add143(
-		.a(sum99),
-		.b(sum100),
+		.a(sum98),
+		.b(sum99),
 		.Out(sum143),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add144(
-		.a(sum101),
-		.b(sum102),
+		.a(sum100),
+		.b(sum101),
 		.Out(sum144),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add145(
-		.a(sum103),
-		.b(sum104),
+		.a(sum102),
+		.b(sum103),
 		.Out(sum145),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add146(
-		.a(sum105),
-		.b(sum106),
+		.a(sum104),
+		.b(sum105),
 		.Out(sum146),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add147(
-		.a(sum107),
-		.b(sum108),
+		.a(sum106),
+		.b(sum107),
 		.Out(sum147),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add148(
-		.a(sum109),
-		.b(sum110),
+		.a(sum108),
+		.b(sum109),
 		.Out(sum148),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add149(
-		.a(sum111),
-		.b(sum112),
+		.a(sum110),
+		.b(sum111),
 		.Out(sum149),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add150(
-		.a(sum113),
-		.b(sum114),
+		.a(sum112),
+		.b(sum113),
 		.Out(sum150),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add151(
-		.a(sum115),
-		.b(sum116),
+		.a(sum114),
+		.b(sum115),
 		.Out(sum151),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add152(
-		.a(sum117),
-		.b(sum118),
+		.a(sum116),
+		.b(sum117),
 		.Out(sum152),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add153(
-		.a(sum119),
-		.b(sum120),
+		.a(sum118),
+		.b(sum119),
 		.Out(sum153),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add154(
-		.a(sum121),
-		.b(sum122),
+		.a(sum120),
+		.b(sum121),
 		.Out(sum154),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add155(
-		.a(sum123),
-		.b(sum124),
+		.a(sum122),
+		.b(sum123),
 		.Out(sum155),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add156(
-		.a(sum125),
-		.b(sum126),
+		.a(sum124),
+		.b(sum125),
 		.Out(sum156),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add157(
-		.a(sum127),
-		.b(sum128),
+		.a(sum126),
+		.b(sum127),
 		.Out(sum157),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add158(
-		.a(sum129),
-		.b(sum130),
+		.a(sum128),
+		.b(sum129),
 		.Out(sum158),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add159(
-		.a(sum131),
-		.b(sum132),
+		.a(sum130),
+		.b(sum131),
 		.Out(sum159),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add160(
-		.a(sum133),
-		.b(sum134),
+		.a(sum132),
+		.b(sum133),
 		.Out(sum160),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add161(
-		.a(sum135),
-		.b(sum136),
+		.a(sum134),
+		.b(sum135),
 		.Out(sum161),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add162(
-		.a(sum137),
-		.b(sum138),
+		.a(sum136),
+		.b(sum137),
 		.Out(sum162),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add163(
-		.a(sum140),
-		.b(sum141),
+		.a(sum138),
+		.b(sum139),
 		.Out(sum163),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add164(
-		.a(sum142),
-		.b(sum143),
+		.a(sum141),
+		.b(sum142),
 		.Out(sum164),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add165(
-		.a(sum144),
-		.b(sum145),
+		.a(sum143),
+		.b(sum144),
 		.Out(sum165),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add166(
-		.a(sum146),
-		.b(sum147),
+		.a(sum145),
+		.b(sum146),
 		.Out(sum166),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add167(
-		.a(sum148),
-		.b(sum149),
+		.a(sum147),
+		.b(sum148),
 		.Out(sum167),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add168(
-		.a(sum150),
-		.b(sum151),
+		.a(sum149),
+		.b(sum150),
 		.Out(sum168),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add169(
-		.a(sum152),
-		.b(sum153),
+		.a(sum151),
+		.b(sum152),
 		.Out(sum169),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add170(
-		.a(sum154),
-		.b(sum155),
+		.a(sum153),
+		.b(sum154),
 		.Out(sum170),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add171(
-		.a(sum156),
-		.b(sum157),
+		.a(sum155),
+		.b(sum156),
 		.Out(sum171),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add172(
-		.a(sum158),
-		.b(sum159),
+		.a(sum157),
+		.b(sum158),
 		.Out(sum172),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add173(
-		.a(sum160),
-		.b(sum161),
+		.a(sum159),
+		.b(sum160),
 		.Out(sum173),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add174(
-		.a(sum162),
-		.b(sum139),
+		.a(sum161),
+		.b(sum162),
 		.Out(sum174),
 		.Out_test(),
 		.shift(),
@@ -2900,87 +2901,95 @@ module node1_5(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,
 
 	float_adder add175(
 		.a(sum163),
-		.b(sum164),
+		.b(sum140),
 		.Out(sum175),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add176(
-		.a(sum165),
-		.b(sum166),
+		.a(sum164),
+		.b(sum165),
 		.Out(sum176),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add177(
-		.a(sum167),
-		.b(sum168),
+		.a(sum166),
+		.b(sum167),
 		.Out(sum177),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add178(
-		.a(sum169),
-		.b(sum170),
+		.a(sum168),
+		.b(sum169),
 		.Out(sum178),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add179(
-		.a(sum171),
-		.b(sum172),
+		.a(sum170),
+		.b(sum171),
 		.Out(sum179),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add180(
-		.a(sum173),
-		.b(sum174),
+		.a(sum172),
+		.b(sum173),
 		.Out(sum180),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add181(
-		.a(sum175),
-		.b(sum176),
+		.a(sum174),
+		.b(sum175),
 		.Out(sum181),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add182(
-		.a(sum177),
-		.b(sum178),
+		.a(sum176),
+		.b(sum177),
 		.Out(sum182),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add183(
-		.a(sum179),
-		.b(sum180),
+		.a(sum178),
+		.b(sum179),
 		.Out(sum183),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add184(
-		.a(sum181),
-		.b(sum182),
+		.a(sum180),
+		.b(sum181),
 		.Out(sum184),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add185(
-		.a(sum184),
+		.a(sum182),
 		.b(sum183),
+		.Out(sum185),
+		.Out_test(),
+		.shift(),
+		.c_out());
+
+	float_adder add186(
+		.a(sum185),
+		.b(sum184),
 		.Out(N1),
 		.Out_test(),
 		.shift(),

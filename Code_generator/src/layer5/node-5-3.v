@@ -61,6 +61,7 @@ module node5_3(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,
 	parameter [31:0] W27=32'b00111101101011101011001101010110;
 	parameter [31:0] W28=32'b10111110010111100011010001000000;
 	parameter [31:0] W29=32'b00111110010110111010000011101011;
+	parameter [31:0] B0=32'b00111101101111101110111101110111;
 	wire [31:0] in0;
 	wire [31:0] in1;
 	wire [31:0] in2;
@@ -419,56 +420,64 @@ module node5_3(N1,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,
 		.c_out());
 
 	float_adder add22(
-		.a(sum15),
-		.b(sum16),
+		.a(sum14),
+		.b(B0),
 		.Out(sum22),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add23(
-		.a(sum17),
-		.b(sum18),
+		.a(sum15),
+		.b(sum16),
 		.Out(sum23),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add24(
-		.a(sum19),
-		.b(sum20),
+		.a(sum17),
+		.b(sum18),
 		.Out(sum24),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add25(
-		.a(sum21),
-		.b(sum14),
+		.a(sum19),
+		.b(sum20),
 		.Out(sum25),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add26(
-		.a(sum22),
-		.b(sum23),
+		.a(sum21),
+		.b(sum22),
 		.Out(sum26),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add27(
-		.a(sum24),
-		.b(sum25),
+		.a(sum23),
+		.b(sum24),
 		.Out(sum27),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add28(
-		.a(sum26),
-		.b(sum27),
+		.a(sum25),
+		.b(sum26),
+		.Out(sum28),
+		.Out_test(),
+		.shift(),
+		.c_out());
+
+	float_adder add29(
+		.a(sum27),
+		.b(sum28),
 		.Out(N1),
 		.Out_test(),
 		.shift(),

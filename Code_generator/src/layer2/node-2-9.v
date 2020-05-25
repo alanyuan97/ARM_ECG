@@ -11,6 +11,7 @@ module node2_9(N1,A0,A1,A2,A3,A4);
 	parameter [31:0] W2=32'b10111110111010111001111101001000;
 	parameter [31:0] W3=32'b10111110100010111000011110101010;
 	parameter [31:0] W4=32'b10111110110010110001101111000000;
+	parameter [31:0] B0=32'b00000000000000000000000000000000;
 	wire [31:0] in0;
 	wire [31:0] in1;
 	wire [31:0] in2;
@@ -59,16 +60,24 @@ module node2_9(N1,A0,A1,A2,A3,A4);
 		.c_out());
 
 	float_adder add2(
-		.a(sum0),
-		.b(sum1),
+		.a(in4),
+		.b(B0),
 		.Out(sum2),
 		.Out_test(),
 		.shift(),
 		.c_out());
 
 	float_adder add3(
-		.a(sum2),
-		.b(in4),
+		.a(sum0),
+		.b(sum1),
+		.Out(sum3),
+		.Out_test(),
+		.shift(),
+		.c_out());
+
+	float_adder add4(
+		.a(sum3),
+		.b(sum2),
 		.Out(N1),
 		.Out_test(),
 		.shift(),
