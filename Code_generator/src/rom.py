@@ -38,11 +38,11 @@ data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
 STRBUFF = "module rom_input(EN,"
 for i in range(186):
     STRBUFF+=f"I{i}x,"
-STRBUFF += "I186x);\n"
+STRBUFF += "I186x);\n\tinput EN;\n"
 STRBUFF += "\toutput [31:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
-STRBUFF += "\n\treg [31:0]"
+STRBUFF += "I186x;\n\treg [31:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
 STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
