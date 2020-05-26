@@ -33,7 +33,7 @@ def binary(num):
     # in an array as binary strings. Now we just concatenate them to get the total
     # representation of the float:
     return ''.join(padded)
-data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata.npy')
+data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
 
 STRBUFF = "module rom_input(EN,"
 for i in range(186):
