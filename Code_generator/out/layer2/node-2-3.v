@@ -88,8 +88,8 @@ module node2_3(clk,N3x,A0x,A1x,A2x,A3x,A4x);
 always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
-			N3x=sumout;
+			N3x<=sumout;
 		else
-			N3x=32'd0;
+			N3x<=32'd0;
 	end
 endmodule

@@ -248,8 +248,8 @@ module node4_14(clk,N14x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,
 always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
-			N14x=sumout;
+			N14x<=sumout;
 		else
-			N14x=32'd0;
+			N14x<=32'd0;
 	end
 endmodule

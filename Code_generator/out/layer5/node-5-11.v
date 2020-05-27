@@ -488,8 +488,8 @@ module node5_11(clk,N11x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,
 always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
-			N11x=sumout;
+			N11x<=sumout;
 		else
-			N11x=32'd0;
+			N11x<=32'd0;
 	end
 endmodule

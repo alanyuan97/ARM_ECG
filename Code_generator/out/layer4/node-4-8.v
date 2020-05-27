@@ -248,8 +248,8 @@ module node4_8(clk,N8x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A1
 always@(posedge clk)
 	begin 
 		if(sumout[31]==0)
-			N8x=sumout;
+			N8x<=sumout;
 		else
-			N8x=32'd0;
+			N8x<=32'd0;
 	end
 endmodule
