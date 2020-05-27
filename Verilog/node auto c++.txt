@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()         //for instatantions
+{
+   for(int i=1; i<16; i++){    //outputs/neurons
+   cout << "node3_" <<i<<" node3_"<<i<<"( \n";
+   for(int j=0; j<11; j++){   //inputs
+    cout<<".A"<<j<<"x(R"<<j<<"x), \n";
+   }
+   cout<<".clk(clk) \n";
+   cout<<".N"<<i<<"x(N"<<i<<"x) \n";
+   cout<<"); \n";
+   }
+}
+
+#include <iostream>  //for inputs and outputs
+
+using namespace std;
+
+int main()   
+{
+
+    cout<<"input clk; \n";
+    cout<<"output [31:0] ";
+   for(int i=1; i<31; i++){   //outputs
+   cout <<"N"<<i<<"x,";
+   }
+   cout<<"\n";
+   cout<<"input [31:0]";
+   for(int j=0; j<15; j++){  //inputs
+   cout <<"R"<<j<<"x,";
+   }
+   
+}
