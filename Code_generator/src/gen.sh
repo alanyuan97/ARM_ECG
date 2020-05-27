@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 layers_num=8
-NNnum="187 5 10 15 30 15 10 1"
+NNnum="50 5 10 15 30 15 10 1"
 LAYER="5 10 15 30 15 10 1"
 i=1
 MYPATH="./out/"
