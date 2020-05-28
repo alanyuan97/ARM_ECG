@@ -35,4 +35,6 @@ done
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
 ./src/rom.py > $MYPATH/ROM/rom_input.txt
-./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt
+echo "ROM finished generate"
+echo "Exit bash without errors..."
+# ./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt

@@ -4,63 +4,71 @@ import sys
 import struct
 
 def main(argv):
-    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/weight.npy",allow_pickle=True)
-    # bias = np.load("/home/alan/winDesktop/ARM_ECG/Sim/weight.npy",allow_pickle=True)
+    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+    # bias = np.load("/home/alan/winDesktop/ARM_ECG/simulation/abias.npy",allow_pickle=True)
     # allow pickle must be true to load data
     # weights[0] has dim of (187*5)
     idx1 = int(argv[0])
     idx2 = int(argv[1])
-    layerW = weights[(2*idx1-2)]
+    layerW = weights[2*(idx1-1)]
     layerB = weights[2*(idx1-1)+1]
     LISTSIZE = layerW.shape[0]
-    if LISTSIZE ==  187:
-        LISTSIZE = 50
-    ADDERCOUNT = 0
     inputs = [ f"in{i}x" for i in range(LISTSIZE)]
     inputs.append("B0x")
-    # Start of module, TODO add function call from bash., add keras table
-    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(clk,N{idx2}x,"
+    # Start of module
+    STRBUF = "module node" + str(idx1) + "_"+ str(idx2) + f"(clk,reset,N{idx2}x,"
     for i in range(LISTSIZE):
         if i !=LISTSIZE-1:
             STRBUF += "A"+str(i)+"x,"
         else:
             STRBUF += "A"+str(i)+'x'
-    STRBUF += ");\n\tinput clk;\n"
+    STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput [31:0] N{idx2}x;\n\treg [31:0] N{idx2}x; \n\n"
+        STRBUF += "\tinput signed [7:0] A" + str(i) + "x;\n"
+    STRBUF += f"\toutput reg [7:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [31:0] W{0}x=32'b{1};\n".format(i,binary(layerW[i,idx2-1]))
-    STRBUF += "\tparameter [31:0] B{0}x=32'b{1};\n".format(0,binary(layerB[idx2-1]))
-    # TODO parameter [31:0] bias = 32b'xxx
+        STRBUF += "\tparameter signed [7:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
+    STRBUF += "\tparameter signed [7:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
     # Start of wire declare
     for i in range(LISTSIZE):
-        STRBUF += "\twire [31:0] in"+ str(i)+"x;\n"
+        # BUG why is IN0X 16 bits long
+        STRBUF += "\twire signed [7:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\twire [31:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n\twire [31:0] sumout;\n"
+        STRBUF += "\treg signed [7:0] sum"+ str(i)+"x;\n"
+    STRBUF += "\n\treg [7:0] sumout;\n"
 
-    # # Start of mult & add V1.
-    for i in range (LISTSIZE):
-        STRBUF += "\tfloat_mult mult{0}(\n\t\t.x(A{1}x),\n\t\t.y(W{2}x),\n\t\t.z(in{3}x));\n".format(i,i,i,i)
-    # for i in range (LISTSIZE-1):
-    #     if i ==0:
-    #         STRBUF += "\tfloat_adder add{0}(\n\t\t.a(in{1}),\n\t\t.b(in{2}),\n\t\t.Out(sum{3}),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n".format(i,i,i+1,i)
-    #     else:
-    #         STRBUF += "\tfloat_adder add{0}(\n\t\t.a(in{1}),\n\t\t.b(sum{2}),\n\t\t.Out(sum{3}),\n\t\t.Out_test(),\n\t\t.shift(),\n\t\t.c_out());\n".format(i,i,i-1,i)
+    # Copy of input required
+    for i in range(LISTSIZE):
+        STRBUF += "\treg signed [7:0] A"+ str(i)+"x_c;\n"
+    # Start of mult & add V3.
+    STRBUF += "\n\n"
+    for i in range(LISTSIZE):
+        STRBUF += f"\tassign in{i}x=A{i}x_c*W{i}x;\n"
+
+    # STRBUF+=gentree(inputs, "sum", "sumout")
+    # if(2*idx1 == len(weights)): # reached sigmoid node
+    #     STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=32'd1;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
+    # else:
+    #     STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=sumout;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
+    # STRBUF+= "\n\tend"
+    STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=8'b0;\n\t\tsumout<=8'b0;\n"
+    for i in range(LISTSIZE):
+        STRBUF += f"\t\tA{i}x_c<=8'b0\n"
+    for i in range(LISTSIZE):
+        STRBUF += f"\t\tsum{i}x<=8'b0\n"
+    STRBUF += "\tend\n\n"
+    for i in range(LISTSIZE):
+        STRBUF += f"\tA{i}x_c<=A{i}x;\n"
+    STRBUF += "\tsumout<="
+    for i in range(LISTSIZE+1):
+        if i == LISTSIZE:
+            STRBUF += "B0x;\n"
+        else:
+            STRBUF += f"in{i}x+"
     
-    # Start of mult & add V2.
-    # TODO include bias adder here, so if even number neurons, add bias at the end,
-    # otherwise if odd number of neurons, add bias at start
-    STRBUF+=gentree(inputs, "sum", "sumout")
-    if(2*idx1 == len(weights)): # reached sigmoid node
-        STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=32'd1;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
-    else:
-        STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=sumout;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
-    STRBUF+= "\n\tend"
-    STRBUF+= "\nendmodule"
+    STRBUF+= "\n\tif(sumout[7]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=8'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):
@@ -146,6 +154,23 @@ def gentree(inputs, inertmidate_perfix, outname):
     gen.makeadder(*intermindates, outname)
  
     return gen.output
+
+def num_to_fixed_point(num):
+  out = ""
+  if num < 0:
+    out = out + "1"
+    num += 1
+  else:
+    out = out + "0"
+  x = 0.5
+  for i in range(0,7):
+    if num >= x:
+      out = out + "1"
+      num -= x
+    else: 
+      out += "0"
+    x /= 2
+  return out
 
 if __name__ == "__main__":
     main(sys.argv[1:])

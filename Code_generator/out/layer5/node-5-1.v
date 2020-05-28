@@ -1,495 +1,300 @@
-module node5_1(clk,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x,A15x,A16x,A17x,A18x,A19x,A20x,A21x,A22x,A23x,A24x,A25x,A26x,A27x,A28x,A29x);
+module node5_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x,A15x,A16x,A17x,A18x,A19x,A20x,A21x,A22x,A23x,A24x,A25x,A26x,A27x,A28x,A29x);
 	input clk;
-	input [31:0] A0x;
-	input [31:0] A1x;
-	input [31:0] A2x;
-	input [31:0] A3x;
-	input [31:0] A4x;
-	input [31:0] A5x;
-	input [31:0] A6x;
-	input [31:0] A7x;
-	input [31:0] A8x;
-	input [31:0] A9x;
-	input [31:0] A10x;
-	input [31:0] A11x;
-	input [31:0] A12x;
-	input [31:0] A13x;
-	input [31:0] A14x;
-	input [31:0] A15x;
-	input [31:0] A16x;
-	input [31:0] A17x;
-	input [31:0] A18x;
-	input [31:0] A19x;
-	input [31:0] A20x;
-	input [31:0] A21x;
-	input [31:0] A22x;
-	input [31:0] A23x;
-	input [31:0] A24x;
-	input [31:0] A25x;
-	input [31:0] A26x;
-	input [31:0] A27x;
-	input [31:0] A28x;
-	input [31:0] A29x;
-	output [31:0] N1x;
-	reg [31:0] N1x; 
+	input reset;
+	input signed [7:0] A0x;
+	input signed [7:0] A1x;
+	input signed [7:0] A2x;
+	input signed [7:0] A3x;
+	input signed [7:0] A4x;
+	input signed [7:0] A5x;
+	input signed [7:0] A6x;
+	input signed [7:0] A7x;
+	input signed [7:0] A8x;
+	input signed [7:0] A9x;
+	input signed [7:0] A10x;
+	input signed [7:0] A11x;
+	input signed [7:0] A12x;
+	input signed [7:0] A13x;
+	input signed [7:0] A14x;
+	input signed [7:0] A15x;
+	input signed [7:0] A16x;
+	input signed [7:0] A17x;
+	input signed [7:0] A18x;
+	input signed [7:0] A19x;
+	input signed [7:0] A20x;
+	input signed [7:0] A21x;
+	input signed [7:0] A22x;
+	input signed [7:0] A23x;
+	input signed [7:0] A24x;
+	input signed [7:0] A25x;
+	input signed [7:0] A26x;
+	input signed [7:0] A27x;
+	input signed [7:0] A28x;
+	input signed [7:0] A29x;
+	output reg [7:0] N1x;
 
-	parameter [31:0] W0x=32'b10111110011110111001001100110101;
-	parameter [31:0] W1x=32'b10111110111011010000000000001111;
-	parameter [31:0] W2x=32'b00111110100010000100111011011011;
-	parameter [31:0] W3x=32'b10111101000110110000110111111100;
-	parameter [31:0] W4x=32'b00111110101111111101010101010111;
-	parameter [31:0] W5x=32'b10111111011111110111110100110110;
-	parameter [31:0] W6x=32'b00111110101000110110000101011001;
-	parameter [31:0] W7x=32'b00111110100110000001101011111011;
-	parameter [31:0] W8x=32'b00111110010101111001011110010101;
-	parameter [31:0] W9x=32'b00111110000010101001110000110101;
-	parameter [31:0] W10x=32'b00111110010001101111100011011001;
-	parameter [31:0] W11x=32'b00111110110001100010101000011010;
-	parameter [31:0] W12x=32'b00111110110101010110000001111001;
-	parameter [31:0] W13x=32'b00111100010110101110100000011001;
-	parameter [31:0] W14x=32'b10111110101110101100100111100001;
-	parameter [31:0] W15x=32'b00111110001110101011001111101101;
-	parameter [31:0] W16x=32'b10111111010010011000101110010011;
-	parameter [31:0] W17x=32'b10111000011100010111111011101011;
-	parameter [31:0] W18x=32'b10111110110100110011011011101110;
-	parameter [31:0] W19x=32'b00111101110111111110101110000111;
-	parameter [31:0] W20x=32'b10111101010011010111110011001100;
-	parameter [31:0] W21x=32'b10111111000010000100101101000010;
-	parameter [31:0] W22x=32'b00111101110101001101000010001101;
-	parameter [31:0] W23x=32'b00111100000101011110111100011000;
-	parameter [31:0] W24x=32'b10111110010010000111011010011111;
-	parameter [31:0] W25x=32'b10111101100101010100110111110111;
-	parameter [31:0] W26x=32'b00111110001110000110101111001111;
-	parameter [31:0] W27x=32'b00111110110100011000011100001000;
-	parameter [31:0] W28x=32'b00111100111010110010000010110000;
-	parameter [31:0] W29x=32'b00111111001000101100011101001100;
-	parameter [31:0] B0x=32'b00111101001100101001011001100101;
-	wire [31:0] in0x;
-	wire [31:0] in1x;
-	wire [31:0] in2x;
-	wire [31:0] in3x;
-	wire [31:0] in4x;
-	wire [31:0] in5x;
-	wire [31:0] in6x;
-	wire [31:0] in7x;
-	wire [31:0] in8x;
-	wire [31:0] in9x;
-	wire [31:0] in10x;
-	wire [31:0] in11x;
-	wire [31:0] in12x;
-	wire [31:0] in13x;
-	wire [31:0] in14x;
-	wire [31:0] in15x;
-	wire [31:0] in16x;
-	wire [31:0] in17x;
-	wire [31:0] in18x;
-	wire [31:0] in19x;
-	wire [31:0] in20x;
-	wire [31:0] in21x;
-	wire [31:0] in22x;
-	wire [31:0] in23x;
-	wire [31:0] in24x;
-	wire [31:0] in25x;
-	wire [31:0] in26x;
-	wire [31:0] in27x;
-	wire [31:0] in28x;
-	wire [31:0] in29x;
-	wire [31:0] sum0x;
-	wire [31:0] sum1x;
-	wire [31:0] sum2x;
-	wire [31:0] sum3x;
-	wire [31:0] sum4x;
-	wire [31:0] sum5x;
-	wire [31:0] sum6x;
-	wire [31:0] sum7x;
-	wire [31:0] sum8x;
-	wire [31:0] sum9x;
-	wire [31:0] sum10x;
-	wire [31:0] sum11x;
-	wire [31:0] sum12x;
-	wire [31:0] sum13x;
-	wire [31:0] sum14x;
-	wire [31:0] sum15x;
-	wire [31:0] sum16x;
-	wire [31:0] sum17x;
-	wire [31:0] sum18x;
-	wire [31:0] sum19x;
-	wire [31:0] sum20x;
-	wire [31:0] sum21x;
-	wire [31:0] sum22x;
-	wire [31:0] sum23x;
-	wire [31:0] sum24x;
-	wire [31:0] sum25x;
-	wire [31:0] sum26x;
-	wire [31:0] sum27x;
-	wire [31:0] sum28x;
+	parameter signed [7:0] W0x=8'sb00100111;
+	parameter signed [7:0] W1x=8'sb01001100;
+	parameter signed [7:0] W2x=8'sb00000101;
+	parameter signed [7:0] W3x=8'sb00100100;
+	parameter signed [7:0] W4x=8'sb11111011;
+	parameter signed [7:0] W5x=8'sb11100111;
+	parameter signed [7:0] W6x=8'sb11100101;
+	parameter signed [7:0] W7x=8'sb00110001;
+	parameter signed [7:0] W8x=8'sb00111001;
+	parameter signed [7:0] W9x=8'sb00110001;
+	parameter signed [7:0] W10x=8'sb00011110;
+	parameter signed [7:0] W11x=8'sb01011010;
+	parameter signed [7:0] W12x=8'sb11110011;
+	parameter signed [7:0] W13x=8'sb01000001;
+	parameter signed [7:0] W14x=8'sb10101001;
+	parameter signed [7:0] W15x=8'sb00010011;
+	parameter signed [7:0] W16x=8'sb00011101;
+	parameter signed [7:0] W17x=8'sb10111001;
+	parameter signed [7:0] W18x=8'sb11011111;
+	parameter signed [7:0] W19x=8'sb11000000;
+	parameter signed [7:0] W20x=8'sb11110011;
+	parameter signed [7:0] W21x=8'sb00000011;
+	parameter signed [7:0] W22x=8'sb00101100;
+	parameter signed [7:0] W23x=8'sb00101101;
+	parameter signed [7:0] W24x=8'sb00011101;
+	parameter signed [7:0] W25x=8'sb00101011;
+	parameter signed [7:0] W26x=8'sb11101100;
+	parameter signed [7:0] W27x=8'sb00010111;
+	parameter signed [7:0] W28x=8'sb00000110;
+	parameter signed [7:0] W29x=8'sb00000100;
+	parameter signed [7:0] B0x=8'sb00001011;
+	wire signed [7:0] in0x;
+	wire signed [7:0] in1x;
+	wire signed [7:0] in2x;
+	wire signed [7:0] in3x;
+	wire signed [7:0] in4x;
+	wire signed [7:0] in5x;
+	wire signed [7:0] in6x;
+	wire signed [7:0] in7x;
+	wire signed [7:0] in8x;
+	wire signed [7:0] in9x;
+	wire signed [7:0] in10x;
+	wire signed [7:0] in11x;
+	wire signed [7:0] in12x;
+	wire signed [7:0] in13x;
+	wire signed [7:0] in14x;
+	wire signed [7:0] in15x;
+	wire signed [7:0] in16x;
+	wire signed [7:0] in17x;
+	wire signed [7:0] in18x;
+	wire signed [7:0] in19x;
+	wire signed [7:0] in20x;
+	wire signed [7:0] in21x;
+	wire signed [7:0] in22x;
+	wire signed [7:0] in23x;
+	wire signed [7:0] in24x;
+	wire signed [7:0] in25x;
+	wire signed [7:0] in26x;
+	wire signed [7:0] in27x;
+	wire signed [7:0] in28x;
+	wire signed [7:0] in29x;
+	reg signed [7:0] sum0x;
+	reg signed [7:0] sum1x;
+	reg signed [7:0] sum2x;
+	reg signed [7:0] sum3x;
+	reg signed [7:0] sum4x;
+	reg signed [7:0] sum5x;
+	reg signed [7:0] sum6x;
+	reg signed [7:0] sum7x;
+	reg signed [7:0] sum8x;
+	reg signed [7:0] sum9x;
+	reg signed [7:0] sum10x;
+	reg signed [7:0] sum11x;
+	reg signed [7:0] sum12x;
+	reg signed [7:0] sum13x;
+	reg signed [7:0] sum14x;
+	reg signed [7:0] sum15x;
+	reg signed [7:0] sum16x;
+	reg signed [7:0] sum17x;
+	reg signed [7:0] sum18x;
+	reg signed [7:0] sum19x;
+	reg signed [7:0] sum20x;
+	reg signed [7:0] sum21x;
+	reg signed [7:0] sum22x;
+	reg signed [7:0] sum23x;
+	reg signed [7:0] sum24x;
+	reg signed [7:0] sum25x;
+	reg signed [7:0] sum26x;
+	reg signed [7:0] sum27x;
+	reg signed [7:0] sum28x;
 
-	wire [31:0] sumout;
-	float_mult mult0(
-		.x(A0x),
-		.y(W0x),
-		.z(in0x));
-	float_mult mult1(
-		.x(A1x),
-		.y(W1x),
-		.z(in1x));
-	float_mult mult2(
-		.x(A2x),
-		.y(W2x),
-		.z(in2x));
-	float_mult mult3(
-		.x(A3x),
-		.y(W3x),
-		.z(in3x));
-	float_mult mult4(
-		.x(A4x),
-		.y(W4x),
-		.z(in4x));
-	float_mult mult5(
-		.x(A5x),
-		.y(W5x),
-		.z(in5x));
-	float_mult mult6(
-		.x(A6x),
-		.y(W6x),
-		.z(in6x));
-	float_mult mult7(
-		.x(A7x),
-		.y(W7x),
-		.z(in7x));
-	float_mult mult8(
-		.x(A8x),
-		.y(W8x),
-		.z(in8x));
-	float_mult mult9(
-		.x(A9x),
-		.y(W9x),
-		.z(in9x));
-	float_mult mult10(
-		.x(A10x),
-		.y(W10x),
-		.z(in10x));
-	float_mult mult11(
-		.x(A11x),
-		.y(W11x),
-		.z(in11x));
-	float_mult mult12(
-		.x(A12x),
-		.y(W12x),
-		.z(in12x));
-	float_mult mult13(
-		.x(A13x),
-		.y(W13x),
-		.z(in13x));
-	float_mult mult14(
-		.x(A14x),
-		.y(W14x),
-		.z(in14x));
-	float_mult mult15(
-		.x(A15x),
-		.y(W15x),
-		.z(in15x));
-	float_mult mult16(
-		.x(A16x),
-		.y(W16x),
-		.z(in16x));
-	float_mult mult17(
-		.x(A17x),
-		.y(W17x),
-		.z(in17x));
-	float_mult mult18(
-		.x(A18x),
-		.y(W18x),
-		.z(in18x));
-	float_mult mult19(
-		.x(A19x),
-		.y(W19x),
-		.z(in19x));
-	float_mult mult20(
-		.x(A20x),
-		.y(W20x),
-		.z(in20x));
-	float_mult mult21(
-		.x(A21x),
-		.y(W21x),
-		.z(in21x));
-	float_mult mult22(
-		.x(A22x),
-		.y(W22x),
-		.z(in22x));
-	float_mult mult23(
-		.x(A23x),
-		.y(W23x),
-		.z(in23x));
-	float_mult mult24(
-		.x(A24x),
-		.y(W24x),
-		.z(in24x));
-	float_mult mult25(
-		.x(A25x),
-		.y(W25x),
-		.z(in25x));
-	float_mult mult26(
-		.x(A26x),
-		.y(W26x),
-		.z(in26x));
-	float_mult mult27(
-		.x(A27x),
-		.y(W27x),
-		.z(in27x));
-	float_mult mult28(
-		.x(A28x),
-		.y(W28x),
-		.z(in28x));
-	float_mult mult29(
-		.x(A29x),
-		.y(W29x),
-		.z(in29x));
+	reg [7:0] sumout;
+	reg signed [7:0] A0x_c;
+	reg signed [7:0] A1x_c;
+	reg signed [7:0] A2x_c;
+	reg signed [7:0] A3x_c;
+	reg signed [7:0] A4x_c;
+	reg signed [7:0] A5x_c;
+	reg signed [7:0] A6x_c;
+	reg signed [7:0] A7x_c;
+	reg signed [7:0] A8x_c;
+	reg signed [7:0] A9x_c;
+	reg signed [7:0] A10x_c;
+	reg signed [7:0] A11x_c;
+	reg signed [7:0] A12x_c;
+	reg signed [7:0] A13x_c;
+	reg signed [7:0] A14x_c;
+	reg signed [7:0] A15x_c;
+	reg signed [7:0] A16x_c;
+	reg signed [7:0] A17x_c;
+	reg signed [7:0] A18x_c;
+	reg signed [7:0] A19x_c;
+	reg signed [7:0] A20x_c;
+	reg signed [7:0] A21x_c;
+	reg signed [7:0] A22x_c;
+	reg signed [7:0] A23x_c;
+	reg signed [7:0] A24x_c;
+	reg signed [7:0] A25x_c;
+	reg signed [7:0] A26x_c;
+	reg signed [7:0] A27x_c;
+	reg signed [7:0] A28x_c;
+	reg signed [7:0] A29x_c;
 
-	float_adder add0(
-		.a(in0x),
-		.b(in1x),
-		.Out(sum0x),
-		.Out_test(),
-		.shift(),
-		.c_out());
 
-	float_adder add1(
-		.a(in2x),
-		.b(in3x),
-		.Out(sum1x),
-		.Out_test(),
-		.shift(),
-		.c_out());
+	assign in0x=A0x_c*W0x;
+	assign in1x=A1x_c*W1x;
+	assign in2x=A2x_c*W2x;
+	assign in3x=A3x_c*W3x;
+	assign in4x=A4x_c*W4x;
+	assign in5x=A5x_c*W5x;
+	assign in6x=A6x_c*W6x;
+	assign in7x=A7x_c*W7x;
+	assign in8x=A8x_c*W8x;
+	assign in9x=A9x_c*W9x;
+	assign in10x=A10x_c*W10x;
+	assign in11x=A11x_c*W11x;
+	assign in12x=A12x_c*W12x;
+	assign in13x=A13x_c*W13x;
+	assign in14x=A14x_c*W14x;
+	assign in15x=A15x_c*W15x;
+	assign in16x=A16x_c*W16x;
+	assign in17x=A17x_c*W17x;
+	assign in18x=A18x_c*W18x;
+	assign in19x=A19x_c*W19x;
+	assign in20x=A20x_c*W20x;
+	assign in21x=A21x_c*W21x;
+	assign in22x=A22x_c*W22x;
+	assign in23x=A23x_c*W23x;
+	assign in24x=A24x_c*W24x;
+	assign in25x=A25x_c*W25x;
+	assign in26x=A26x_c*W26x;
+	assign in27x=A27x_c*W27x;
+	assign in28x=A28x_c*W28x;
+	assign in29x=A29x_c*W29x;
 
-	float_adder add2(
-		.a(in4x),
-		.b(in5x),
-		.Out(sum2x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add3(
-		.a(in6x),
-		.b(in7x),
-		.Out(sum3x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add4(
-		.a(in8x),
-		.b(in9x),
-		.Out(sum4x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add5(
-		.a(in10x),
-		.b(in11x),
-		.Out(sum5x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add6(
-		.a(in12x),
-		.b(in13x),
-		.Out(sum6x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add7(
-		.a(in14x),
-		.b(in15x),
-		.Out(sum7x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add8(
-		.a(in16x),
-		.b(in17x),
-		.Out(sum8x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add9(
-		.a(in18x),
-		.b(in19x),
-		.Out(sum9x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add10(
-		.a(in20x),
-		.b(in21x),
-		.Out(sum10x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add11(
-		.a(in22x),
-		.b(in23x),
-		.Out(sum11x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add12(
-		.a(in24x),
-		.b(in25x),
-		.Out(sum12x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add13(
-		.a(in26x),
-		.b(in27x),
-		.Out(sum13x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add14(
-		.a(in28x),
-		.b(in29x),
-		.Out(sum14x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add15(
-		.a(sum0x),
-		.b(sum1x),
-		.Out(sum15x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add16(
-		.a(sum2x),
-		.b(sum3x),
-		.Out(sum16x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add17(
-		.a(sum4x),
-		.b(sum5x),
-		.Out(sum17x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add18(
-		.a(sum6x),
-		.b(sum7x),
-		.Out(sum18x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add19(
-		.a(sum8x),
-		.b(sum9x),
-		.Out(sum19x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add20(
-		.a(sum10x),
-		.b(sum11x),
-		.Out(sum20x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add21(
-		.a(sum12x),
-		.b(sum13x),
-		.Out(sum21x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add22(
-		.a(sum14x),
-		.b(B0x),
-		.Out(sum22x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add23(
-		.a(sum15x),
-		.b(sum16x),
-		.Out(sum23x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add24(
-		.a(sum17x),
-		.b(sum18x),
-		.Out(sum24x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add25(
-		.a(sum19x),
-		.b(sum20x),
-		.Out(sum25x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add26(
-		.a(sum21x),
-		.b(sum22x),
-		.Out(sum26x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add27(
-		.a(sum23x),
-		.b(sum24x),
-		.Out(sum27x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add28(
-		.a(sum25x),
-		.b(sum26x),
-		.Out(sum28x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add29(
-		.a(sum27x),
-		.b(sum28x),
-		.Out(sumout),
-		.Out_test(),
-		.shift(),
-		.c_out());
 always@(posedge clk)
-	begin 
-		if(sumout[31]==0)
-			N1x<=sumout;
-		else
-			N1x<=32'd0;
+	begin
+
+	if(reset) begin
+		N1x<=8'b0;
+		sumout<=8'b0;
+		A0x_c<=8'b0
+		A1x_c<=8'b0
+		A2x_c<=8'b0
+		A3x_c<=8'b0
+		A4x_c<=8'b0
+		A5x_c<=8'b0
+		A6x_c<=8'b0
+		A7x_c<=8'b0
+		A8x_c<=8'b0
+		A9x_c<=8'b0
+		A10x_c<=8'b0
+		A11x_c<=8'b0
+		A12x_c<=8'b0
+		A13x_c<=8'b0
+		A14x_c<=8'b0
+		A15x_c<=8'b0
+		A16x_c<=8'b0
+		A17x_c<=8'b0
+		A18x_c<=8'b0
+		A19x_c<=8'b0
+		A20x_c<=8'b0
+		A21x_c<=8'b0
+		A22x_c<=8'b0
+		A23x_c<=8'b0
+		A24x_c<=8'b0
+		A25x_c<=8'b0
+		A26x_c<=8'b0
+		A27x_c<=8'b0
+		A28x_c<=8'b0
+		A29x_c<=8'b0
+		sum0x<=8'b0
+		sum1x<=8'b0
+		sum2x<=8'b0
+		sum3x<=8'b0
+		sum4x<=8'b0
+		sum5x<=8'b0
+		sum6x<=8'b0
+		sum7x<=8'b0
+		sum8x<=8'b0
+		sum9x<=8'b0
+		sum10x<=8'b0
+		sum11x<=8'b0
+		sum12x<=8'b0
+		sum13x<=8'b0
+		sum14x<=8'b0
+		sum15x<=8'b0
+		sum16x<=8'b0
+		sum17x<=8'b0
+		sum18x<=8'b0
+		sum19x<=8'b0
+		sum20x<=8'b0
+		sum21x<=8'b0
+		sum22x<=8'b0
+		sum23x<=8'b0
+		sum24x<=8'b0
+		sum25x<=8'b0
+		sum26x<=8'b0
+		sum27x<=8'b0
+		sum28x<=8'b0
+		sum29x<=8'b0
+	end
+
+	A0x_c<=A0x;
+	A1x_c<=A1x;
+	A2x_c<=A2x;
+	A3x_c<=A3x;
+	A4x_c<=A4x;
+	A5x_c<=A5x;
+	A6x_c<=A6x;
+	A7x_c<=A7x;
+	A8x_c<=A8x;
+	A9x_c<=A9x;
+	A10x_c<=A10x;
+	A11x_c<=A11x;
+	A12x_c<=A12x;
+	A13x_c<=A13x;
+	A14x_c<=A14x;
+	A15x_c<=A15x;
+	A16x_c<=A16x;
+	A17x_c<=A17x;
+	A18x_c<=A18x;
+	A19x_c<=A19x;
+	A20x_c<=A20x;
+	A21x_c<=A21x;
+	A22x_c<=A22x;
+	A23x_c<=A23x;
+	A24x_c<=A24x;
+	A25x_c<=A25x;
+	A26x_c<=A26x;
+	A27x_c<=A27x;
+	A28x_c<=A28x;
+	A29x_c<=A29x;
+	sumout<=in0x+in1x+in2x+in3x+in4x+in5x+in6x+in7x+in8x+in9x+in10x+in11x+in12x+in13x+in14x+in15x+in16x+in17x+in18x+in19x+in20x+in21x+in22x+in23x+in24x+in25x+in26x+in27x+in28x+in29x+B0x;
+
+	if(sumout[7]==0)
+		begin
+		N{idx2}x<=sumout;
+		end
+	else
+		begin
+		N{idx2}x<=8'd0;
+		end
 	end
 endmodule

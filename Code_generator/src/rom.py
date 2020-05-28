@@ -33,7 +33,25 @@ def binary(num):
     # in an array as binary strings. Now we just concatenate them to get the total
     # representation of the float:
     return ''.join(padded)
-data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
+
+def num_to_fixed_point(num):
+  out = ""
+  if num < 0:
+    out = out + "1"
+    num += 1
+  else:
+    out = out + "0"
+  x = 0.5
+  for i in range(0,7):
+    if num >= x:
+      out = out + "1"
+      num -= x
+    else: 
+      out += "0"
+    x /= 2
+  return out
+
+data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/Testpos.npy')
 
 STRBUFF = "module rom_input(EN,"
 for i in range(186):
@@ -48,7 +66,7 @@ for i in range(186):
 STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
 
 for i in range(187):
-    STRBUFF += f"\tI{i}x = 32'b{binary(data[i])};\n"
+    STRBUFF += f"\tI{i}x = 32'b{num_to_fixed_point(data[i])};\n"
 STRBUFF +="\tend\nendmodule"
 print(STRBUFF)
 

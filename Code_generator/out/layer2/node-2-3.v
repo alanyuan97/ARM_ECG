@@ -1,95 +1,75 @@
-module node2_3(clk,N3x,A0x,A1x,A2x,A3x,A4x);
+module node2_3(clk,reset,N3x,A0x,A1x,A2x,A3x,A4x);
 	input clk;
-	input [31:0] A0x;
-	input [31:0] A1x;
-	input [31:0] A2x;
-	input [31:0] A3x;
-	input [31:0] A4x;
-	output [31:0] N3x;
-	reg [31:0] N3x; 
+	input reset;
+	input signed [7:0] A0x;
+	input signed [7:0] A1x;
+	input signed [7:0] A2x;
+	input signed [7:0] A3x;
+	input signed [7:0] A4x;
+	output reg [7:0] N3x;
 
-	parameter [31:0] W0x=32'b10111111010100001011000111101000;
-	parameter [31:0] W1x=32'b10111111010100001000001010100001;
-	parameter [31:0] W2x=32'b00111111000000111101110111011000;
-	parameter [31:0] W3x=32'b10111101111111110001111111001000;
-	parameter [31:0] W4x=32'b10111111011111110111111110001100;
-	parameter [31:0] B0x=32'b10111101111010110011011110001110;
-	wire [31:0] in0x;
-	wire [31:0] in1x;
-	wire [31:0] in2x;
-	wire [31:0] in3x;
-	wire [31:0] in4x;
-	wire [31:0] sum0x;
-	wire [31:0] sum1x;
-	wire [31:0] sum2x;
-	wire [31:0] sum3x;
+	parameter signed [7:0] W0x=8'sb11110001;
+	parameter signed [7:0] W1x=8'sb11001111;
+	parameter signed [7:0] W2x=8'sb11000110;
+	parameter signed [7:0] W3x=8'sb10111001;
+	parameter signed [7:0] W4x=8'sb11111110;
+	parameter signed [7:0] B0x=8'sb00000000;
+	wire signed [7:0] in0x;
+	wire signed [7:0] in1x;
+	wire signed [7:0] in2x;
+	wire signed [7:0] in3x;
+	wire signed [7:0] in4x;
+	reg signed [7:0] sum0x;
+	reg signed [7:0] sum1x;
+	reg signed [7:0] sum2x;
+	reg signed [7:0] sum3x;
 
-	wire [31:0] sumout;
-	float_mult mult0(
-		.x(A0x),
-		.y(W0x),
-		.z(in0x));
-	float_mult mult1(
-		.x(A1x),
-		.y(W1x),
-		.z(in1x));
-	float_mult mult2(
-		.x(A2x),
-		.y(W2x),
-		.z(in2x));
-	float_mult mult3(
-		.x(A3x),
-		.y(W3x),
-		.z(in3x));
-	float_mult mult4(
-		.x(A4x),
-		.y(W4x),
-		.z(in4x));
+	reg [7:0] sumout;
+	reg signed [7:0] A0x_c;
+	reg signed [7:0] A1x_c;
+	reg signed [7:0] A2x_c;
+	reg signed [7:0] A3x_c;
+	reg signed [7:0] A4x_c;
 
-	float_adder add0(
-		.a(in0x),
-		.b(in1x),
-		.Out(sum0x),
-		.Out_test(),
-		.shift(),
-		.c_out());
 
-	float_adder add1(
-		.a(in2x),
-		.b(in3x),
-		.Out(sum1x),
-		.Out_test(),
-		.shift(),
-		.c_out());
+	assign in0x=A0x_c*W0x;
+	assign in1x=A1x_c*W1x;
+	assign in2x=A2x_c*W2x;
+	assign in3x=A3x_c*W3x;
+	assign in4x=A4x_c*W4x;
 
-	float_adder add2(
-		.a(in4x),
-		.b(B0x),
-		.Out(sum2x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add3(
-		.a(sum0x),
-		.b(sum1x),
-		.Out(sum3x),
-		.Out_test(),
-		.shift(),
-		.c_out());
-
-	float_adder add4(
-		.a(sum3x),
-		.b(sum2x),
-		.Out(sumout),
-		.Out_test(),
-		.shift(),
-		.c_out());
 always@(posedge clk)
-	begin 
-		if(sumout[31]==0)
-			N3x<=sumout;
-		else
-			N3x<=32'd0;
+	begin
+
+	if(reset) begin
+		N3x<=8'b0;
+		sumout<=8'b0;
+		A0x_c<=8'b0
+		A1x_c<=8'b0
+		A2x_c<=8'b0
+		A3x_c<=8'b0
+		A4x_c<=8'b0
+		sum0x<=8'b0
+		sum1x<=8'b0
+		sum2x<=8'b0
+		sum3x<=8'b0
+		sum4x<=8'b0
+	end
+
+	A0x_c<=A0x;
+	A1x_c<=A1x;
+	A2x_c<=A2x;
+	A3x_c<=A3x;
+	A4x_c<=A4x;
+	sumout<=in0x+in1x+in2x+in3x+in4x+B0x;
+
+	if(sumout[7]==0)
+		begin
+		N{idx2}x<=sumout;
+		end
+	else
+		begin
+		N{idx2}x<=8'd0;
+		end
 	end
 endmodule
