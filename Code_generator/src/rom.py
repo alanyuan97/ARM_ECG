@@ -51,7 +51,7 @@ def num_to_fixed_point(num):
     x /= 2
   return out
 
-data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
+data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/Testpos.npy')
 
 STRBUFF = "module rom_input(EN,"
 for i in range(186):

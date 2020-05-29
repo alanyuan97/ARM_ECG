@@ -25,12 +25,12 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput signed [7:0] A" + str(i) + "x;\n"
+        STRBUF += "\tinput signed [15:0] A" + str(i) + "x;\n"
     STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter signed [7:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
-    STRBUF += "\tparameter signed [7:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
+        STRBUF += "\tparameter signed [15:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
+    STRBUF += "\tparameter signed [15:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
@@ -165,8 +165,8 @@ def num_to_fixed_point(num):
     num += 1
   else:
     out = out + "0"
-  x = 0.5
-  for i in range(0,7):
+  x = 0.5 
+  for i in range(0,15):
     if num >= x:
       out = out + "1"
       num -= x
@@ -174,6 +174,8 @@ def num_to_fixed_point(num):
       out += "0"
     x /= 2
   return out
+  0.5
+  0.500063
 
 if __name__ == "__main__":
     main(sys.argv[1:])
