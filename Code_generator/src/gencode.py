@@ -55,9 +55,9 @@ def main(argv):
     # STRBUF+= "\n\tend"
     STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=8'b0;\n\t\tsumout<=8'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tA{i}x_c<=8'b0\n"
+        STRBUF += f"\t\tA{i}x_c<=8'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tsum{i}x<=8'b0\n"
+        STRBUF += f"\t\tsum{i}x<=8'b0;\n"
     STRBUF += "\tend\n\n"
     for i in range(LISTSIZE):
         STRBUF += f"\tA{i}x_c<=A{i}x;\n"

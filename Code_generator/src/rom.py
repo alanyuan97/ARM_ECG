@@ -57,16 +57,16 @@ STRBUFF = "module rom_input(EN,"
 for i in range(186):
     STRBUFF+=f"I{i}x,"
 STRBUFF += "I186x);\n\tinput EN;\n"
-STRBUFF += "\toutput [31:0]"
+STRBUFF += "\toutput [7:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\n\treg [31:0]"
+STRBUFF += "I186x;\n\treg [7:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
 STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
 
 for i in range(187):
-    STRBUFF += f"\tI{i}x = 32'b{num_to_fixed_point(data[i])};\n"
+    STRBUFF += f"\tI{i}x = 8'b{num_to_fixed_point(data[i])};\n"
 STRBUFF +="\tend\nendmodule"
 print(STRBUFF)
 

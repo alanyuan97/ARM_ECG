@@ -74,26 +74,26 @@ always@(posedge clk)
 	if(reset) begin
 		N9x<=8'b0;
 		sumout<=8'b0;
-		A0x_c<=8'b0
-		A1x_c<=8'b0
-		A2x_c<=8'b0
-		A3x_c<=8'b0
-		A4x_c<=8'b0
-		A5x_c<=8'b0
-		A6x_c<=8'b0
-		A7x_c<=8'b0
-		A8x_c<=8'b0
-		A9x_c<=8'b0
-		sum0x<=8'b0
-		sum1x<=8'b0
-		sum2x<=8'b0
-		sum3x<=8'b0
-		sum4x<=8'b0
-		sum5x<=8'b0
-		sum6x<=8'b0
-		sum7x<=8'b0
-		sum8x<=8'b0
-		sum9x<=8'b0
+		A0x_c<=8'b0;
+		A1x_c<=8'b0;
+		A2x_c<=8'b0;
+		A3x_c<=8'b0;
+		A4x_c<=8'b0;
+		A5x_c<=8'b0;
+		A6x_c<=8'b0;
+		A7x_c<=8'b0;
+		A8x_c<=8'b0;
+		A9x_c<=8'b0;
+		sum0x<=8'b0;
+		sum1x<=8'b0;
+		sum2x<=8'b0;
+		sum3x<=8'b0;
+		sum4x<=8'b0;
+		sum5x<=8'b0;
+		sum6x<=8'b0;
+		sum7x<=8'b0;
+		sum8x<=8'b0;
+		sum9x<=8'b0;
 	end
 
 	A0x_c<=A0x;
