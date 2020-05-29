@@ -155,11 +155,11 @@ always@(posedge clk)
 
 	if(sumout[7]==0)
 		begin
-		N{idx2}x<=sumout;
+		N17x<=sumout;
 		end
 	else
 		begin
-		N{idx2}x<=8'd0;
+		N17x<=8'd0;
 		end
 	end
 endmodule
