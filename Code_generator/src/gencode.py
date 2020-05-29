@@ -26,7 +26,7 @@ def main(argv):
     # Start of input declare
     for i in range(LISTSIZE):
         STRBUF += "\tinput signed [7:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput reg [7:0] N{idx2}x;\n\n"
+    STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
         STRBUF += "\tparameter signed [7:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
@@ -34,10 +34,10 @@ def main(argv):
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
-        STRBUF += "\twire signed [7:0] in"+ str(i)+"x;\n"
+        STRBUF += "\twire signed [15:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\treg signed [7:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n\treg [7:0] sumout;\n"
+        STRBUF += "\treg signed [15:0] sum"+ str(i)+"x;\n"
+    STRBUF += "\n\treg [15:0] sumout;\n"
 
     # Copy of input required
     for i in range(LISTSIZE):
