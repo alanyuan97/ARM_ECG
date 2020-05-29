@@ -36,7 +36,7 @@ def printbuffer():
         inputrand.append(tmp)
         STRBUFF += f"\tI{i}x = 8'b{num_to_fixed_point(tmp)};\n"
     STRBUFF +="\tend\nendmodule"
-    np.save("randnums.npy",np.array(inputrand))
+    # np.save("randnums.npy",np.array(inputrand))
     return STRBUFF,np.array(inputrand)
 
 def main():

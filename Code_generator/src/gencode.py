@@ -25,19 +25,19 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput signed [15:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
+        STRBUF += "\tinput signed [7:0] A" + str(i) + "x;\n"
+    STRBUF += f"\toutput reg [7:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter signed [15:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
-    STRBUF += "\tparameter signed [15:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
+        STRBUF += "\tparameter signed [7:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
+    STRBUF += "\tparameter signed [7:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
-        STRBUF += "\twire signed [15:0] in"+ str(i)+"x;\n"
+        STRBUF += "\twire signed [7:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\treg signed [15:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n\treg [15:0] sumout;\n"
+        STRBUF += "\treg signed [7:0] sum"+ str(i)+"x;\n"
+    STRBUF += "\n\treg [7:0] sumout;\n"
 
     # Copy of input required
     for i in range(LISTSIZE):
@@ -166,7 +166,7 @@ def num_to_fixed_point(num):
   else:
     out = out + "0"
   x = 0.5 
-  for i in range(0,15):
+  for i in range(0,7):
     if num >= x:
       out = out + "1"
       num -= x
