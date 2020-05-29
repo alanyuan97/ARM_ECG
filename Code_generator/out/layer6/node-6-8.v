@@ -133,7 +133,7 @@ always@(posedge clk)
 		sum11x<=8'b0;
 		sum12x<=8'b0;
 		sum13x<=8'b0;
-		sum14x<=8'b0;
+		sumout<=8'b0;
 	end
 
 	A0x_c<=A0x;

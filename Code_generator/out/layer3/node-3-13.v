@@ -93,7 +93,7 @@ always@(posedge clk)
 		sum6x<=8'b0;
 		sum7x<=8'b0;
 		sum8x<=8'b0;
-		sum9x<=8'b0;
+		sumout<=8'b0;
 	end
 
 	A0x_c<=A0x;

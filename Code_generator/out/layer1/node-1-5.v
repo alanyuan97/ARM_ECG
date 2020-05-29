@@ -1509,7 +1509,7 @@ always@(posedge clk)
 		sum183x<=8'b0;
 		sum184x<=8'b0;
 		sum185x<=8'b0;
-		sum186x<=8'b0;
+		sumout<=8'b0;
 	end
 
 	A0x_c<=A0x;

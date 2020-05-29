@@ -253,7 +253,7 @@ always@(posedge clk)
 		sum26x<=8'b0;
 		sum27x<=8'b0;
 		sum28x<=8'b0;
-		sum29x<=8'b0;
+		sumout<=8'b0;
 	end
 
 	A0x_c<=A0x;

@@ -57,7 +57,10 @@ def main(argv):
     for i in range(LISTSIZE):
         STRBUF += f"\t\tA{i}x_c<=8'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tsum{i}x<=8'b0;\n"
+        if i == LISTSIZE-1:
+            STRBUF += f"\t\tsumout<=8'b0;\n"
+        else:
+            STRBUF += f"\t\tsum{i}x<=8'b0;\n"
     STRBUF += "\tend\n\n"
     for i in range(LISTSIZE):
         STRBUF += f"\tA{i}x_c<=A{i}x;\n"
