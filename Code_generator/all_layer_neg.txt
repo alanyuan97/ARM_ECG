@@ -122,3 +122,5 @@ Output9: Decimal:0.9960937500000000 	 8bit_binary : 01111111
 Keras simulation on activation layer 7 ==> 
  
 Output0: Decimal:0.0826797485351562 	 8bit_binary : 00001010
+
+------------END LAYER 7--------------
