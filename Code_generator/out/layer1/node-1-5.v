@@ -304,7 +304,7 @@ module node1_5(clk,reset,N5x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A
 	parameter signed [15:0] W111x=16'sb1111111110100001;
 	parameter signed [15:0] W112x=16'sb0000000010001001;
 	parameter signed [15:0] W113x=16'sb1111111100000011;
-	parameter signed [15:0] W114x=16'sb10000000000000000;
+	parameter signed [15:0] W114x=16'sb0000000000000000;
 	parameter signed [15:0] W115x=16'sb1111111110110100;
 	parameter signed [15:0] W116x=16'sb1111111110111000;
 	parameter signed [15:0] W117x=16'sb1111111111111001;

@@ -230,7 +230,7 @@ module node1_2(clk,reset,N2x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A
 	parameter signed [15:0] W37x=16'sb0000000010110100;
 	parameter signed [15:0] W38x=16'sb0000000010100111;
 	parameter signed [15:0] W39x=16'sb0000000101010011;
-	parameter signed [15:0] W40x=16'sb10000000000000000;
+	parameter signed [15:0] W40x=16'sb0000000000000000;
 	parameter signed [15:0] W41x=16'sb0000000010011110;
 	parameter signed [15:0] W42x=16'sb0000000000011010;
 	parameter signed [15:0] W43x=16'sb0000000011100000;

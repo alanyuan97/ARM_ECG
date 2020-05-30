@@ -283,7 +283,7 @@ module node1_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A
 	parameter signed [15:0] W90x=16'sb0000000001101101;
 	parameter signed [15:0] W91x=16'sb1111111111101111;
 	parameter signed [15:0] W92x=16'sb1111111111101001;
-	parameter signed [15:0] W93x=16'sb10000000000000000;
+	parameter signed [15:0] W93x=16'sb0000000000000000;
 	parameter signed [15:0] W94x=16'sb1111111101110101;
 	parameter signed [15:0] W95x=16'sb1111111111101001;
 	parameter signed [15:0] W96x=16'sb1111111100111010;

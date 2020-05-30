@@ -194,6 +194,8 @@ def num2fixedbin(num,precision,BITS = 16 ):
     whole,dec = str(num1).split(".")
     whole = int(whole)
 
+
+
     dec = float("0." + dec)
     whole = bin(whole).lstrip('0b')
     if not whole:
@@ -213,12 +215,15 @@ def num2fixedbin(num,precision,BITS = 16 ):
     for i in range(len(out)):
         STR += str(out[i])
     res += STR
-
+    # print(res)
     if num<0:
         conv = ["1","0"]
         res1 = ''.join([conv[int(a)] for a in res])
         res2 = int(res1,base=2) + 1
-        return f"{BITS}'sb" + str(bin(res2).lstrip("0b"))
+        res3 = str(bin(res2).lstrip("0b"))
+        if len(res3)!= BITS:
+            res3 = res3[len(res3)-BITS:]
+        return f"{BITS}'sb" + res3
     else:
         return f"{BITS}'sb" + str(res)
 
