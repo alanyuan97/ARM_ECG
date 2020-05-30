@@ -17,6 +17,52 @@ def num_to_fixed_point(num):
       out += "0"
     x /= 2
   return out
+def num2fixedbin(num,precision,BITS = 16 ):
+    """
+        INPUT: 
+            num: number to convert
+        PARAMETERS: 
+            precision: decimal points required
+            BITS: set to 16 by default, otherwise user specify
+
+        Returns:
+            A string formated with number of bits used specified as prefix
+
+        Example: 
+            num2fixedbin(0.625,10) returns 16'sb1000000010100000
+    """
+    if num<0:
+        SIGNED = 1
+        num *= -1
+    else:
+        SIGNED = 0
+
+    whole,dec = str(num).split(".")
+    whole = int(whole)
+
+
+
+    dec = float("0." + dec)
+    whole = bin(whole).lstrip('0b')
+    if not whole:
+        whole = 0
+    res = int(whole)
+    res = "{0:0{1}d}".format(res,BITS-precision -1 ) # append 0s in front according to the precision
+    temp = 0.5
+    out = []
+    STR = ""
+    for i in range(precision):
+        if dec<temp:
+            out.extend('0')
+        else:
+            out.extend('1')
+            dec -= temp
+        temp /= 2
+    for i in range(len(out)):
+        STR += str(out[i])
+    res += STR
+    res = f"{SIGNED}"+ res
+    return f"{BITS}'sb" + res
 def printbuffer():
     inputrand = []
     STRBUFF = "module rom_input(EN,"
@@ -34,7 +80,7 @@ def printbuffer():
     for i in range(187):
         tmp = rand.uniform(-1,1)
         inputrand.append(tmp)
-        STRBUFF += f"\tI{i}x = 8'b{num_to_fixed_point(tmp)};\n"
+        STRBUFF += f"\tI{i}x = {num2fixedbin(tmp,10)};\n"
     STRBUFF +="\tend\nendmodule"
     # np.save("randnums.npy",np.array(inputrand))
     return STRBUFF,np.array(inputrand)
@@ -48,6 +94,6 @@ def main():
     for i in range(len(ROM_sim)):
         if ROM_sim[i] <0:
             ROM_sim[i]=0
-    print(ROM_sim,[num_to_fixed_point(ROM_sim[i]) for i in range(5) ])   
+    print(ROM_sim,[num2fixedbin(ROM_sim[i],10) for i in range(5) ])   
 if __name__ == '__main__':
     main()
