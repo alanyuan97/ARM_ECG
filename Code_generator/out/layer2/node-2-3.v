@@ -8,11 +8,11 @@ module node2_3(clk,reset,N3x,A0x,A1x,A2x,A3x,A4x);
 	input signed [15:0] A4x;
 	output reg [15:0] N3x;
 
-	parameter signed [15:0] W0x=16'sb1000000001110011;
-	parameter signed [15:0] W1x=16'sb1000000110000101;
-	parameter signed [15:0] W2x=16'sb1000000111001110;
-	parameter signed [15:0] W3x=16'sb1000001000110100;
-	parameter signed [15:0] W4x=16'sb1000000000001011;
+	parameter signed [15:0] W0x=16'sb1111111110001101;
+	parameter signed [15:0] W1x=16'sb1111111001111011;
+	parameter signed [15:0] W2x=16'sb1111111000110010;
+	parameter signed [15:0] W3x=16'sb1111110111001100;
+	parameter signed [15:0] W4x=16'sb1111111111110101;
 	parameter signed [15:0] B0x=16'sb0000000000000000;
 	wire signed [15:0] in0x;
 	wire signed [15:0] in1x;

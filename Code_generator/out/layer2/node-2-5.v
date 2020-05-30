@@ -9,11 +9,11 @@ module node2_5(clk,reset,N5x,A0x,A1x,A2x,A3x,A4x);
 	output reg [15:0] N5x;
 
 	parameter signed [15:0] W0x=16'sb0000001000001111;
-	parameter signed [15:0] W1x=16'sb1000010000000000;
-	parameter signed [15:0] W2x=16'sb1000000111101100;
+	parameter signed [15:0] W1x=16'sb1111110000000000;
+	parameter signed [15:0] W2x=16'sb1111111000010100;
 	parameter signed [15:0] W3x=16'sb0000000001010100;
-	parameter signed [15:0] W4x=16'sb1000001000100000;
-	parameter signed [15:0] B0x=16'sb1000000000010001;
+	parameter signed [15:0] W4x=16'sb1111110111100000;
+	parameter signed [15:0] B0x=16'sb1111111111101111;
 	wire signed [15:0] in0x;
 	wire signed [15:0] in1x;
 	wire signed [15:0] in2x;

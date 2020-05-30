@@ -9,8 +9,8 @@ module node2_9(clk,reset,N9x,A0x,A1x,A2x,A3x,A4x);
 	output reg [15:0] N9x;
 
 	parameter signed [15:0] W0x=16'sb0000000101001100;
-	parameter signed [15:0] W1x=16'sb1000001100011110;
-	parameter signed [15:0] W2x=16'sb1000000000111011;
+	parameter signed [15:0] W1x=16'sb1111110011100010;
+	parameter signed [15:0] W2x=16'sb1111111111000101;
 	parameter signed [15:0] W3x=16'sb0000001001011011;
 	parameter signed [15:0] W4x=16'sb0000001011011101;
 	parameter signed [15:0] B0x=16'sb0000000000111101;

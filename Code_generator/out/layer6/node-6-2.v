@@ -19,20 +19,20 @@ module node6_2(clk,reset,N2x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A
 	output reg [15:0] N2x;
 
 	parameter signed [15:0] W0x=16'sb0000001010111110;
-	parameter signed [15:0] W1x=16'sb1000001010000011;
-	parameter signed [15:0] W2x=16'sb1000001000100010;
+	parameter signed [15:0] W1x=16'sb1111110101111101;
+	parameter signed [15:0] W2x=16'sb1111110111011110;
 	parameter signed [15:0] W3x=16'sb0000000000010000;
 	parameter signed [15:0] W4x=16'sb0000001111110011;
 	parameter signed [15:0] W5x=16'sb0000001000000001;
 	parameter signed [15:0] W6x=16'sb0000001001010111;
 	parameter signed [15:0] W7x=16'sb0000000000101001;
 	parameter signed [15:0] W8x=16'sb0000000010001001;
-	parameter signed [15:0] W9x=16'sb1000000000011010;
-	parameter signed [15:0] W10x=16'sb1000000110101000;
-	parameter signed [15:0] W11x=16'sb1000000011001001;
+	parameter signed [15:0] W9x=16'sb1111111111100110;
+	parameter signed [15:0] W10x=16'sb1111111001011000;
+	parameter signed [15:0] W11x=16'sb1111111100110111;
 	parameter signed [15:0] W12x=16'sb0000000000011110;
-	parameter signed [15:0] W13x=16'sb1000001010110101;
-	parameter signed [15:0] W14x=16'sb1000000101110100;
+	parameter signed [15:0] W13x=16'sb1111110101001011;
+	parameter signed [15:0] W14x=16'sb1111111010001100;
 	parameter signed [15:0] B0x=16'sb0000000101010111;
 	wire signed [15:0] in0x;
 	wire signed [15:0] in1x;

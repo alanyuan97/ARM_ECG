@@ -7,13 +7,8 @@ def num2fixedbin(num,precision,BITS = 16 ):
             precision: decimal points required
             BITS: set to 16 by default, otherwise user specify
     """
-    if num<0:
-        SIGNED = 1
-        num *= -1
-    else:
-        SIGNED = 0
-
-    whole,dec = str(num).split(".")
+    num1 = abs(num)
+    whole,dec = str(num1).split(".")
     whole = int(whole)
 
 
@@ -23,7 +18,7 @@ def num2fixedbin(num,precision,BITS = 16 ):
     if not whole:
         whole = 0
     res = int(whole)
-    res = "{0:0{1}d}".format(res,BITS-precision -1 ) # append 0s in front according to the precision
+    res = "{0:0{1}d}".format(res,BITS-precision ) # append 0s in front according to the precision
     temp = 0.5
     out = []
     STR = ""
@@ -37,7 +32,12 @@ def num2fixedbin(num,precision,BITS = 16 ):
     for i in range(len(out)):
         STR += str(out[i])
     res += STR
-    res = f"{SIGNED}"+ res
-    return f"{BITS}'sb" + res
 
-print(num2fixedbin(-0.625,8))
+    if num<0:
+        conv = ["1","0"]
+        res1 = ''.join([conv[int(a)] for a in res])
+        res2 = int(res1,base=2) + 1
+        return f"{BITS}'sb" + str(bin(res2).lstrip("0b"))
+    else:
+        return f"{BITS}'sb" + str(res)
+print(num2fixedbin(-0.625,8)) 

@@ -31,23 +31,16 @@ def num2fixedbin(num,precision,BITS = 16 ):
         Example: 
             num2fixedbin(0.625,10) returns 16'sb1000000010100000
     """
-    if num<0:
-        SIGNED = 1
-        num *= -1
-    else:
-        SIGNED = 0
-
-    whole,dec = str(num).split(".")
+    num1 = abs(num)
+    whole,dec = str(num1).split(".")
     whole = int(whole)
-
-
 
     dec = float("0." + dec)
     whole = bin(whole).lstrip('0b')
     if not whole:
         whole = 0
     res = int(whole)
-    res = "{0:0{1}d}".format(res,BITS-precision -1 ) # append 0s in front according to the precision
+    res = "{0:0{1}d}".format(res,BITS-precision ) # append 0s in front according to the precision
     temp = 0.5
     out = []
     STR = ""
@@ -61,8 +54,14 @@ def num2fixedbin(num,precision,BITS = 16 ):
     for i in range(len(out)):
         STR += str(out[i])
     res += STR
-    res = f"{SIGNED}"+ res
-    return f"{BITS}'sb" + res
+
+    if num<0:
+        conv = ["1","0"]
+        res1 = ''.join([conv[int(a)] for a in res])
+        res2 = int(res1,base=2) + 1
+        return f"{BITS}'sb" + str(bin(res2).lstrip("0b"))
+    else:
+        return f"{BITS}'sb" + str(res)
 def printbuffer():
     inputrand = []
     STRBUFF = "module rom_input(EN,"

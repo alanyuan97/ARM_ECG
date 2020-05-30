@@ -19,17 +19,17 @@ module node4_14(clk,reset,N14x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x
 	output reg [15:0] N14x;
 
 	parameter signed [15:0] W0x=16'sb0000000111110000;
-	parameter signed [15:0] W1x=16'sb1000001001010101;
+	parameter signed [15:0] W1x=16'sb1111110110101011;
 	parameter signed [15:0] W2x=16'sb0000000100000001;
-	parameter signed [15:0] W3x=16'sb1000000010000011;
+	parameter signed [15:0] W3x=16'sb1111111101111101;
 	parameter signed [15:0] W4x=16'sb0000000000000001;
 	parameter signed [15:0] W5x=16'sb0000000111010000;
-	parameter signed [15:0] W6x=16'sb1000000000100010;
+	parameter signed [15:0] W6x=16'sb1111111111011110;
 	parameter signed [15:0] W7x=16'sb0000000100001001;
-	parameter signed [15:0] W8x=16'sb1000000110111111;
-	parameter signed [15:0] W9x=16'sb1000001001101010;
-	parameter signed [15:0] W10x=16'sb1000000011001000;
-	parameter signed [15:0] W11x=16'sb1000000000000011;
+	parameter signed [15:0] W8x=16'sb1111111001000001;
+	parameter signed [15:0] W9x=16'sb1111110110010110;
+	parameter signed [15:0] W10x=16'sb1111111100111000;
+	parameter signed [15:0] W11x=16'sb1111111111111101;
 	parameter signed [15:0] W12x=16'sb0000000100000110;
 	parameter signed [15:0] W13x=16'sb0000000011011000;
 	parameter signed [15:0] W14x=16'sb0000000111000000;

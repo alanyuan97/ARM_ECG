@@ -9,7 +9,7 @@ module node2_10(clk,reset,N10x,A0x,A1x,A2x,A3x,A4x);
 	output reg [15:0] N10x;
 
 	parameter signed [15:0] W0x=16'sb0000000100011100;
-	parameter signed [15:0] W1x=16'sb1000000101110001;
+	parameter signed [15:0] W1x=16'sb1111111010001111;
 	parameter signed [15:0] W2x=16'sb0000001100101011;
 	parameter signed [15:0] W3x=16'sb0000001010110011;
 	parameter signed [15:0] W4x=16'sb0000001110010000;

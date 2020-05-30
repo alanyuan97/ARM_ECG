@@ -14,14 +14,14 @@ module node3_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	output reg [15:0] N1x;
 
 	parameter signed [15:0] W0x=16'sb0000001000100100;
-	parameter signed [15:0] W1x=16'sb1000000001001100;
+	parameter signed [15:0] W1x=16'sb1111111110110100;
 	parameter signed [15:0] W2x=16'sb0000000001100001;
 	parameter signed [15:0] W3x=16'sb0000001001111001;
 	parameter signed [15:0] W4x=16'sb0000000011000000;
-	parameter signed [15:0] W5x=16'sb1000000000100111;
-	parameter signed [15:0] W6x=16'sb1000000001110010;
+	parameter signed [15:0] W5x=16'sb1111111111011001;
+	parameter signed [15:0] W6x=16'sb1111111110001110;
 	parameter signed [15:0] W7x=16'sb0000000000000010;
-	parameter signed [15:0] W8x=16'sb1000000010101001;
+	parameter signed [15:0] W8x=16'sb1111111101010111;
 	parameter signed [15:0] W9x=16'sb0000000110110010;
 	parameter signed [15:0] B0x=16'sb0000000001001010;
 	wire signed [15:0] in0x;
