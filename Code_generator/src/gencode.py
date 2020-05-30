@@ -1,7 +1,6 @@
 #! /usr/bin/python3
 import numpy as np
 import sys
-import struct
 
 def main(argv):
     weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
@@ -25,23 +24,23 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput signed [7:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput reg [7:0] N{idx2}x;\n\n"
+        STRBUF += "\tinput signed [15:0] A" + str(i) + "x;\n"
+    STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter signed [7:0] W{0}x=8'sb{1};\n".format(i,num_to_fixed_point(layerW[i,idx2-1]))
-    STRBUF += "\tparameter signed [7:0] B{0}x=8'sb{1};\n".format(0,num_to_fixed_point(layerB[idx2-1]))
+        STRBUF += "\tparameter signed [15:0] W{0}x={1};\n".format(i,num2fixedbin(layerW[i,idx2-1],10)) # No need to add format as it returns 
+    STRBUF += "\tparameter signed [15:0] B{0}x={1};\n".format(0,num2fixedbin(layerB[idx2-1],10))
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
-        STRBUF += "\twire signed [7:0] in"+ str(i)+"x;\n"
+        STRBUF += "\twire signed [15:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\treg signed [7:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n\treg [7:0] sumout;\n"
+        STRBUF += "\treg signed [15:0] sum"+ str(i)+"x;\n"
+    STRBUF += "\n\treg [15:0] sumout;\n"
 
     # Copy of input required
     for i in range(LISTSIZE):
-        STRBUF += "\treg signed [7:0] A"+ str(i)+"x_c;\n"
+        STRBUF += "\treg signed [15:0] A"+ str(i)+"x_c;\n"
     # Start of mult & add V3.
     STRBUF += "\n\n"
     for i in range(LISTSIZE):
@@ -53,14 +52,14 @@ def main(argv):
     # else:
     #     STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=sumout;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
     # STRBUF+= "\n\tend"
-    STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=8'b0;\n\t\tsumout<=8'b0;\n"
+    STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=16'b0;\n\t\tsumout<=16'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tA{i}x_c<=8'b0;\n"
+        STRBUF += f"\t\tA{i}x_c<=16'b0;\n"
     for i in range(LISTSIZE):
         if i == LISTSIZE-1:
-            STRBUF += f"\t\tsumout<=8'b0;\n"
+            STRBUF += f"\t\tsumout<=16'b0;\n"
         else:
-            STRBUF += f"\t\tsum{i}x<=8'b0;\n"
+            STRBUF += f"\t\tsum{i}x<=16'b0;\n"
     STRBUF += "\tend\n\n"
     for i in range(LISTSIZE):
         STRBUF += f"\tA{i}x_c<=A{i}x;\n"
@@ -71,7 +70,7 @@ def main(argv):
         else:
             STRBUF += f"in{i}x+"
     
-    STRBUF+= f"\n\tif(sumout[7]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=8'd0;\n\t\tend\n\tend\nendmodule"
+    STRBUF+= f"\n\tif(sumout[15]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=16'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):
@@ -176,6 +175,53 @@ def num_to_fixed_point(num):
   return out
   0.5
   0.500063
+
+def num2fixedbin(num,precision,BITS = 16 ):
+    """
+        INPUT: 
+            num: number to convert
+        PARAMETERS: 
+            precision: decimal points required
+            BITS: set to 16 by default, otherwise user specify
+
+        Returns:
+            A string formated with number of bits used specified as prefix
+
+        Example: 
+            num2fixedbin(0.625,10) returns 16'sb1000000010100000
+    """
+    if num<0:
+        SIGNED = 1
+        num *= -1
+    else:
+        SIGNED = 0
+
+    whole,dec = str(num).split(".")
+    whole = int(whole)
+
+
+
+    dec = float("0." + dec)
+    whole = bin(whole).lstrip('0b')
+    if not whole:
+        whole = 0
+    res = int(whole)
+    res = "{0:0{1}d}".format(res,BITS-precision -1 ) # append 0s in front according to the precision
+    temp = 0.5
+    out = []
+    STR = ""
+    for i in range(precision):
+        if dec<temp:
+            out.extend('0')
+        else:
+            out.extend('1')
+            dec -= temp
+        temp /= 2
+    for i in range(len(out)):
+        STR += str(out[i])
+    res += STR
+    res = f"{SIGNED}"+ res
+    return f"{BITS}'sb" + res
 
 if __name__ == "__main__":
     main(sys.argv[1:])

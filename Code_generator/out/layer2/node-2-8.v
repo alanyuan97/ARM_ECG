@@ -1,35 +1,35 @@
 module node2_8(clk,reset,N8x,A0x,A1x,A2x,A3x,A4x);
 	input clk;
 	input reset;
-	input signed [7:0] A0x;
-	input signed [7:0] A1x;
-	input signed [7:0] A2x;
-	input signed [7:0] A3x;
-	input signed [7:0] A4x;
-	output reg [7:0] N8x;
+	input signed [15:0] A0x;
+	input signed [15:0] A1x;
+	input signed [15:0] A2x;
+	input signed [15:0] A3x;
+	input signed [15:0] A4x;
+	output reg [15:0] N8x;
 
-	parameter signed [7:0] W0x=8'sb00110001;
-	parameter signed [7:0] W1x=8'sb00101011;
-	parameter signed [7:0] W2x=8'sb00001000;
-	parameter signed [7:0] W3x=8'sb10101100;
-	parameter signed [7:0] W4x=8'sb11100000;
-	parameter signed [7:0] B0x=8'sb00001010;
-	wire signed [7:0] in0x;
-	wire signed [7:0] in1x;
-	wire signed [7:0] in2x;
-	wire signed [7:0] in3x;
-	wire signed [7:0] in4x;
-	reg signed [7:0] sum0x;
-	reg signed [7:0] sum1x;
-	reg signed [7:0] sum2x;
-	reg signed [7:0] sum3x;
+	parameter signed [15:0] W0x=16'sb0000000110001011;
+	parameter signed [15:0] W1x=16'sb0000000101011100;
+	parameter signed [15:0] W2x=16'sb0000000001000000;
+	parameter signed [15:0] W3x=16'sb1000001010011000;
+	parameter signed [15:0] W4x=16'sb1000000011111110;
+	parameter signed [15:0] B0x=16'sb0000000001010101;
+	wire signed [15:0] in0x;
+	wire signed [15:0] in1x;
+	wire signed [15:0] in2x;
+	wire signed [15:0] in3x;
+	wire signed [15:0] in4x;
+	reg signed [15:0] sum0x;
+	reg signed [15:0] sum1x;
+	reg signed [15:0] sum2x;
+	reg signed [15:0] sum3x;
 
-	reg [7:0] sumout;
-	reg signed [7:0] A0x_c;
-	reg signed [7:0] A1x_c;
-	reg signed [7:0] A2x_c;
-	reg signed [7:0] A3x_c;
-	reg signed [7:0] A4x_c;
+	reg [15:0] sumout;
+	reg signed [15:0] A0x_c;
+	reg signed [15:0] A1x_c;
+	reg signed [15:0] A2x_c;
+	reg signed [15:0] A3x_c;
+	reg signed [15:0] A4x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -42,18 +42,18 @@ always@(posedge clk)
 	begin
 
 	if(reset) begin
-		N8x<=8'b0;
-		sumout<=8'b0;
-		A0x_c<=8'b0;
-		A1x_c<=8'b0;
-		A2x_c<=8'b0;
-		A3x_c<=8'b0;
-		A4x_c<=8'b0;
-		sum0x<=8'b0;
-		sum1x<=8'b0;
-		sum2x<=8'b0;
-		sum3x<=8'b0;
-		sumout<=8'b0;
+		N8x<=16'b0;
+		sumout<=16'b0;
+		A0x_c<=16'b0;
+		A1x_c<=16'b0;
+		A2x_c<=16'b0;
+		A3x_c<=16'b0;
+		A4x_c<=16'b0;
+		sum0x<=16'b0;
+		sum1x<=16'b0;
+		sum2x<=16'b0;
+		sum3x<=16'b0;
+		sumout<=16'b0;
 	end
 
 	A0x_c<=A0x;
@@ -63,13 +63,13 @@ always@(posedge clk)
 	A4x_c<=A4x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+B0x;
 
-	if(sumout[7]==0)
+	if(sumout[15]==0)
 		begin
 		N8x<=sumout;
 		end
 	else
 		begin
-		N8x<=8'd0;
+		N8x<=16'd0;
 		end
 	end
 endmodule

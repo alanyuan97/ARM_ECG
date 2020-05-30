@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 import numpy as np
 import struct
+import sys
 def binary(num):
     # Struct can provide us with the float packed into bytes. The '!' ensures that
     # it's in network byte order (big-endian) and the 'f' says that it should be
@@ -51,7 +52,7 @@ def num_to_fixed_point(num):
     x /= 2
   return out
 
-data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/Testpos.npy')
+data = np.load(sys.argv[1],allow_pickle=True)
 
 STRBUFF = "module rom_input(EN,"
 for i in range(186):

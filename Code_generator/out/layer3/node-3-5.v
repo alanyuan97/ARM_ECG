@@ -1,60 +1,60 @@
 module node3_5(clk,reset,N5x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input clk;
 	input reset;
-	input signed [7:0] A0x;
-	input signed [7:0] A1x;
-	input signed [7:0] A2x;
-	input signed [7:0] A3x;
-	input signed [7:0] A4x;
-	input signed [7:0] A5x;
-	input signed [7:0] A6x;
-	input signed [7:0] A7x;
-	input signed [7:0] A8x;
-	input signed [7:0] A9x;
-	output reg [7:0] N5x;
+	input signed [15:0] A0x;
+	input signed [15:0] A1x;
+	input signed [15:0] A2x;
+	input signed [15:0] A3x;
+	input signed [15:0] A4x;
+	input signed [15:0] A5x;
+	input signed [15:0] A6x;
+	input signed [15:0] A7x;
+	input signed [15:0] A8x;
+	input signed [15:0] A9x;
+	output reg [15:0] N5x;
 
-	parameter signed [7:0] W0x=8'sb11110100;
-	parameter signed [7:0] W1x=8'sb11001100;
-	parameter signed [7:0] W2x=8'sb00101111;
-	parameter signed [7:0] W3x=8'sb10101101;
-	parameter signed [7:0] W4x=8'sb00010000;
-	parameter signed [7:0] W5x=8'sb00001100;
-	parameter signed [7:0] W6x=8'sb00011000;
-	parameter signed [7:0] W7x=8'sb11010101;
-	parameter signed [7:0] W8x=8'sb01100011;
-	parameter signed [7:0] W9x=8'sb11101110;
-	parameter signed [7:0] B0x=8'sb11111010;
-	wire signed [7:0] in0x;
-	wire signed [7:0] in1x;
-	wire signed [7:0] in2x;
-	wire signed [7:0] in3x;
-	wire signed [7:0] in4x;
-	wire signed [7:0] in5x;
-	wire signed [7:0] in6x;
-	wire signed [7:0] in7x;
-	wire signed [7:0] in8x;
-	wire signed [7:0] in9x;
-	reg signed [7:0] sum0x;
-	reg signed [7:0] sum1x;
-	reg signed [7:0] sum2x;
-	reg signed [7:0] sum3x;
-	reg signed [7:0] sum4x;
-	reg signed [7:0] sum5x;
-	reg signed [7:0] sum6x;
-	reg signed [7:0] sum7x;
-	reg signed [7:0] sum8x;
+	parameter signed [15:0] W0x=16'sb1000000001011010;
+	parameter signed [15:0] W1x=16'sb1000000110011011;
+	parameter signed [15:0] W2x=16'sb0000000101111111;
+	parameter signed [15:0] W3x=16'sb1000001010010010;
+	parameter signed [15:0] W4x=16'sb0000000010000011;
+	parameter signed [15:0] W5x=16'sb0000000001100110;
+	parameter signed [15:0] W6x=16'sb0000000011000011;
+	parameter signed [15:0] W7x=16'sb1000000101010101;
+	parameter signed [15:0] W8x=16'sb0000001100011101;
+	parameter signed [15:0] W9x=16'sb1000000010001001;
+	parameter signed [15:0] B0x=16'sb1000000000101011;
+	wire signed [15:0] in0x;
+	wire signed [15:0] in1x;
+	wire signed [15:0] in2x;
+	wire signed [15:0] in3x;
+	wire signed [15:0] in4x;
+	wire signed [15:0] in5x;
+	wire signed [15:0] in6x;
+	wire signed [15:0] in7x;
+	wire signed [15:0] in8x;
+	wire signed [15:0] in9x;
+	reg signed [15:0] sum0x;
+	reg signed [15:0] sum1x;
+	reg signed [15:0] sum2x;
+	reg signed [15:0] sum3x;
+	reg signed [15:0] sum4x;
+	reg signed [15:0] sum5x;
+	reg signed [15:0] sum6x;
+	reg signed [15:0] sum7x;
+	reg signed [15:0] sum8x;
 
-	reg [7:0] sumout;
-	reg signed [7:0] A0x_c;
-	reg signed [7:0] A1x_c;
-	reg signed [7:0] A2x_c;
-	reg signed [7:0] A3x_c;
-	reg signed [7:0] A4x_c;
-	reg signed [7:0] A5x_c;
-	reg signed [7:0] A6x_c;
-	reg signed [7:0] A7x_c;
-	reg signed [7:0] A8x_c;
-	reg signed [7:0] A9x_c;
+	reg [15:0] sumout;
+	reg signed [15:0] A0x_c;
+	reg signed [15:0] A1x_c;
+	reg signed [15:0] A2x_c;
+	reg signed [15:0] A3x_c;
+	reg signed [15:0] A4x_c;
+	reg signed [15:0] A5x_c;
+	reg signed [15:0] A6x_c;
+	reg signed [15:0] A7x_c;
+	reg signed [15:0] A8x_c;
+	reg signed [15:0] A9x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -72,28 +72,28 @@ always@(posedge clk)
 	begin
 
 	if(reset) begin
-		N5x<=8'b0;
-		sumout<=8'b0;
-		A0x_c<=8'b0;
-		A1x_c<=8'b0;
-		A2x_c<=8'b0;
-		A3x_c<=8'b0;
-		A4x_c<=8'b0;
-		A5x_c<=8'b0;
-		A6x_c<=8'b0;
-		A7x_c<=8'b0;
-		A8x_c<=8'b0;
-		A9x_c<=8'b0;
-		sum0x<=8'b0;
-		sum1x<=8'b0;
-		sum2x<=8'b0;
-		sum3x<=8'b0;
-		sum4x<=8'b0;
-		sum5x<=8'b0;
-		sum6x<=8'b0;
-		sum7x<=8'b0;
-		sum8x<=8'b0;
-		sumout<=8'b0;
+		N5x<=16'b0;
+		sumout<=16'b0;
+		A0x_c<=16'b0;
+		A1x_c<=16'b0;
+		A2x_c<=16'b0;
+		A3x_c<=16'b0;
+		A4x_c<=16'b0;
+		A5x_c<=16'b0;
+		A6x_c<=16'b0;
+		A7x_c<=16'b0;
+		A8x_c<=16'b0;
+		A9x_c<=16'b0;
+		sum0x<=16'b0;
+		sum1x<=16'b0;
+		sum2x<=16'b0;
+		sum3x<=16'b0;
+		sum4x<=16'b0;
+		sum5x<=16'b0;
+		sum6x<=16'b0;
+		sum7x<=16'b0;
+		sum8x<=16'b0;
+		sumout<=16'b0;
 	end
 
 	A0x_c<=A0x;
@@ -108,13 +108,13 @@ always@(posedge clk)
 	A9x_c<=A9x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+in5x+in6x+in7x+in8x+in9x+B0x;
 
-	if(sumout[7]==0)
+	if(sumout[15]==0)
 		begin
 		N5x<=sumout;
 		end
 	else
 		begin
-		N5x<=8'd0;
+		N5x<=16'd0;
 		end
 	end
 endmodule
