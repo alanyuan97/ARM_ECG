@@ -2,55 +2,57 @@
 import numpy as np
 import struct
 import sys
-def binary(num):
-    # Struct can provide us with the float packed into bytes. The '!' ensures that
-    # it's in network byte order (big-endian) and the 'f' says that it should be
-    # packed as a float. Alternatively, for double-precision, you could use 'd'.
-    packed = struct.pack('!f', num)
-    # print 'Packed: %s' % repr(packed)
+from bitstring import Bits
+def num2fixedbin(num,precision,BITS = 16 ):
+    """
+        INPUT: 
+            num: number to convert
+        PARAMETERS: 
+            precision: decimal points required
+            BITS: set to 16 by default, otherwise user specify
 
-    # For each character in the returned string, we'll turn it into its corresponding
-    # integer code point
-    # 
-    # [62, 163, 215, 10] = [ord(c) for c in '>\xa3\xd7\n']
-    integers = [c for c in packed]
-    # print 'Integers: %s' % integers
+        Returns:
+            A string formated with number of bits used specified as prefix
 
-    # For each integer, we'll convert it to its binary representation.
-    binaries = [bin(i) for i in integers]
-    # print 'Binaries: %s' % binaries
+        Example: 
+            num2fixedbin(0.625,10) returns 16'sb1000000010100000
+    """
+    num1 = abs(num)
+    whole,dec = str(num1).split(".")
+    whole = int(whole)
 
-    # Now strip off the '0b' from each of these
-    stripped_binaries = [s.replace('0b', '') for s in binaries]
-    # print 'Stripped: %s' % stripped_binaries
 
-    # Pad each byte's binary representation's with 0's to make sure it has all 8 bits:
-    #
-    # ['00111110', '10100011', '11010111', '00001010']
-    padded = [s.rjust(8, '0') for s in stripped_binaries]
-    # print 'Padded: %s' % padded
 
-    # At this point, we have each of the bytes for the network byte ordered float
-    # in an array as binary strings. Now we just concatenate them to get the total
-    # representation of the float:
-    return ''.join(padded)
-
-def num_to_fixed_point(num):
-  out = ""
-  if num < 0:
-    out = out + "1"
-    num += 1
-  else:
-    out = out + "0"
-  x = 0.5
-  for i in range(0,7):
-    if num >= x:
-      out = out + "1"
-      num -= x
-    else: 
-      out += "0"
-    x /= 2
-  return out
+    dec = float("0." + dec)
+    whole = bin(whole).lstrip('0b')
+    if not whole:
+        whole = 0
+    res = int(whole)
+    res = "{0:0{1}d}".format(res,BITS-precision ) # append 0s in front according to the precision
+    temp = 0.5
+    out = []
+    STR = ""
+    for i in range(precision):
+        if dec<temp:
+            out.extend('0')
+        else:
+            out.extend('1')
+            dec -= temp
+        temp /= 2
+    for i in range(len(out)):
+        STR += str(out[i])
+    res += STR
+    # print(res)
+    if num<0:
+        conv = ["1","0"]
+        res1 = ''.join([conv[int(a)] for a in res])
+        res2 = int(res1,base=2) + 1
+        res3 = str(bin(res2).lstrip("0b"))
+        if len(res3)!= BITS:
+            res3 = res3[len(res3)-BITS:]
+        return res3
+    else:
+        return str(res)
 
 data = np.load(sys.argv[1],allow_pickle=True)
 
@@ -58,16 +60,16 @@ STRBUFF = "module rom_input(EN,"
 for i in range(186):
     STRBUFF+=f"I{i}x,"
 STRBUFF += "I186x);\n\tinput EN;\n"
-STRBUFF += "\toutput [7:0]"
+STRBUFF += "\toutput [15:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\n\treg [7:0]"
+STRBUFF += "I186x;\n\treg [15:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
 STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
 
 for i in range(187):
-    STRBUFF += f"\tI{i}x = 8'b{num_to_fixed_point(data[i])};\n"
+    STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(data[i],10)).int};\n"
 STRBUFF +="\tend\nendmodule"
 print(STRBUFF)
 

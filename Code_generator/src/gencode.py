@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 import numpy as np
 import sys
-
+from bitstring import Bits
 def main(argv):
     weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
     # bias = np.load("/home/alan/winDesktop/ARM_ECG/simulation/abias.npy",allow_pickle=True)
@@ -24,23 +24,23 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput signed [15:0] A" + str(i) + "x;\n"
+        STRBUF += "\tinput [15:0] A" + str(i) + "x;\n"
     STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter signed [15:0] W{0}x={1};\n".format(i,num2fixedbin(layerW[i,idx2-1],10)) # No need to add format as it returns 
-    STRBUF += "\tparameter signed [15:0] B{0}x={1};\n".format(0,num2fixedbin(layerB[idx2-1],10))
+        STRBUF += "\tparameter [15:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],10)).int) # No need to add format as it returns 
+    STRBUF += "\tparameter [15:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],10)).int)
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
-        STRBUF += "\twire signed [15:0] in"+ str(i)+"x;\n"
+        STRBUF += "\twire [15:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\treg signed [15:0] sum"+ str(i)+"x;\n"
+        STRBUF += "\treg [15:0] sum"+ str(i)+"x;\n"
     STRBUF += "\n\treg [15:0] sumout;\n"
 
     # Copy of input required
     for i in range(LISTSIZE):
-        STRBUF += "\treg signed [15:0] A"+ str(i)+"x_c;\n"
+        STRBUF += "\treg [15:0] A"+ str(i)+"x_c;\n"
     # Start of mult & add V3.
     STRBUF += "\n\n"
     for i in range(LISTSIZE):
@@ -223,9 +223,9 @@ def num2fixedbin(num,precision,BITS = 16 ):
         res3 = str(bin(res2).lstrip("0b"))
         if len(res3)!= BITS:
             res3 = res3[len(res3)-BITS:]
-        return f"{BITS}'sb" + res3
+        return res3
     else:
-        return f"{BITS}'sb" + str(res)
+        return str(res)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

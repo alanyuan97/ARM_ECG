@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 import numpy as np
 import random as rand
+from bitstring import Bits
 def num_to_fixed_point(num):
   out = ""
   if num < 0:
@@ -17,7 +18,7 @@ def num_to_fixed_point(num):
       out += "0"
     x /= 2
   return out
-def num2fixedbin(num,precision,BITS = 16 ):
+def num2fixedbin(num,precision,BITS = 16):
     """
         INPUT: 
             num: number to convert
@@ -64,19 +65,19 @@ def num2fixedbin(num,precision,BITS = 16 ):
         res3 = str(bin(res2).lstrip("0b"))
         if len(res3)!= BITS:
             res3 = res3[len(res3)-BITS:]
-        return f"{BITS}'sb" + res3
+        return res3
     else:
-        return f"{BITS}'sb" + str(res)
+        return str(res)
 def printbuffer():
     inputrand = []
     STRBUFF = "module rom_input(EN,"
     for i in range(186):
         STRBUFF+=f"I{i}x,"
     STRBUFF += "I186x);\n\tinput EN;\n"
-    STRBUFF += "\toutput [7:0]"
+    STRBUFF += "\toutput [15:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
-    STRBUFF += "I186x;\n\treg [7:0]"
+    STRBUFF += "I186x;\n\treg [15:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
     STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
@@ -84,7 +85,7 @@ def printbuffer():
     for i in range(187):
         tmp = rand.uniform(-1,1)
         inputrand.append(tmp)
-        STRBUFF += f"\tI{i}x = {num2fixedbin(tmp,10)};\n"
+        STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(tmp,10)).int};\n"
     STRBUFF +="\tend\nendmodule"
     # np.save("randnums.npy",np.array(inputrand))
     return STRBUFF,np.array(inputrand)

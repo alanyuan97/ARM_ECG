@@ -34,8 +34,10 @@ done
 
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
-./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy > $MYPATH/ROM/rom_input_pos.txt
-./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/ROM/rom_input_neg.txt
+./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy > $MYPATH/ROM/rom_input_pos.v
+./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/ROM/rom_input_neg.v
+
+./src/random_num/ranROM.py > ./src/random_num/randtest.v
 echo "ROM finished generate"
 echo "Exit bash without errors..."
 # ./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt
