@@ -24,12 +24,12 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput [7:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput reg [7:0] N{idx2}x;\n\n"
+        STRBUF += "\tinput [15:0] A" + str(i) + "x;\n"
+    STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [7:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],7,BITS=8)).int) # No need to add format as it returns 
-    STRBUF += "\tparameter [7:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],7,BITS=8)).int)
+        STRBUF += "\tparameter [15:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],6,BITS=8)).int) # No need to add format as it returns 
+    STRBUF += "\tparameter [15:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],6,BITS=8)).int)
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
@@ -40,7 +40,7 @@ def main(argv):
 
     # Copy of input required
     for i in range(LISTSIZE):
-        STRBUF += "\treg [7:0] A"+ str(i)+"x_c;\n"
+        STRBUF += "\treg [15:0] A"+ str(i)+"x_c;\n"
     # Start of mult & add V3.
     STRBUF += "\n\n"
     for i in range(LISTSIZE):
@@ -54,7 +54,7 @@ def main(argv):
     # STRBUF+= "\n\tend"
     STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=16'b0;\n\t\tsumout<=16'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tA{i}x_c<=8'b0;\n"
+        STRBUF += f"\t\tA{i}x_c<=16'b0;\n"
     for i in range(LISTSIZE):
         if i == LISTSIZE-1:
             STRBUF += f"\t\tsumout<=16'b0;\n"
@@ -70,7 +70,7 @@ def main(argv):
         else:
             STRBUF += f"in{i}x+"
     
-    STRBUF+= f"\n\tif(sumout[13]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout[13:6];\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=8'd0;\n\t\tend\n\tend\nendmodule"
+    STRBUF+= f"\n\tif(sumout[15]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=16'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):

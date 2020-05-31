@@ -73,10 +73,10 @@ def printbuffer():
     for i in range(186):
         STRBUFF+=f"I{i}x,"
     STRBUFF += "I186x);\n\tinput EN;\n"
-    STRBUFF += "\toutput [7:0]"
+    STRBUFF += "\toutput [15:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
-    STRBUFF += "I186x;\n\treg [7:0]"
+    STRBUFF += "I186x;\n\treg [15:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
     STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
@@ -94,6 +94,7 @@ def main():
     print(BUFFER)
     weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
     ROM_sim = np.matmul(np.transpose(randominputs),weights[0]) + weights[1]
+    # print(weights[0],"\n\n",weights[1])
     # print(ROM_sim.shape,ROM_sim)
     for i in range(len(ROM_sim)):
         if ROM_sim[i] <0:

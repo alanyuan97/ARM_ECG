@@ -1,39 +1,39 @@
 module node6_8(clk,reset,N8x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
 	input clk;
 	input reset;
-	input [7:0] A0x;
-	input [7:0] A1x;
-	input [7:0] A2x;
-	input [7:0] A3x;
-	input [7:0] A4x;
-	input [7:0] A5x;
-	input [7:0] A6x;
-	input [7:0] A7x;
-	input [7:0] A8x;
-	input [7:0] A9x;
-	input [7:0] A10x;
-	input [7:0] A11x;
-	input [7:0] A12x;
-	input [7:0] A13x;
-	input [7:0] A14x;
-	output reg [7:0] N8x;
+	input [15:0] A0x;
+	input [15:0] A1x;
+	input [15:0] A2x;
+	input [15:0] A3x;
+	input [15:0] A4x;
+	input [15:0] A5x;
+	input [15:0] A6x;
+	input [15:0] A7x;
+	input [15:0] A8x;
+	input [15:0] A9x;
+	input [15:0] A10x;
+	input [15:0] A11x;
+	input [15:0] A12x;
+	input [15:0] A13x;
+	input [15:0] A14x;
+	output reg [15:0] N8x;
 
-	parameter [7:0] W0x=-127;
-	parameter [7:0] W1x=-3;
-	parameter [7:0] W2x=-23;
-	parameter [7:0] W3x=41;
-	parameter [7:0] W4x=-85;
-	parameter [7:0] W5x=48;
-	parameter [7:0] W6x=24;
-	parameter [7:0] W7x=33;
-	parameter [7:0] W8x=56;
-	parameter [7:0] W9x=79;
-	parameter [7:0] W10x=-4;
-	parameter [7:0] W11x=19;
-	parameter [7:0] W12x=-36;
-	parameter [7:0] W13x=7;
-	parameter [7:0] W14x=-34;
-	parameter [7:0] B0x=-16;
+	parameter [15:0] W0x=-63;
+	parameter [15:0] W1x=-1;
+	parameter [15:0] W2x=-11;
+	parameter [15:0] W3x=20;
+	parameter [15:0] W4x=-42;
+	parameter [15:0] W5x=24;
+	parameter [15:0] W6x=12;
+	parameter [15:0] W7x=16;
+	parameter [15:0] W8x=28;
+	parameter [15:0] W9x=39;
+	parameter [15:0] W10x=-2;
+	parameter [15:0] W11x=9;
+	parameter [15:0] W12x=-18;
+	parameter [15:0] W13x=3;
+	parameter [15:0] W14x=-17;
+	parameter [15:0] B0x=-8;
 	wire [15:0] in0x;
 	wire [15:0] in1x;
 	wire [15:0] in2x;
@@ -65,21 +65,21 @@ module node6_8(clk,reset,N8x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A
 	reg [15:0] sum13x;
 
 	reg [15:0] sumout;
-	reg [7:0] A0x_c;
-	reg [7:0] A1x_c;
-	reg [7:0] A2x_c;
-	reg [7:0] A3x_c;
-	reg [7:0] A4x_c;
-	reg [7:0] A5x_c;
-	reg [7:0] A6x_c;
-	reg [7:0] A7x_c;
-	reg [7:0] A8x_c;
-	reg [7:0] A9x_c;
-	reg [7:0] A10x_c;
-	reg [7:0] A11x_c;
-	reg [7:0] A12x_c;
-	reg [7:0] A13x_c;
-	reg [7:0] A14x_c;
+	reg [15:0] A0x_c;
+	reg [15:0] A1x_c;
+	reg [15:0] A2x_c;
+	reg [15:0] A3x_c;
+	reg [15:0] A4x_c;
+	reg [15:0] A5x_c;
+	reg [15:0] A6x_c;
+	reg [15:0] A7x_c;
+	reg [15:0] A8x_c;
+	reg [15:0] A9x_c;
+	reg [15:0] A10x_c;
+	reg [15:0] A11x_c;
+	reg [15:0] A12x_c;
+	reg [15:0] A13x_c;
+	reg [15:0] A14x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -104,21 +104,21 @@ always@(posedge clk)
 	if(reset) begin
 		N8x<=16'b0;
 		sumout<=16'b0;
-		A0x_c<=8'b0;
-		A1x_c<=8'b0;
-		A2x_c<=8'b0;
-		A3x_c<=8'b0;
-		A4x_c<=8'b0;
-		A5x_c<=8'b0;
-		A6x_c<=8'b0;
-		A7x_c<=8'b0;
-		A8x_c<=8'b0;
-		A9x_c<=8'b0;
-		A10x_c<=8'b0;
-		A11x_c<=8'b0;
-		A12x_c<=8'b0;
-		A13x_c<=8'b0;
-		A14x_c<=8'b0;
+		A0x_c<=16'b0;
+		A1x_c<=16'b0;
+		A2x_c<=16'b0;
+		A3x_c<=16'b0;
+		A4x_c<=16'b0;
+		A5x_c<=16'b0;
+		A6x_c<=16'b0;
+		A7x_c<=16'b0;
+		A8x_c<=16'b0;
+		A9x_c<=16'b0;
+		A10x_c<=16'b0;
+		A11x_c<=16'b0;
+		A12x_c<=16'b0;
+		A13x_c<=16'b0;
+		A14x_c<=16'b0;
 		sum0x<=16'b0;
 		sum1x<=16'b0;
 		sum2x<=16'b0;
@@ -153,13 +153,13 @@ always@(posedge clk)
 	A14x_c<=A14x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+in5x+in6x+in7x+in8x+in9x+in10x+in11x+in12x+in13x+in14x+B0x;
 
-	if(sumout[13]==0)
+	if(sumout[15]==0)
 		begin
-		N8x<=sumout[13:6];
+		N8x<=sumout;
 		end
 	else
 		begin
-		N8x<=8'd0;
+		N8x<=16'd0;
 		end
 	end
 endmodule

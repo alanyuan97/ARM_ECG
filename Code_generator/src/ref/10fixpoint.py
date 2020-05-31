@@ -48,5 +48,5 @@ def num2fixedbin(num,precision,BITS = 16 ):
         return res3
     else:
         return str(res)
-out = num2fixedbin(-0.625,7,BITS=8).lstrip("8'sb")
+out = num2fixedbin(-0.129791528,6,BITS=8).lstrip("8'sb")
 print(Bits(bin= out).int) 
