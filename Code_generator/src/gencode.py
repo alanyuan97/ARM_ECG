@@ -4,7 +4,8 @@ import sys
 import struct
 
 def main(argv):
-    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+    weights = np.load("/home/edoardo/Desktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+    #weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
     # bias = np.load("/home/alan/winDesktop/ARM_ECG/simulation/abias.npy",allow_pickle=True)
     # allow pickle must be true to load data
     # weights[0] has dim of (187*5)

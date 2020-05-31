@@ -12,7 +12,7 @@ def binary(num):
 
     # For each character in the returned string, we'll turn it into its corresponding
     # integer code point
-    # 
+    #
     # [62, 163, 215, 10] = [ord(c) for c in '>\xa3\xd7\n']
     integers = [c for c in packed]
     # print 'Integers: %s' % integers
@@ -48,14 +48,15 @@ def num_to_fixed_point(num):
     if num >= x:
       out = out + "1"
       num -= x
-    else: 
+    else:
       out += "0"
     x /= 2
   return out
 
 def main(argv):
     #data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/Testpos.npy')
-    data = np.load('/home/edoardo/Desktop/ARM_ECG/simulation/Testpos.npy')
+    outs = np.load('/home/edoardo/Desktop/ARM_ECG/simulation/outputs_dictionary.npy',allow_pickle=True).item()
+    data = outs[list(outs)[0]][0]
 
     n_in = int(argv[0])
 
@@ -63,16 +64,13 @@ def main(argv):
     for i in range(n_in):
         STRBUFF+=f", I{i}x"
     STRBUFF += ");\n\tinput EN, clk;\n"
-    STRBUFF += "\toutput [7:0]"
-    for i in range(n_in):
-        STRBUFF += f", I{i}x"
-    STRBUFF += ";\n\treg [7:0]"
-    for i in range(n_in):
+    STRBUFF += "\toutput reg [7:0] I0x"
+    for i in range(1, n_in):
         STRBUFF += f", I{i}x"
     STRBUFF += ";\nalways@(posedge clk)\n\tbegin\n"
 
     for i in range(n_in):
-        STRBUFF += f"\tI{i}x = 8'b{num_to_fixed_point(data[i])};\n"
+        STRBUFF += f"\tI{i}x = 8'b" + data[i] + ";\n"
     STRBUFF +="\tend\nendmodule"
     print(STRBUFF)
 

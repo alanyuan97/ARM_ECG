@@ -1,8 +1,5 @@
 #! /usr/bin/python3
-import numpy as np
 import sys
-import struct
-
 
 def main(argv):
     inputs = int(argv[0])
@@ -18,26 +15,27 @@ def main(argv):
             STRBUF += ","
         else:
             STRBUF += ");"
-    STRBUF += "\n" + "input reset; \n" + "input clk; \n" + "output [7:0] "
+    STRBUF += "\n\t" + "input reset, clk; \n\t" + "output [7:0] "
     for i in range(1, outputs+1):
         STRBUF += "N" + str(i) + "x"
         if i != outputs:
             STRBUF += ","
         else:
             STRBUF += ";"
-    STRBUF += "\ninput [7:0]"
+    STRBUF += "\n\tinput [7:0] "
     for j in range(inputs):
         STRBUF += "R" + str(j) + "x"
-    if j != inputs-1:
-        STRBUF += ","
-    else:
-        STRBUF += ";"
+        if j != inputs-1:
+            STRBUF += ","
+        else:
+            STRBUF += ";"
     STRBUF += "\n\n";
     for i in range(outputs):
-        STRBUF += "node-" + str(layer_ind) + "-" + str(i) + " node-" + str(layer_ind) + "-" + str(i) + "( \n"
-    for j in range(inputs):
-        STRBUF += ".A" + str(j) + "x(R" + str(j) + "x), \n"
-    STRBUF += ".clk(clk), \n" + ".reset(reset), \n" + ".N" + str(i) + "x(N" + str(i) + "x) \n" + "); \n" + "endmodule"
+        STRBUF += "\tnode_" + str(layer_ind) + "_" + str(i+1) + " node_" + str(layer_ind) + "_" + str(i+1) + "( \n\t"
+        for j in range(inputs):
+            STRBUF += "\t.A" + str(j) + "x(R" + str(j) + "x), \n\t"
+        STRBUF += "\t.clk(clk), \n\t" + "\t.reset(reset), \n\t" + "\t.N" + str(i+1) + "x(N" + str(i+1) + "x) \n\t" + "); \n"
+    STRBUF += "endmodule"
     print(STRBUF)
 
 if __name__ == "__main__":

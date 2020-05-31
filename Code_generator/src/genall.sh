@@ -1,9 +1,12 @@
-#! /usr/bin/bash
-#layers_num=8
-NNnum="50 5 10 15 30 15 10 1"
+#! /usr/bin/env bash
+# CHANGE THREE VARIABLES
+NNnum="187 5 10 15 30 15 10 1"
 LAYER="5 10 15 30 15 10 1"
+n_in=187
+
+
 i=1
-MYPATH="out\"
+MYPATH="out/"
 echo "Start Code gen ..."
 
 if [ ! -d $MYPATH ]
@@ -15,8 +18,6 @@ else
     mkdir $MYPATH
     echo "Directory ./out exists."
 fi
-
-echo "hi"
 
 for a in $LAYER;do
     inn_idx="layer"
@@ -30,21 +31,26 @@ for a in $LAYER;do
     # generate nodes
     for j in $(seq 1 $a);do
         # echo $i $j
-        python src\gencode.py $i $j > $CURRENTPATH\node-$i-$j.v
+        python3 src/gennode.py $i $j > $CURRENTPATH/node_${i}_${j}.v
     done
 
     # generate layer
-    python src\genlayer.py $N $a $i > $CURRENTPATH\layer-$i.v
+    python3 src/genlayer.py $N $a $i > $CURRENTPATH/layer_$i.v
 
     echo "Layer $i finished generate"
     i=$(($i+1))
 done
 
-# generate top-level entity
+# generate rom
 
-mkdir $MYPATH\ROM
-mkdir $MYPATH\SIM
-src\rom.py > $MYPATH\ROM\rom_input.txt
+mkdir $MYPATH/ROM
+mkdir $MYPATH/SIM
+python3 src/romedo.py $n_in > $MYPATH/ROM/rom_input.v
 echo "ROM finished generate"
+
+# generate top-level entity
+python3 src/gentop.py $NNnum > $MYPATH/top.v
+echo "top-level finished generate"
+
 echo "Exit bash without errors..."
-# .\src\sim_l1.py > $MYPATH\SIM\firstlayer_sim.txt
+# ./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt
