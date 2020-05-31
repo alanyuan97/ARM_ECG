@@ -8,12 +8,12 @@ module node2_5(clk,reset,N5x,A0x,A1x,A2x,A3x,A4x);
 	input [15:0] A4x;
 	output reg [15:0] N5x;
 
-	parameter [15:0] W0x=32;
-	parameter [15:0] W1x=-64;
-	parameter [15:0] W2x=-30;
-	parameter [15:0] W3x=5;
-	parameter [15:0] W4x=-34;
-	parameter [15:0] B0x=-1;
+	parameter [15:0] W0x=16;
+	parameter [15:0] W1x=-32;
+	parameter [15:0] W2x=-15;
+	parameter [15:0] W3x=2;
+	parameter [15:0] W4x=-17;
+	parameter [15:0] B0x=0;
 	wire [15:0] in0x;
 	wire [15:0] in1x;
 	wire [15:0] in2x;

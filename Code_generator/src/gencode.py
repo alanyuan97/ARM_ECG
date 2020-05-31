@@ -28,8 +28,8 @@ def main(argv):
     STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [15:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],6,BITS=8)).int) # No need to add format as it returns 
-    STRBUF += "\tparameter [15:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],6,BITS=8)).int)
+        STRBUF += "\tparameter [15:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],5,BITS=8)).int) # No need to add format as it returns 
+    STRBUF += "\tparameter [15:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],5,BITS=8)).int)
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long

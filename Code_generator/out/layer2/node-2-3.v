@@ -8,10 +8,10 @@ module node2_3(clk,reset,N3x,A0x,A1x,A2x,A3x,A4x);
 	input [15:0] A4x;
 	output reg [15:0] N3x;
 
-	parameter [15:0] W0x=-7;
-	parameter [15:0] W1x=-24;
-	parameter [15:0] W2x=-28;
-	parameter [15:0] W3x=-35;
+	parameter [15:0] W0x=-3;
+	parameter [15:0] W1x=-12;
+	parameter [15:0] W2x=-14;
+	parameter [15:0] W3x=-17;
 	parameter [15:0] W4x=0;
 	parameter [15:0] B0x=0;
 	wire [15:0] in0x;

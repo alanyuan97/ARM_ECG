@@ -31,13 +31,16 @@ for a in $LAYER;do
     echo "Layer $i finished generate"
     i=$(($i+1))
 done
-
+echo "Paths made for ROM and SIM"
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
+echo "Generating Positive and Negative test case ROM verilog ... "
 ./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy > $MYPATH/ROM/rom_input_pos.v
 ./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/ROM/rom_input_neg.v
-
+echo "Generating Random ROM for test purpose ... "
 ./src/random_num/ranROM.py > ./src/random_num/randtest.v
+echo "Generating all layer test case simulation ... "
+./src/ref/sim_all_layer.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy > $MYPATH/SIM/all_layer_pos.txt
+./src/ref/sim_all_layer.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/SIM/all_layer_neg.txt
 echo "ROM finished generate"
 echo "Exit bash without errors..."
-# ./src/sim_l1.py > $MYPATH/SIM/firstlayer_sim.txt

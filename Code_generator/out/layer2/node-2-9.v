@@ -8,12 +8,12 @@ module node2_9(clk,reset,N9x,A0x,A1x,A2x,A3x,A4x);
 	input [15:0] A4x;
 	output reg [15:0] N9x;
 
-	parameter [15:0] W0x=20;
-	parameter [15:0] W1x=-49;
-	parameter [15:0] W2x=-3;
-	parameter [15:0] W3x=37;
-	parameter [15:0] W4x=45;
-	parameter [15:0] B0x=3;
+	parameter [15:0] W0x=10;
+	parameter [15:0] W1x=-24;
+	parameter [15:0] W2x=-1;
+	parameter [15:0] W3x=18;
+	parameter [15:0] W4x=22;
+	parameter [15:0] B0x=1;
 	wire [15:0] in0x;
 	wire [15:0] in1x;
 	wire [15:0] in2x;

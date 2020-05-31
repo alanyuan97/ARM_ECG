@@ -1,0 +1,219 @@
+
+
+Test case path: /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy 
+
+
+Result Simulation on layer-1 == >
+
+
+Node_1:-1.0051922209;		Q3.5 format binary:1111111111100000
+
+Node_2:-0.2482832888;		Q3.5 format binary:1111111111111001
+
+Node_3:0.8124685139;		Q3.5 format binary:0000000000011001
+
+Node_4:0.4895688791;		Q3.5 format binary:0000000000001111
+
+Node_5:0.2974698574;		Q3.5 format binary:0000000000001001
+
+****************End of layer-1********************* 
+
+
+Result Simulation on layer-2 == >
+
+
+Node_1:0.4299060432;		Q3.5 format binary:0000000000001101
+
+Node_2:-0.0004556653;		Q3.5 format binary:0000000000000000
+
+Node_3:-0.4315336785;		Q3.5 format binary:1111111111110011
+
+Node_4:-1.2895507161;		Q3.5 format binary:1111111111010111
+
+Node_5:-0.7957861030;		Q3.5 format binary:1111111111100111
+
+Node_6:0.2038554286;		Q3.5 format binary:0000000000000110
+
+Node_7:-1.2519903507;		Q3.5 format binary:1111111111011000
+
+Node_8:-0.7288106818;		Q3.5 format binary:1111111111101001
+
+Node_9:0.3807561026;		Q3.5 format binary:0000000000001100
+
+Node_10:1.1874812350;		Q3.5 format binary:0000000000100101
+
+****************End of layer-2********************* 
+
+
+Result Simulation on layer-3 == >
+
+
+Node_1:-0.1148924322;		Q3.5 format binary:1111111111111101
+
+Node_2:1.4633133059;		Q3.5 format binary:0000000000101110
+
+Node_3:-0.1573903955;		Q3.5 format binary:1111111111111011
+
+Node_4:-0.5592976927;		Q3.5 format binary:1111111111101111
+
+Node_5:0.6460304366;		Q3.5 format binary:0000000000010100
+
+Node_6:-1.8475277421;		Q3.5 format binary:1111111111000101
+
+Node_7:1.0134863881;		Q3.5 format binary:0000000000100000
+
+Node_8:-1.4646100144;		Q3.5 format binary:1111111111010010
+
+Node_9:0.6996903204;		Q3.5 format binary:0000000000010110
+
+Node_10:-0.6382264311;		Q3.5 format binary:1111111111101100
+
+Node_11:2.7807817518;		Q3.5 format binary:0000000001011000
+
+Node_12:0.2660779637;		Q3.5 format binary:0000000000001000
+
+Node_13:0.3474445006;		Q3.5 format binary:0000000000001011
+
+Node_14:-1.3242881857;		Q3.5 format binary:1111111111010110
+
+Node_15:-0.7680672042;		Q3.5 format binary:1111111111101000
+
+****************End of layer-3********************* 
+
+
+Result Simulation on layer-4 == >
+
+
+Node_1:-2.5519289987;		Q3.5 format binary:1111111110101111
+
+Node_2:-1.2464609848;		Q3.5 format binary:1111111111011001
+
+Node_3:-1.2608123118;		Q3.5 format binary:1111111111011000
+
+Node_4:0.1353687488;		Q3.5 format binary:0000000000000100
+
+Node_5:3.6726853262;		Q3.5 format binary:0000000001110101
+
+Node_6:2.9304936136;		Q3.5 format binary:0000000001011101
+
+Node_7:2.4011719358;		Q3.5 format binary:0000000001001100
+
+Node_8:-0.8271695109;		Q3.5 format binary:1111111111100110
+
+Node_9:-0.2401343731;		Q3.5 format binary:1111111111111001
+
+Node_10:-1.6921615420;		Q3.5 format binary:1111111111001010
+
+Node_11:-0.6944651319;		Q3.5 format binary:1111111111101010
+
+Node_12:1.0389596074;		Q3.5 format binary:0000000000100001
+
+Node_13:2.7872367970;		Q3.5 format binary:0000000001011001
+
+Node_14:-3.0827858995;		Q3.5 format binary:1111111110011110
+
+Node_15:0.3390709127;		Q3.5 format binary:0000000000001010
+
+Node_16:-1.1384955010;		Q3.5 format binary:1111111111011100
+
+Node_17:-1.5692988767;		Q3.5 format binary:1111111111001110
+
+Node_18:3.0869229144;		Q3.5 format binary:0000000001100010
+
+Node_19:-1.2873957145;		Q3.5 format binary:1111111111010111
+
+Node_20:3.6009064955;		Q3.5 format binary:0000000001110011
+
+Node_21:4.0791082584;		Q3.5 format binary:0000000010000010
+
+Node_22:3.0420917808;		Q3.5 format binary:0000000001100001
+
+Node_23:-1.2190293462;		Q3.5 format binary:1111111111011001
+
+Node_24:-2.7866439604;		Q3.5 format binary:1111111110100111
+
+Node_25:-1.1780561349;		Q3.5 format binary:1111111111011011
+
+Node_26:-3.4860389536;		Q3.5 format binary:1111111110010001
+
+Node_27:2.6191734908;		Q3.5 format binary:0000000001010011
+
+Node_28:-1.3475618661;		Q3.5 format binary:1111111111010101
+
+Node_29:1.1591469256;		Q3.5 format binary:0000000000100101
+
+Node_30:-1.8527841701;		Q3.5 format binary:1111111111000101
+
+****************End of layer-4********************* 
+
+
+Result Simulation on layer-5 == >
+
+
+Node_1:-12.7734820473;		Q3.5 format binary:1111111001101000
+
+Node_2:-1.3926278197;		Q3.5 format binary:1111111111010100
+
+Node_3:-14.8725591995;		Q3.5 format binary:1111111000100101
+
+Node_4:-11.0391688093;		Q3.5 format binary:1111111010011111
+
+Node_5:-11.7892864622;		Q3.5 format binary:1111111010000111
+
+Node_6:7.0881106344;		Q3.5 format binary:0000000011100010
+
+Node_7:-11.6400880145;		Q3.5 format binary:1111111010001100
+
+Node_8:7.6388372339;		Q3.5 format binary:0000000011110100
+
+Node_9:-3.7422717466;		Q3.5 format binary:1111111110001001
+
+Node_10:7.9578774665;		Q3.5 format binary:0000000011111110
+
+Node_11:7.3298507319;		Q3.5 format binary:0000000011101010
+
+Node_12:0.7010465406;		Q3.5 format binary:0000000000010110
+
+Node_13:-3.4197404453;		Q3.5 format binary:1111111110010011
+
+Node_14:14.0878302166;		Q3.5 format binary:0000000111000010
+
+Node_15:13.0703965453;		Q3.5 format binary:0000000110100010
+
+****************End of layer-5********************* 
+
+
+Result Simulation on layer-6 == >
+
+
+Node_1:-9.9373870694;		Q3.5 format binary:1111111011000011
+
+Node_2:-32.6816952361;		Q3.5 format binary:1111101111101011
+
+Node_3:-31.0589783546;		Q3.5 format binary:1111110000011111
+
+Node_4:14.8834112048;		Q3.5 format binary:0000000111011100
+
+Node_5:-17.4208000501;		Q3.5 format binary:1111110111010011
+
+Node_6:58.2697771612;		Q3.5 format binary:0000011101001000
+
+Node_7:-8.2523917863;		Q3.5 format binary:1111111011111000
+
+Node_8:23.5576213886;		Q3.5 format binary:0000001011110001
+
+Node_9:-30.8621657965;		Q3.5 format binary:1111110000100101
+
+Node_10:-31.5560819720;		Q3.5 format binary:1111110000001111
+
+****************End of layer-6********************* 
+
+
+Result Simulation on layer-7 == >
+
+
+Node_1:181.7403720934;		Q3.5 format binary:0001011010110111
+
+****************End of layer-7********************* 
+
+

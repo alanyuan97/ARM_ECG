@@ -1,5 +1,5 @@
 all: 
-	./src/gen.sh
+	./src/gen.sh > RUNLOG.txt
 clean:
 	rm -r ./out/
 layers:

@@ -1,8 +1,8 @@
 #! /usr/bin/python3
 import numpy as np
-import struct
 import sys
 from bitstring import Bits
+
 def num2fixedbin(num,precision,BITS = 16 ):
     """
         INPUT: 
@@ -17,12 +17,10 @@ def num2fixedbin(num,precision,BITS = 16 ):
         Example: 
             num2fixedbin(0.625,10) returns 16'sb1000000010100000
     """
+
     num1 = abs(num)
     whole,dec = str(num1).split(".")
     whole = int(whole)
-
-
-
     dec = float("0." + dec)
     whole = bin(whole).lstrip('0b')
     if not whole:
@@ -52,25 +50,25 @@ def num2fixedbin(num,precision,BITS = 16 ):
             res3 = res3[len(res3)-BITS:]
         return res3
     else:
-        return str(res)
+        if len(res)!= BITS:
+            res = res[len(res)-BITS:]
+        return res
 
 data = np.load(sys.argv[1],allow_pickle=True)
+# neg_data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
+print(f"\n\nTest case path: {sys.argv[1]} \n\n")
+weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+inputM = np.transpose(np.array(data))
 
-STRBUFF = "module rom_input(EN,"
-for i in range(186):
-    STRBUFF+=f"I{i}x,"
-STRBUFF += "I186x);\n\tinput EN;\n"
-STRBUFF += "\toutput [15:0]"
-for i in range(186):
-    STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\n\treg [15:0]"
-for i in range(186):
-    STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
+# len(weights) = 14 checked
 
-for i in range(187):
-    STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(data[i],5,BITS=8)).int};\n"
-STRBUFF +="\tend\nendmodule"
-print(STRBUFF)
-
-
+for i in range(int(len(weights)/2)):
+    L1w = weights[2*i]
+    B1 = weights[2*i+1]
+    inputN = np.array(L1w)
+    output = np.matmul(inputM, inputN) + B1
+    inputM = output
+    print(f"Result Simulation on layer-{i+1} == >\n\n")
+    for j in range(len(output)):
+        print(f"Node_{j+1}:{output[j]:<.10f};\t\tQ3.5 format binary:{num2fixedbin(output[j],5)}\n")
+    print(f"****************End of layer-{i+1}********************* \n\n")
