@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+from bitstring import Bits
 def num2fixedbin(num,precision,BITS = 16 ):
     """
         INPUT: 
@@ -6,13 +7,17 @@ def num2fixedbin(num,precision,BITS = 16 ):
         PARAMETERS: 
             precision: decimal points required
             BITS: set to 16 by default, otherwise user specify
+
+        Returns:
+            A string formated with number of bits used specified as prefix
+
+        Example: 
+            num2fixedbin(0.625,10) returns 16'sb1000000010100000
     """
+
     num1 = abs(num)
     whole,dec = str(num1).split(".")
     whole = int(whole)
-
-
-
     dec = float("0." + dec)
     whole = bin(whole).lstrip('0b')
     if not whole:
@@ -40,7 +45,8 @@ def num2fixedbin(num,precision,BITS = 16 ):
         res3 = str(bin(res2).lstrip("0b"))
         if len(res3)!= BITS:
             res3 = res3[len(res3)-BITS:]
-        return f"{BITS}'sb" + res3
+        return res3
     else:
-        return f"{BITS}'sb" + str(res)
-print(num2fixedbin(-0.0006988485693000257,8)) 
+        return str(res)
+out = num2fixedbin(-0.625,7,BITS=8).lstrip("8'sb")
+print(Bits(bin= out).int) 

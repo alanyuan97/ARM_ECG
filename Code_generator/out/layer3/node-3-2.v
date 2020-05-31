@@ -1,29 +1,29 @@
 module node3_2(clk,reset,N2x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input clk;
 	input reset;
-	input [15:0] A0x;
-	input [15:0] A1x;
-	input [15:0] A2x;
-	input [15:0] A3x;
-	input [15:0] A4x;
-	input [15:0] A5x;
-	input [15:0] A6x;
-	input [15:0] A7x;
-	input [15:0] A8x;
-	input [15:0] A9x;
-	output reg [15:0] N2x;
+	input [7:0] A0x;
+	input [7:0] A1x;
+	input [7:0] A2x;
+	input [7:0] A3x;
+	input [7:0] A4x;
+	input [7:0] A5x;
+	input [7:0] A6x;
+	input [7:0] A7x;
+	input [7:0] A8x;
+	input [7:0] A9x;
+	output reg [7:0] N2x;
 
-	parameter [15:0] W0x=1021;
-	parameter [15:0] W1x=-4;
-	parameter [15:0] W2x=-382;
-	parameter [15:0] W3x=604;
-	parameter [15:0] W4x=408;
-	parameter [15:0] W5x=634;
-	parameter [15:0] W6x=-325;
-	parameter [15:0] W7x=-1024;
-	parameter [15:0] W8x=-11;
-	parameter [15:0] W9x=540;
-	parameter [15:0] B0x=79;
+	parameter [7:0] W0x=127;
+	parameter [7:0] W1x=0;
+	parameter [7:0] W2x=-47;
+	parameter [7:0] W3x=75;
+	parameter [7:0] W4x=51;
+	parameter [7:0] W5x=79;
+	parameter [7:0] W6x=-40;
+	parameter [7:0] W7x=-128;
+	parameter [7:0] W8x=-1;
+	parameter [7:0] W9x=67;
+	parameter [7:0] B0x=9;
 	wire [15:0] in0x;
 	wire [15:0] in1x;
 	wire [15:0] in2x;
@@ -45,16 +45,16 @@ module node3_2(clk,reset,N2x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	reg [15:0] sum8x;
 
 	reg [15:0] sumout;
-	reg [15:0] A0x_c;
-	reg [15:0] A1x_c;
-	reg [15:0] A2x_c;
-	reg [15:0] A3x_c;
-	reg [15:0] A4x_c;
-	reg [15:0] A5x_c;
-	reg [15:0] A6x_c;
-	reg [15:0] A7x_c;
-	reg [15:0] A8x_c;
-	reg [15:0] A9x_c;
+	reg [7:0] A0x_c;
+	reg [7:0] A1x_c;
+	reg [7:0] A2x_c;
+	reg [7:0] A3x_c;
+	reg [7:0] A4x_c;
+	reg [7:0] A5x_c;
+	reg [7:0] A6x_c;
+	reg [7:0] A7x_c;
+	reg [7:0] A8x_c;
+	reg [7:0] A9x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -74,16 +74,16 @@ always@(posedge clk)
 	if(reset) begin
 		N2x<=16'b0;
 		sumout<=16'b0;
-		A0x_c<=16'b0;
-		A1x_c<=16'b0;
-		A2x_c<=16'b0;
-		A3x_c<=16'b0;
-		A4x_c<=16'b0;
-		A5x_c<=16'b0;
-		A6x_c<=16'b0;
-		A7x_c<=16'b0;
-		A8x_c<=16'b0;
-		A9x_c<=16'b0;
+		A0x_c<=8'b0;
+		A1x_c<=8'b0;
+		A2x_c<=8'b0;
+		A3x_c<=8'b0;
+		A4x_c<=8'b0;
+		A5x_c<=8'b0;
+		A6x_c<=8'b0;
+		A7x_c<=8'b0;
+		A8x_c<=8'b0;
+		A9x_c<=8'b0;
 		sum0x<=16'b0;
 		sum1x<=16'b0;
 		sum2x<=16'b0;
@@ -108,13 +108,13 @@ always@(posedge clk)
 	A9x_c<=A9x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+in5x+in6x+in7x+in8x+in9x+B0x;
 
-	if(sumout[15]==0)
+	if(sumout[13]==0)
 		begin
-		N2x<=sumout;
+		N2x<=sumout[13:6];
 		end
 	else
 		begin
-		N2x<=16'd0;
+		N2x<=8'd0;
 		end
 	end
 endmodule

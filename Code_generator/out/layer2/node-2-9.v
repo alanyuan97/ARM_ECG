@@ -1,19 +1,19 @@
 module node2_9(clk,reset,N9x,A0x,A1x,A2x,A3x,A4x);
 	input clk;
 	input reset;
-	input [15:0] A0x;
-	input [15:0] A1x;
-	input [15:0] A2x;
-	input [15:0] A3x;
-	input [15:0] A4x;
-	output reg [15:0] N9x;
+	input [7:0] A0x;
+	input [7:0] A1x;
+	input [7:0] A2x;
+	input [7:0] A3x;
+	input [7:0] A4x;
+	output reg [7:0] N9x;
 
-	parameter [15:0] W0x=332;
-	parameter [15:0] W1x=-798;
-	parameter [15:0] W2x=-59;
-	parameter [15:0] W3x=603;
-	parameter [15:0] W4x=733;
-	parameter [15:0] B0x=61;
+	parameter [7:0] W0x=41;
+	parameter [7:0] W1x=-99;
+	parameter [7:0] W2x=-7;
+	parameter [7:0] W3x=75;
+	parameter [7:0] W4x=91;
+	parameter [7:0] B0x=7;
 	wire [15:0] in0x;
 	wire [15:0] in1x;
 	wire [15:0] in2x;
@@ -25,11 +25,11 @@ module node2_9(clk,reset,N9x,A0x,A1x,A2x,A3x,A4x);
 	reg [15:0] sum3x;
 
 	reg [15:0] sumout;
-	reg [15:0] A0x_c;
-	reg [15:0] A1x_c;
-	reg [15:0] A2x_c;
-	reg [15:0] A3x_c;
-	reg [15:0] A4x_c;
+	reg [7:0] A0x_c;
+	reg [7:0] A1x_c;
+	reg [7:0] A2x_c;
+	reg [7:0] A3x_c;
+	reg [7:0] A4x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -44,11 +44,11 @@ always@(posedge clk)
 	if(reset) begin
 		N9x<=16'b0;
 		sumout<=16'b0;
-		A0x_c<=16'b0;
-		A1x_c<=16'b0;
-		A2x_c<=16'b0;
-		A3x_c<=16'b0;
-		A4x_c<=16'b0;
+		A0x_c<=8'b0;
+		A1x_c<=8'b0;
+		A2x_c<=8'b0;
+		A3x_c<=8'b0;
+		A4x_c<=8'b0;
 		sum0x<=16'b0;
 		sum1x<=16'b0;
 		sum2x<=16'b0;
@@ -63,13 +63,13 @@ always@(posedge clk)
 	A4x_c<=A4x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+B0x;
 
-	if(sumout[15]==0)
+	if(sumout[13]==0)
 		begin
-		N9x<=sumout;
+		N9x<=sumout[13:6];
 		end
 	else
 		begin
-		N9x<=16'd0;
+		N9x<=8'd0;
 		end
 	end
 endmodule

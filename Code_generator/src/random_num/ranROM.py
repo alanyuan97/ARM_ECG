@@ -18,7 +18,7 @@ def num_to_fixed_point(num):
       out += "0"
     x /= 2
   return out
-def num2fixedbin(num,precision,BITS = 16):
+def num2fixedbin(num,precision,BITS = 16 ):
     """
         INPUT: 
             num: number to convert
@@ -32,12 +32,10 @@ def num2fixedbin(num,precision,BITS = 16):
         Example: 
             num2fixedbin(0.625,10) returns 16'sb1000000010100000
     """
+
     num1 = abs(num)
     whole,dec = str(num1).split(".")
     whole = int(whole)
-
-
-
     dec = float("0." + dec)
     whole = bin(whole).lstrip('0b')
     if not whole:
@@ -68,16 +66,17 @@ def num2fixedbin(num,precision,BITS = 16):
         return res3
     else:
         return str(res)
+
 def printbuffer():
     inputrand = []
     STRBUFF = "module rom_input(EN,"
     for i in range(186):
         STRBUFF+=f"I{i}x,"
     STRBUFF += "I186x);\n\tinput EN;\n"
-    STRBUFF += "\toutput [15:0]"
+    STRBUFF += "\toutput [7:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
-    STRBUFF += "I186x;\n\treg [15:0]"
+    STRBUFF += "I186x;\n\treg [7:0]"
     for i in range(186):
         STRBUFF += f"I{i}x,"
     STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
@@ -85,7 +84,7 @@ def printbuffer():
     for i in range(187):
         tmp = rand.uniform(-1,1)
         inputrand.append(tmp)
-        STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(tmp,10)).int};\n"
+        STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(tmp,6,BITS=8)).int};\n"
     STRBUFF +="\tend\nendmodule"
     # np.save("randnums.npy",np.array(inputrand))
     return STRBUFF,np.array(inputrand)
@@ -99,6 +98,6 @@ def main():
     for i in range(len(ROM_sim)):
         if ROM_sim[i] <0:
             ROM_sim[i]=0
-    print(ROM_sim,[num2fixedbin(ROM_sim[i],10) for i in range(5) ])   
+    print(ROM_sim,"\n\n",[Bits(bin = num2fixedbin(ROM_sim[i],6,BITS=8)).int for i in range(5) ],"\n\n",[num2fixedbin(ROM_sim[i],6,BITS=8) for i in range(5)])   
 if __name__ == '__main__':
     main()
