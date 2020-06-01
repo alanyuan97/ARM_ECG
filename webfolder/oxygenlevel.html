@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Cardiopathy</title>
+<title>Oxygen_level</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -52,25 +52,6 @@ body {
   padding: 10px;
 }
 </style>
-
-<script>
-update = function(){
- request=new XMLHttpRequest();
- request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       document.getElementById("foo").innerHTML = request.responseText;
-    }
- };
-
- request.open("GET", "/api")
- request.send();
-}
-
-update();
-
-</script>
-
 </head>
 <body>
 
@@ -79,16 +60,10 @@ update();
 
 </div>
 
-
-
-
 <div class="content">
-  <h2>Cardiopathy</h2>
-  <span id="foo"></span>
+  <h2>Oxygen level</h2>
+  <p></p>
 </div>
-
-
-
 
 <div class="footer">
   <p id="demo"></p>
