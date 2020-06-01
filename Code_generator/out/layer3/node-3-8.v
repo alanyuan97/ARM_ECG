@@ -110,7 +110,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N8x<=sumout;
+		N8x<=sumout[28:13];
 		end
 	else
 		begin

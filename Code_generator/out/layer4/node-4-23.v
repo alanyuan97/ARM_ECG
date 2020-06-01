@@ -155,7 +155,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N23x<=sumout;
+		N23x<=sumout[28:13];
 		end
 	else
 		begin

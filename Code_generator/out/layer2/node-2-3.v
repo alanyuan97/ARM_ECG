@@ -65,7 +65,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N3x<=sumout;
+		N3x<=sumout[28:13];
 		end
 	else
 		begin

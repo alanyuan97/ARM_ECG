@@ -70,7 +70,7 @@ def main(argv):
         else:
             STRBUF += f"in{i}x+"
     
-    STRBUF+= f"\n\tif(sumout[31]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=32'd0;\n\t\tend\n\tend\nendmodule"
+    STRBUF+= f"\n\tif(sumout[31]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout[28:13];\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=32'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):
