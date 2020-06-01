@@ -65,6 +65,7 @@ update = function(){
 
  request.open("GET", "/api")
  request.send();
+ setTimeout(update, 1000);
 }
 
 update();
