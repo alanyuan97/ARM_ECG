@@ -19,10 +19,6 @@ module node2_8(clk,reset,N8x,A0x,A1x,A2x,A3x,A4x);
 	wire [31:0] in2x;
 	wire [31:0] in3x;
 	wire [31:0] in4x;
-	reg [31:0] sum0x;
-	reg [31:0] sum1x;
-	reg [31:0] sum2x;
-	reg [31:0] sum3x;
 
 	reg [31:0] sumout;
 	reg [31:0] A0x_c;
@@ -49,10 +45,6 @@ always@(posedge clk)
 		A2x_c<=32'b0;
 		A3x_c<=32'b0;
 		A4x_c<=32'b0;
-		sum0x<=32'b0;
-		sum1x<=32'b0;
-		sum2x<=32'b0;
-		sum3x<=32'b0;
 		sumout<=32'b0;
 	end
 

@@ -49,20 +49,6 @@ module node4_17(clk,reset,N17x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x
 	wire [31:0] in12x;
 	wire [31:0] in13x;
 	wire [31:0] in14x;
-	reg [31:0] sum0x;
-	reg [31:0] sum1x;
-	reg [31:0] sum2x;
-	reg [31:0] sum3x;
-	reg [31:0] sum4x;
-	reg [31:0] sum5x;
-	reg [31:0] sum6x;
-	reg [31:0] sum7x;
-	reg [31:0] sum8x;
-	reg [31:0] sum9x;
-	reg [31:0] sum10x;
-	reg [31:0] sum11x;
-	reg [31:0] sum12x;
-	reg [31:0] sum13x;
 
 	reg [31:0] sumout;
 	reg [31:0] A0x_c;
@@ -119,20 +105,6 @@ always@(posedge clk)
 		A12x_c<=32'b0;
 		A13x_c<=32'b0;
 		A14x_c<=32'b0;
-		sum0x<=32'b0;
-		sum1x<=32'b0;
-		sum2x<=32'b0;
-		sum3x<=32'b0;
-		sum4x<=32'b0;
-		sum5x<=32'b0;
-		sum6x<=32'b0;
-		sum7x<=32'b0;
-		sum8x<=32'b0;
-		sum9x<=32'b0;
-		sum10x<=32'b0;
-		sum11x<=32'b0;
-		sum12x<=32'b0;
-		sum13x<=32'b0;
 		sumout<=32'b0;
 	end
 
