@@ -11,7 +11,7 @@ class HeartDiagnosis():
     def get_erasmia(self):
         # make up data before interface with FPGA
         return {
-            "name": "erasmia",
+            "name": "Arrhythmia",
             "probability": 0.42,
             "voltage": [1,2,4,35,4,3,6],
             "time": datetime.datetime.now().strftime("%H:%M:%S")

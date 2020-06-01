@@ -59,7 +59,11 @@ update = function(){
  request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
-       document.getElementById("foo").innerHTML = request.responseText;
+       var myObj = JSON.parse(this.responseText);
+       document.getElementById("foo").innerHTML ="The probablity of getting " +myObj.name+ " is "+ myObj.probability + "<br/> ( "+myObj.time+" ) ";
+       
+      
+
     }
  };
 
