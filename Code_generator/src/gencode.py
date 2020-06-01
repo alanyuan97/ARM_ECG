@@ -24,23 +24,23 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
     # Start of input declare
     for i in range(LISTSIZE):
-        STRBUF += "\tinput [15:0] A" + str(i) + "x;\n"
-    STRBUF += f"\toutput reg [15:0] N{idx2}x;\n\n"
+        STRBUF += "\tinput [31:0] A" + str(i) + "x;\n"
+    STRBUF += f"\toutput reg [31:0] N{idx2}x;\n\n"
     # Start of LUT declare i.e. parameter [...] ...
     for i in range(LISTSIZE):
-        STRBUF += "\tparameter [15:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],5,BITS=8)).int) # No need to add format as it returns 
-    STRBUF += "\tparameter [15:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],5,BITS=8)).int)
+        STRBUF += "\tparameter [31:0] W{0}x={1};\n".format(i,Bits(bin=num2fixedbin(layerW[i,idx2-1],13,BITS=16)).int) # No need to add format as it returns 
+    STRBUF += "\tparameter [31:0] B{0}x={1};\n".format(0,Bits(bin=num2fixedbin(layerB[idx2-1],13,BITS=16)).int)
     # Start of wire declare
     for i in range(LISTSIZE):
         # BUG why is IN0X 16 bits long
-        STRBUF += "\twire [15:0] in"+ str(i)+"x;\n"
+        STRBUF += "\twire [31:0] in"+ str(i)+"x;\n"
     for i in range(LISTSIZE-1):
-        STRBUF += "\treg [15:0] sum"+ str(i)+"x;\n"
-    STRBUF += "\n\treg [15:0] sumout;\n"
+        STRBUF += "\treg [31:0] sum"+ str(i)+"x;\n"
+    STRBUF += "\n\treg [31:0] sumout;\n"
 
     # Copy of input required
     for i in range(LISTSIZE):
-        STRBUF += "\treg [15:0] A"+ str(i)+"x_c;\n"
+        STRBUF += "\treg [31:0] A"+ str(i)+"x_c;\n"
     # Start of mult & add V3.
     STRBUF += "\n\n"
     for i in range(LISTSIZE):
@@ -52,14 +52,14 @@ def main(argv):
     # else:
     #     STRBUF += f"always@(posedge clk)\n\tbegin \n\t\tif(sumout[31]==0)\n\t\t\tN{idx2}x<=sumout;\n\t\telse\n\t\t\tN{idx2}x<=32'd0;"
     # STRBUF+= "\n\tend"
-    STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=16'b0;\n\t\tsumout<=16'b0;\n"
+    STRBUF+=f"\nalways@(posedge clk)\n\tbegin\n\n\tif(reset) begin\n\t\tN{idx2}x<=32'b0;\n\t\tsumout<=32'b0;\n"
     for i in range(LISTSIZE):
-        STRBUF += f"\t\tA{i}x_c<=16'b0;\n"
+        STRBUF += f"\t\tA{i}x_c<=32'b0;\n"
     for i in range(LISTSIZE):
         if i == LISTSIZE-1:
-            STRBUF += f"\t\tsumout<=16'b0;\n"
+            STRBUF += f"\t\tsumout<=32'b0;\n"
         else:
-            STRBUF += f"\t\tsum{i}x<=16'b0;\n"
+            STRBUF += f"\t\tsum{i}x<=32'b0;\n"
     STRBUF += "\tend\n\n"
     for i in range(LISTSIZE):
         STRBUF += f"\tA{i}x_c<=A{i}x;\n"
@@ -70,7 +70,7 @@ def main(argv):
         else:
             STRBUF += f"in{i}x+"
     
-    STRBUF+= f"\n\tif(sumout[15]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=16'd0;\n\t\tend\n\tend\nendmodule"
+    STRBUF+= f"\n\tif(sumout[31]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=32'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):

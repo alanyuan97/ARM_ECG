@@ -70,5 +70,5 @@ for i in range(int(len(weights)/2)):
     inputM = output
     print(f"Result Simulation on layer-{i+1} == >\n\n")
     for j in range(len(output)):
-        print(f"Node_{j+1}:{output[j]:<.10f};\t\tQ3.5 format binary:{num2fixedbin(output[j],5)}\n")
+        print(f"Node_{j+1}:{output[j]:<.10f};\t\tQ3.13 format binary:{num2fixedbin(output[j],13)}\n")
     print(f"****************End of layer-{i+1}********************* \n\n")

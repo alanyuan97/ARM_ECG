@@ -84,7 +84,7 @@ def printbuffer():
     for i in range(187):
         tmp = rand.uniform(-1,1)
         inputrand.append(tmp)
-        STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(tmp,5,BITS=8)).int};\n"
+        STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(tmp,13,BITS=16)).int};\n"
     STRBUFF +="\tend\nendmodule"
     # np.save("randnums.npy",np.array(inputrand))
     return STRBUFF,np.array(inputrand)
@@ -101,6 +101,6 @@ def main():
     for i in range(len(ROM_sim)):
         if ROM_sim[i] <0:
             ROM_sim[i]=0
-    print(ROM_sim,"\n\n",[Bits(bin = num2fixedbin(ROM_sim[i],5,BITS=8)).int for i in range(5) ],"\n\n",[num2fixedbin(ROM_sim[i],5,BITS=8) for i in range(5)])   
+    print(ROM_sim,"\n\n",[Bits(bin = num2fixedbin(ROM_sim[i],13,BITS=16)).int for i in range(5) ],"\n\n",[num2fixedbin(ROM_sim[i],13,BITS=16) for i in range(5)])   
 if __name__ == '__main__':
     main()

@@ -60,16 +60,16 @@ STRBUFF = "module rom_input(EN,"
 for i in range(186):
     STRBUFF+=f"I{i}x,"
 STRBUFF += "I186x);\n\tinput EN;\n"
-STRBUFF += "\toutput [15:0]"
+STRBUFF += "\toutput [31:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\n\treg [15:0]"
+STRBUFF += "I186x;\n\treg [31:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
 STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
 
 for i in range(187):
-    STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(data[i],5,BITS=8)).int};\n"
+    STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(data[i],13,BITS=16)).int};\n"
 STRBUFF +="\tend\nendmodule"
 print(STRBUFF)
 
