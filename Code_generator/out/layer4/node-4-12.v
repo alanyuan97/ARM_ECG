@@ -18,22 +18,22 @@ module node4_12(clk,reset,N12x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x
 	input [31:0] A14x;
 	output reg [31:0] N12x;
 
-	parameter [31:0] W0x=2132;
-	parameter [31:0] W1x=-6283;
-	parameter [31:0] W2x=-377;
-	parameter [31:0] W3x=-1586;
-	parameter [31:0] W4x=2118;
-	parameter [31:0] W5x=4298;
-	parameter [31:0] W6x=-5397;
-	parameter [31:0] W7x=-428;
-	parameter [31:0] W8x=6121;
-	parameter [31:0] W9x=6963;
-	parameter [31:0] W10x=38;
-	parameter [31:0] W11x=299;
-	parameter [31:0] W12x=1457;
-	parameter [31:0] W13x=-2373;
-	parameter [31:0] W14x=2917;
-	parameter [31:0] B0x=163;
+	parameter [31:0] W0x=-1096;
+	parameter [31:0] W1x=1842;
+	parameter [31:0] W2x=3555;
+	parameter [31:0] W3x=1623;
+	parameter [31:0] W4x=746;
+	parameter [31:0] W5x=6618;
+	parameter [31:0] W6x=2853;
+	parameter [31:0] W7x=-3128;
+	parameter [31:0] W8x=-6094;
+	parameter [31:0] W9x=-5814;
+	parameter [31:0] W10x=1609;
+	parameter [31:0] W11x=-4356;
+	parameter [31:0] W12x=4568;
+	parameter [31:0] W13x=-3322;
+	parameter [31:0] W14x=-2157;
+	parameter [31:0] B0x=1020;
 	wire [31:0] in0x;
 	wire [31:0] in1x;
 	wire [31:0] in2x;
@@ -155,7 +155,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N12x<=sumout[28:13];
+		N12x<=sumout;
 		end
 	else
 		begin

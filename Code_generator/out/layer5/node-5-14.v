@@ -33,37 +33,37 @@ module node5_14(clk,reset,N14x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x
 	input [31:0] A29x;
 	output reg [31:0] N14x;
 
-	parameter [31:0] W0x=1613;
-	parameter [31:0] W1x=-1812;
-	parameter [31:0] W2x=-2833;
-	parameter [31:0] W3x=-1364;
-	parameter [31:0] W4x=3411;
-	parameter [31:0] W5x=-420;
-	parameter [31:0] W6x=2061;
-	parameter [31:0] W7x=1774;
-	parameter [31:0] W8x=1561;
-	parameter [31:0] W9x=1389;
-	parameter [31:0] W10x=-3328;
-	parameter [31:0] W11x=721;
-	parameter [31:0] W12x=-3864;
-	parameter [31:0] W13x=-4509;
-	parameter [31:0] W14x=-4070;
-	parameter [31:0] W15x=2247;
-	parameter [31:0] W16x=853;
-	parameter [31:0] W17x=4172;
-	parameter [31:0] W18x=-3109;
-	parameter [31:0] W19x=-1830;
-	parameter [31:0] W20x=-2999;
-	parameter [31:0] W21x=-947;
-	parameter [31:0] W22x=-3260;
-	parameter [31:0] W23x=-3216;
-	parameter [31:0] W24x=-544;
-	parameter [31:0] W25x=1857;
-	parameter [31:0] W26x=-1084;
-	parameter [31:0] W27x=892;
-	parameter [31:0] W28x=4142;
-	parameter [31:0] W29x=-4379;
-	parameter [31:0] B0x=0;
+	parameter [31:0] W0x=-2164;
+	parameter [31:0] W1x=-1099;
+	parameter [31:0] W2x=1270;
+	parameter [31:0] W3x=2267;
+	parameter [31:0] W4x=3011;
+	parameter [31:0] W5x=3864;
+	parameter [31:0] W6x=-1955;
+	parameter [31:0] W7x=-3086;
+	parameter [31:0] W8x=-1935;
+	parameter [31:0] W9x=-849;
+	parameter [31:0] W10x=1039;
+	parameter [31:0] W11x=1083;
+	parameter [31:0] W12x=2911;
+	parameter [31:0] W13x=-4414;
+	parameter [31:0] W14x=6028;
+	parameter [31:0] W15x=-3029;
+	parameter [31:0] W16x=-3617;
+	parameter [31:0] W17x=-1481;
+	parameter [31:0] W18x=187;
+	parameter [31:0] W19x=2693;
+	parameter [31:0] W20x=2075;
+	parameter [31:0] W21x=4132;
+	parameter [31:0] W22x=1230;
+	parameter [31:0] W23x=-1399;
+	parameter [31:0] W24x=-3669;
+	parameter [31:0] W25x=-1153;
+	parameter [31:0] W26x=3338;
+	parameter [31:0] W27x=-3990;
+	parameter [31:0] W28x=-923;
+	parameter [31:0] W29x=-2474;
+	parameter [31:0] B0x=66;
 	wire [31:0] in0x;
 	wire [31:0] in1x;
 	wire [31:0] in2x;
@@ -290,7 +290,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N14x<=sumout[28:13];
+		N14x<=sumout;
 		end
 	else
 		begin

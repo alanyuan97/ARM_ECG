@@ -13,17 +13,17 @@ module node3_11(clk,reset,N11x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input [31:0] A9x;
 	output reg [31:0] N11x;
 
-	parameter [31:0] W0x=4312;
-	parameter [31:0] W1x=-1983;
-	parameter [31:0] W2x=5402;
-	parameter [31:0] W3x=3210;
-	parameter [31:0] W4x=-2931;
-	parameter [31:0] W5x=-4827;
-	parameter [31:0] W6x=-4676;
-	parameter [31:0] W7x=-5212;
-	parameter [31:0] W8x=-3757;
-	parameter [31:0] W9x=-772;
-	parameter [31:0] B0x=-8;
+	parameter [31:0] W0x=-212;
+	parameter [31:0] W1x=4566;
+	parameter [31:0] W2x=1659;
+	parameter [31:0] W3x=-4097;
+	parameter [31:0] W4x=641;
+	parameter [31:0] W5x=6866;
+	parameter [31:0] W6x=-6147;
+	parameter [31:0] W7x=-2493;
+	parameter [31:0] W8x=1599;
+	parameter [31:0] W9x=6448;
+	parameter [31:0] B0x=-364;
 	wire [31:0] in0x;
 	wire [31:0] in1x;
 	wire [31:0] in2x;
@@ -110,7 +110,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N11x<=sumout[28:13];
+		N11x<=sumout;
 		end
 	else
 		begin

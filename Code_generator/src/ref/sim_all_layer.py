@@ -57,7 +57,7 @@ def num2fixedbin(num,precision,BITS = 16 ):
 data = np.load(sys.argv[1],allow_pickle=True)
 # neg_data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
 print(f"\n\nTest case path: {sys.argv[1]} \n\n")
-weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/16bweights.npy",allow_pickle=True)
+weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
 inputM = np.transpose(np.array(data))
 
 # len(weights) = 14 checked
