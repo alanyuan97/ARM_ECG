@@ -13,17 +13,17 @@ module node7_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	input [31:0] A9x;
 	output reg [31:0] N1x;
 
-	parameter [31:0] W0x=-4801;
-	parameter [31:0] W1x=-5287;
-	parameter [31:0] W2x=-3420;
-	parameter [31:0] W3x=6464;
-	parameter [31:0] W4x=-7222;
-	parameter [31:0] W5x=7901;
-	parameter [31:0] W6x=7349;
-	parameter [31:0] W7x=5879;
-	parameter [31:0] W8x=-7826;
-	parameter [31:0] W9x=-5081;
-	parameter [31:0] B0x=-134;
+	parameter [31:0] W0x=-2493;
+	parameter [31:0] W1x=-2414;
+	parameter [31:0] W2x=-5563;
+	parameter [31:0] W3x=6093;
+	parameter [31:0] W4x=3448;
+	parameter [31:0] W5x=-8185;
+	parameter [31:0] W6x=5967;
+	parameter [31:0] W7x=-2295;
+	parameter [31:0] W8x=-2878;
+	parameter [31:0] W9x=4259;
+	parameter [31:0] B0x=635;
 	wire [31:0] in0x;
 	wire [31:0] in1x;
 	wire [31:0] in2x;
@@ -110,7 +110,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N1x<=sumout;
+		N1x<=sumout[28:13];
 		end
 	else
 		begin

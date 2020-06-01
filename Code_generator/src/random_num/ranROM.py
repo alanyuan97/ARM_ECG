@@ -92,7 +92,7 @@ def printbuffer():
 def main():
     BUFFER, randominputs = printbuffer()
     print(BUFFER)
-    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/16bweights.npy",allow_pickle=True)
     ROM_sim = np.matmul(np.transpose(randominputs),weights[0]) + weights[1]
     # print(weights[0],"\n\n",weights[1])
     # print(ROM_sim.shape,ROM_sim)

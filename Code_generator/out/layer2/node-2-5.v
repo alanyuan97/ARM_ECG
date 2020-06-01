@@ -8,12 +8,12 @@ module node2_5(clk,reset,N5x,A0x,A1x,A2x,A3x,A4x);
 	input [31:0] A4x;
 	output reg [31:0] N5x;
 
-	parameter [31:0] W0x=4223;
-	parameter [31:0] W1x=-8192;
-	parameter [31:0] W2x=-3942;
-	parameter [31:0] W3x=675;
-	parameter [31:0] W4x=-4355;
-	parameter [31:0] B0x=-139;
+	parameter [31:0] W0x=-3808;
+	parameter [31:0] W1x=1802;
+	parameter [31:0] W2x=-1999;
+	parameter [31:0] W3x=-3015;
+	parameter [31:0] W4x=1350;
+	parameter [31:0] B0x=34;
 	wire [31:0] in0x;
 	wire [31:0] in1x;
 	wire [31:0] in2x;
@@ -65,7 +65,7 @@ always@(posedge clk)
 
 	if(sumout[31]==0)
 		begin
-		N5x<=sumout;
+		N5x<=sumout[28:13];
 		end
 	else
 		begin

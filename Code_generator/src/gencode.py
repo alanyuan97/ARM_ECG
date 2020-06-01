@@ -3,7 +3,7 @@ import numpy as np
 import sys
 from bitstring import Bits
 def main(argv):
-    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+    weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/16bweights.npy",allow_pickle=True)
     # bias = np.load("/home/alan/winDesktop/ARM_ECG/simulation/abias.npy",allow_pickle=True)
     # allow pickle must be true to load data
     # weights[0] has dim of (187*5)
@@ -70,7 +70,7 @@ def main(argv):
         else:
             STRBUF += f"in{i}x+"
     
-    STRBUF+= f"\n\tif(sumout[31]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout;\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=32'd0;\n\t\tend\n\tend\nendmodule"
+    STRBUF+= f"\n\tif(sumout[31]==0)\n\t\tbegin\n\t\tN{idx2}x<=sumout[28:13];\n\t\tend\n\telse\n\t\tbegin\n\t\tN{idx2}x<=32'd0;\n\t\tend\n\tend\nendmodule"
     print(STRBUF)
 
 def binary(num):

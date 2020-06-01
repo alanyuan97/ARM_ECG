@@ -57,7 +57,7 @@ def num2fixedbin(num,precision,BITS = 16 ):
 data = np.load(sys.argv[1],allow_pickle=True)
 # neg_data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
 print(f"\n\nTest case path: {sys.argv[1]} \n\n")
-weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
+weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/16bweights.npy",allow_pickle=True)
 inputM = np.transpose(np.array(data))
 
 # len(weights) = 14 checked
@@ -67,8 +67,10 @@ for i in range(int(len(weights)/2)):
     B1 = weights[2*i+1]
     inputN = np.array(L1w)
     output = np.matmul(inputM, inputN) + B1
-    inputM = output
     print(f"Result Simulation on layer-{i+1} == >\n\n")
     for j in range(len(output)):
+        if output[j]<0:
+            output[j]=0
         print(f"Node_{j+1}:{output[j]:<.10f};\t\tQ3.13 format binary:{num2fixedbin(output[j],13)}\n")
+    inputM = output
     print(f"****************End of layer-{i+1}********************* \n\n")
