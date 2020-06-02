@@ -2,6 +2,7 @@
 import numpy as np
 import sys
 import struct
+import adjust_weights
 
 def binary(num):
     # Struct can provide us with the float packed into bytes. The '!' ensures that
@@ -40,7 +41,7 @@ def num_to_fixed_point(num):
   out = ""
   if num < 0:
     out = out + "1"
-    num += 1
+    num += 14
   else:
     out = out + "0"
   x = 0.5
@@ -56,7 +57,8 @@ def num_to_fixed_point(num):
 def main(argv):
     #data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/Testpos.npy')
     outs = np.load('/home/edoardo/Desktop/ARM_ECG/simulation/outputs_dictionary.npy',allow_pickle=True).item()
-    data = outs[list(outs)[0]][0]
+    outs_adjusted = adjust_weights.adjust_o(outs)
+    data = outs[list(outs_adjusted)[1]][2]
 
     n_in = int(argv[0])
 
@@ -70,7 +72,11 @@ def main(argv):
     STRBUFF += ";\nalways@(posedge clk)\n\tbegin\n"
 
     for i in range(n_in):
-        STRBUFF += f"\tI{i}x = 8'b" + data[i] + ";\n"
+        if data[i]>=0:
+            STRBUFF += f"\tI{i}x = 8'd" + str(int(data[i])) + ";\n"
+        else:
+            tmp = -data[i]
+            STRBUFF += f"\tI{i}x = -8'd" + str(int(tmp)) + ";\n"
     STRBUFF +="\tend\nendmodule"
     print(STRBUFF)
 
