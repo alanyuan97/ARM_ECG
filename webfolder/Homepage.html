@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="style.css" rel="stylesheet" type="text/css" />
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
@@ -17,17 +18,18 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="heart.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ECG Analysis</a>
     <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT US</a>
     <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOW TO USE</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <!-- <div class="w3-dropdown-hover w3-hide-small"> -->
+      <!-- <button class="w3-padding-large w3-button" title="ECG">ECG <i class="fa fa-caret-down"></i></button> -->
+      <!-- <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="#" class="w3-bar-item w3-button">balabala</a>
         <a href="#" class="w3-bar-item w3-button">wulawula</a>
         <a href="#" class="w3-bar-item w3-button">palapala</a>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
@@ -43,69 +45,33 @@ body {font-family: "Lato", sans-serif}
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-  <!-- Automatic Slideshow Images -->
-
-
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>
-    </div>
-
-
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>
-    </div>
-
-
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>
-    </div>
-  </div>
-
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">OUR PRODUCT NAME</h2>
-    <p class="w3-opacity"><i>your health manager</i></p>
-    <p class="w3-justify">Our role is to provide cost-effective enablers for low-power electronic devices across healthcare to help improve patient outcomes and people’s lives.allow more people to gain insight into their health.
+    <h2 class="w3-wide">Look! It's your heart!</h2>
+    <p class="w3-opacity"><i>NHS</i></p>
+    <p class="w3-justify">
+      An ECG (electrocardiogram) records the electrical activity of your heart at rest. It provides information about your heart rate and rhythm, and shows if there is enlargement of the heart due to high blood pressure (hypertension) or evidence of a previous heart attack (myocardial infarction).
+      Our role is to provide cost-effective enablers for low-power electronic devices across healthcare to help improve patient outcomes and people’s lives.allow more people to gain insight into their health.
 The device can measure electrocardiogram (ECG) to enable medical professionals to get an elaborate insight in patients’ health outside of contact hours.
-
     </p>
-    <div class="w3-row w3-padding-32">
+    <h3 class="w3-justify">What is Arrhythmia?</h3>
+    <p class="w3-justify">
+      An arrhythmia is a disorder of the heart that affects the rate or rhythm at which the heart beats.<br>
+      Clink on the link below for further information.<br>
+      <a class="ecg" href="arrhythmia.html">Arrhythmia</a>
+    </p>
+    <!-- <div class="middle" > -->
 
 
-      <div class="w3-third">
-        <p>Cardiopathy</p>
-        <a href="heart.html"><img src="heart.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      <div position=centre >
+        <h3>Now put on the device and clink in!<img src="down.jpg" width="50" height="50"></h3>
+        <!-- <img src="down.jpg"> -->
+
+        <a href="heart.html"><img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+        <p class="shadow">Your Electrocardiogram and Analysis</p>
       </div>
-
-
-      <div class="w3-third">
-        <p>Oxygen level</p>
-      <a href="oxygenlevel.html"><img src="oxygen.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
-      </div>
-
-
-      <div class="w3-third">
-        <p>Body temprature</p>
-        <a href="temp.html"><img src="temp.jpg" class="w3-round" alt="Random Name" style="width:60%"></a>
-      </div>
-
-
-
-
-
     </div>
-  </div>
+  <!-- </div> -->
 
   <!-- The Tour Section -->
   <div class="w3-black" id="tour">
@@ -119,7 +85,7 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
         <li class="w3-padding">Step 3: </li>
       </ul>
 
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+      <!-- <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
 
 
         <div class="w3-third w3-margin-bottom">
@@ -131,30 +97,30 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
           <div class="w3-container w3-white">
             <p><b>Cardiopathy library</b></p>
             <a href="ischemia.html"><p class="w3-opacity">Ischemia</p><a>
-            <a href="arrhythmia.html"><p class="w3-opacity">Arrhythmia</p><a></a>
+            <a href="arrhythmia.html"><p class="w3-opacity">Arrhythmia</p><a></a> --> 
             <!-- <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
           </div>
         </div>
 
 
-        <div class="w3-third w3-margin-bottom">
+        <!-- <div class="w3-third w3-margin-bottom">
           <img src="book.jpg" alt="Paris" style="width:20%" class="w3-hover-opacity">
           <div class="w3-container w3-white">
             <p><b>case history</b></p>
-            <p class="w3-opacity">2222222</p>
+            <p class="w3-opacity">2222222</p> -->
           <!--  <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button> -->
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
 
 
-        <div class="w3-third w3-margin-bottom">
+        <!-- <div class="w3-third w3-margin-bottom">
           <img src="safe.png" alt="San Francisco" style="width:18%" class="w3-hover-opacity">
           <div class="w3-container w3-white">
             <p><b>Availability to GP</b></p>
-            <p class="w3-opacity">3333333</p>
+            <p class="w3-opacity">3333333</p> -->
           <!--  <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button> -->
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -208,11 +174,6 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
 
 <!-- End Page Content -->
 </div>
-
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
-
-
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
