@@ -12,6 +12,8 @@ def main(argv):
     layerW = weights[2*(idx1-1)]
     layerB = weights[2*(idx1-1)+1]
     LISTSIZE = layerW.shape[0]
+    if LISTSIZE == 187:
+        LISTSIZE = 75
     inputs = [ f"in{i}x" for i in range(LISTSIZE)]
     inputs.append("B0x")
     # Start of module
