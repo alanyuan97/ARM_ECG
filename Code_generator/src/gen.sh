@@ -35,8 +35,8 @@ echo "Paths made for ROM and SIM"
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
 echo "Generating Positive and Negative test case ROM verilog ... "
-./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_pos.npy > $MYPATH/ROM/rom_input_pos.v
-./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/ROM/rom_input_neg.v
+./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/romtestcase.npy > $MYPATH/ROM/rom_input.v
+# ./src/rom.py /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy > $MYPATH/ROM/rom_input_neg.v
 echo "Generating Random ROM for test purpose ... "
 ./src/random_num/ranROM.py > ./src/random_num/randtest.v
 echo "Generating all layer test case simulation ... "

@@ -54,23 +54,29 @@ def num2fixedbin(num,precision,BITS = 16 ):
     else:
         return str(res)
 
+# /home/alan/winDesktop/ARM_ECG/simulation/romtestcase.npy
 data = np.load(sys.argv[1],allow_pickle=True)
+ITERATIONS = int(data.shape[0]) # Read the number of iteration 
 
-STRBUFF = "module rom_input(EN,"
+STRBUFF = "module rom_input(EN,data_add,"
 for i in range(186):
     STRBUFF+=f"I{i}x,"
-STRBUFF += "I186x);\n\tinput EN;\n"
-STRBUFF += "\toutput [31:0]"
+STRBUFF += "I186x);\n\tinput EN;\n\tinput [9:0]data_add;\n"
+STRBUFF += "\toutput reg [31:0]"
 for i in range(186):
     STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\n\treg [31:0]"
-for i in range(186):
-    STRBUFF += f"I{i}x,"
-STRBUFF += "I186x;\nalways@(EN)\n\tbegin\n"
+# STRBUFF += "I186x;\n\treg [31:0]"
+# for i in range(186):
+#     STRBUFF += f"I{i}x,"
+STRBUFF += "I186x;\n\talways@(EN)\n\t\tbegin\n\t\tcase(data_add)\n"
 
-for i in range(187):
-    STRBUFF += f"\tI{i}x = {Bits(bin=num2fixedbin(data[i],13,BITS=16)).int};\n"
-STRBUFF +="\tend\nendmodule"
+for ii in range(ITERATIONS):
+    with_scope_data = np.squeeze(data[ii,:])
+    STRBUFF += f"\t\t\t9b'{ii:#010b}:begin\n"
+    for i in range(187):
+        STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],13,BITS=16)).int};\n"
+    STRBUFF+="\t\t\tend\n\n"
+STRBUFF +="\t\tendcase\n\tend\nendmodule"
 print(STRBUFF)
 
 
