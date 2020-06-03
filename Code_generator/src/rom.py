@@ -72,7 +72,7 @@ STRBUFF += "I186x;\n\talways@(EN)\n\t\tbegin\n\t\tcase(data_add)\n"
 
 for ii in range(ITERATIONS):
     with_scope_data = np.squeeze(data[ii,:])
-    STRBUFF += f"\t\t\t9b'{ii:#010b}:begin\n"
+    STRBUFF += f"\t\t\t10'b{ii:010b}:begin\n"
     for i in range(187):
         STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],13,BITS=16)).int};\n"
     STRBUFF+="\t\t\tend\n\n"

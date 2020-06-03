@@ -5,7 +5,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 	always@(EN)
 		begin
 		case(data_add)
-			9b'0b00000000:begin
+			10'b0000000000:begin
 				I0x <= 8175;
 				I1x <= 4726;
 				I2x <= 2908;
@@ -195,7 +195,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000001:begin
+			10'b0000000001:begin
 				I0x <= 8192;
 				I1x <= 3407;
 				I2x <= 1957;
@@ -385,7 +385,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000010:begin
+			10'b0000000010:begin
 				I0x <= 8192;
 				I1x <= 6881;
 				I2x <= 3522;
@@ -575,7 +575,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000011:begin
+			10'b0000000011:begin
 				I0x <= 7667;
 				I1x <= 6447;
 				I2x <= 3588;
@@ -765,7 +765,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000100:begin
+			10'b0000000100:begin
 				I0x <= 7708;
 				I1x <= 4603;
 				I2x <= 2940;
@@ -955,7 +955,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000101:begin
+			10'b0000000101:begin
 				I0x <= 8192;
 				I1x <= 7192;
 				I2x <= 4161;
@@ -1145,7 +1145,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000110:begin
+			10'b0000000110:begin
 				I0x <= 8126;
 				I1x <= 7741;
 				I2x <= 1753;
@@ -1335,7 +1335,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00000111:begin
+			10'b0000000111:begin
 				I0x <= 7954;
 				I1x <= 6291;
 				I2x <= 1703;
@@ -1525,7 +1525,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001000:begin
+			10'b0000001000:begin
 				I0x <= 8019;
 				I1x <= 7626;
 				I2x <= 3956;
@@ -1715,7 +1715,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001001:begin
+			10'b0000001001:begin
 				I0x <= 7774;
 				I1x <= 7184;
 				I2x <= 3948;
@@ -1905,7 +1905,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001010:begin
+			10'b0000001010:begin
 				I0x <= 8192;
 				I1x <= 6766;
 				I2x <= 1925;
@@ -2095,7 +2095,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001011:begin
+			10'b0000001011:begin
 				I0x <= 7897;
 				I1x <= 3874;
 				I2x <= 1916;
@@ -2285,7 +2285,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001100:begin
+			10'b0000001100:begin
 				I0x <= 8192;
 				I1x <= 6946;
 				I2x <= 2981;
@@ -2475,7 +2475,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001101:begin
+			10'b0000001101:begin
 				I0x <= 8192;
 				I1x <= 4636;
 				I2x <= 1818;
@@ -2665,7 +2665,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001110:begin
+			10'b0000001110:begin
 				I0x <= 8142;
 				I1x <= 6840;
 				I2x <= 1163;
@@ -2855,7 +2855,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00001111:begin
+			10'b0000001111:begin
 				I0x <= 7831;
 				I1x <= 4849;
 				I2x <= 1081;
@@ -3045,7 +3045,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010000:begin
+			10'b0000010000:begin
 				I0x <= 8110;
 				I1x <= 7831;
 				I2x <= 3719;
@@ -3235,7 +3235,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010001:begin
+			10'b0000010001:begin
 				I0x <= 7544;
 				I1x <= 5578;
 				I2x <= 1441;
@@ -3425,7 +3425,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010010:begin
+			10'b0000010010:begin
 				I0x <= 7749;
 				I1x <= 7651;
 				I2x <= 5292;
@@ -3615,7 +3615,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010011:begin
+			10'b0000010011:begin
 				I0x <= 7839;
 				I1x <= 5660;
 				I2x <= 2981;
@@ -3805,7 +3805,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010100:begin
+			10'b0000010100:begin
 				I0x <= 8192;
 				I1x <= 4341;
 				I2x <= 1875;
@@ -3995,7 +3995,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010101:begin
+			10'b0000010101:begin
 				I0x <= 7946;
 				I1x <= 1957;
 				I2x <= 98;
@@ -4185,7 +4185,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010110:begin
+			10'b0000010110:begin
 				I0x <= 7806;
 				I1x <= 4571;
 				I2x <= 1990;
@@ -4375,7 +4375,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00010111:begin
+			10'b0000010111:begin
 				I0x <= 8192;
 				I1x <= 5644;
 				I2x <= 3407;
@@ -4565,7 +4565,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011000:begin
+			10'b0000011000:begin
 				I0x <= 8192;
 				I1x <= 6029;
 				I2x <= 2285;
@@ -4755,7 +4755,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011001:begin
+			10'b0000011001:begin
 				I0x <= 8192;
 				I1x <= 6578;
 				I2x <= 2629;
@@ -4945,7 +4945,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011010:begin
+			10'b0000011010:begin
 				I0x <= 7716;
 				I1x <= 6602;
 				I2x <= 3506;
@@ -5135,7 +5135,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011011:begin
+			10'b0000011011:begin
 				I0x <= 7995;
 				I1x <= 7905;
 				I2x <= 3244;
@@ -5325,7 +5325,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011100:begin
+			10'b0000011100:begin
 				I0x <= 8101;
 				I1x <= 6504;
 				I2x <= 3923;
@@ -5515,7 +5515,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011101:begin
+			10'b0000011101:begin
 				I0x <= 7888;
 				I1x <= 8192;
 				I2x <= 2375;
@@ -5705,7 +5705,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011110:begin
+			10'b0000011110:begin
 				I0x <= 8192;
 				I1x <= 4096;
 				I2x <= 715;
@@ -5895,7 +5895,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00011111:begin
+			10'b0000011111:begin
 				I0x <= 7340;
 				I1x <= 7536;
 				I2x <= 3866;
@@ -6085,7 +6085,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100000:begin
+			10'b0000100000:begin
 				I0x <= 8192;
 				I1x <= 5308;
 				I2x <= 1368;
@@ -6275,7 +6275,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100001:begin
+			10'b0000100001:begin
 				I0x <= 7847;
 				I1x <= 3039;
 				I2x <= 446;
@@ -6465,7 +6465,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100010:begin
+			10'b0000100010:begin
 				I0x <= 8085;
 				I1x <= 7184;
 				I2x <= 2334;
@@ -6655,7 +6655,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100011:begin
+			10'b0000100011:begin
 				I0x <= 8192;
 				I1x <= 5341;
 				I2x <= 3244;
@@ -6845,7 +6845,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100100:begin
+			10'b0000100100:begin
 				I0x <= 8192;
 				I1x <= 5529;
 				I2x <= 3096;
@@ -7035,7 +7035,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100101:begin
+			10'b0000100101:begin
 				I0x <= 7438;
 				I1x <= 6463;
 				I2x <= 2711;
@@ -7225,7 +7225,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100110:begin
+			10'b0000100110:begin
 				I0x <= 8192;
 				I1x <= 7643;
 				I2x <= 3964;
@@ -7415,7 +7415,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00100111:begin
+			10'b0000100111:begin
 				I0x <= 7520;
 				I1x <= 5693;
 				I2x <= 2801;
@@ -7605,7 +7605,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101000:begin
+			10'b0000101000:begin
 				I0x <= 8192;
 				I1x <= 4726;
 				I2x <= 2998;
@@ -7795,7 +7795,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101001:begin
+			10'b0000101001:begin
 				I0x <= 8192;
 				I1x <= 4177;
 				I2x <= 416;
@@ -7985,7 +7985,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101010:begin
+			10'b0000101010:begin
 				I0x <= 8159;
 				I1x <= 4464;
 				I2x <= 1990;
@@ -8175,7 +8175,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101011:begin
+			10'b0000101011:begin
 				I0x <= 8192;
 				I1x <= 2457;
 				I2x <= 80;
@@ -8365,7 +8365,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101100:begin
+			10'b0000101100:begin
 				I0x <= 8118;
 				I1x <= 4988;
 				I2x <= 974;
@@ -8555,7 +8555,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101101:begin
+			10'b0000101101:begin
 				I0x <= 8192;
 				I1x <= 5865;
 				I2x <= 3727;
@@ -8745,7 +8745,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101110:begin
+			10'b0000101110:begin
 				I0x <= 7757;
 				I1x <= 6717;
 				I2x <= 3891;
@@ -8935,7 +8935,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00101111:begin
+			10'b0000101111:begin
 				I0x <= 8110;
 				I1x <= 6447;
 				I2x <= 3932;
@@ -9125,7 +9125,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110000:begin
+			10'b0000110000:begin
 				I0x <= 8192;
 				I1x <= 7757;
 				I2x <= 3170;
@@ -9315,7 +9315,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110001:begin
+			10'b0000110001:begin
 				I0x <= 7389;
 				I1x <= 8192;
 				I2x <= 3055;
@@ -9505,7 +9505,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110010:begin
+			10'b0000110010:begin
 				I0x <= 8132;
 				I1x <= 8109;
 				I2x <= 5307;
@@ -9695,7 +9695,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110011:begin
+			10'b0000110011:begin
 				I0x <= 8192;
 				I1x <= 7131;
 				I2x <= 5566;
@@ -9885,7 +9885,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110100:begin
+			10'b0000110100:begin
 				I0x <= 8123;
 				I1x <= 6476;
 				I2x <= 1974;
@@ -10075,7 +10075,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110101:begin
+			10'b0000110101:begin
 				I0x <= 8192;
 				I1x <= 6186;
 				I2x <= 1582;
@@ -10265,7 +10265,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110110:begin
+			10'b0000110110:begin
 				I0x <= 8192;
 				I1x <= 5237;
 				I2x <= 2547;
@@ -10455,7 +10455,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00110111:begin
+			10'b0000110111:begin
 				I0x <= 7825;
 				I1x <= 6835;
 				I2x <= 4011;
@@ -10645,7 +10645,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111000:begin
+			10'b0000111000:begin
 				I0x <= 8168;
 				I1x <= 8192;
 				I2x <= 8105;
@@ -10835,7 +10835,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111001:begin
+			10'b0000111001:begin
 				I0x <= 7978;
 				I1x <= 5437;
 				I2x <= 2804;
@@ -11025,7 +11025,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111010:begin
+			10'b0000111010:begin
 				I0x <= 7909;
 				I1x <= 3966;
 				I2x <= 778;
@@ -11215,7 +11215,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111011:begin
+			10'b0000111011:begin
 				I0x <= 7963;
 				I1x <= 7124;
 				I2x <= 5138;
@@ -11405,7 +11405,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111100:begin
+			10'b0000111100:begin
 				I0x <= 8192;
 				I1x <= 5333;
 				I2x <= 2038;
@@ -11595,7 +11595,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111101:begin
+			10'b0000111101:begin
 				I0x <= 7848;
 				I1x <= 5826;
 				I2x <= 581;
@@ -11785,7 +11785,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111110:begin
+			10'b0000111110:begin
 				I0x <= 7555;
 				I1x <= 5702;
 				I2x <= 5104;
@@ -11975,7 +11975,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b00111111:begin
+			10'b0000111111:begin
 				I0x <= 8192;
 				I1x <= 6032;
 				I2x <= 3767;
@@ -12165,7 +12165,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000000:begin
+			10'b0001000000:begin
 				I0x <= 8192;
 				I1x <= 6119;
 				I2x <= 3068;
@@ -12355,7 +12355,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000001:begin
+			10'b0001000001:begin
 				I0x <= 8164;
 				I1x <= 6251;
 				I2x <= 2041;
@@ -12545,7 +12545,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000010:begin
+			10'b0001000010:begin
 				I0x <= 7452;
 				I1x <= 3027;
 				I2x <= 0;
@@ -12735,7 +12735,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000011:begin
+			10'b0001000011:begin
 				I0x <= 7928;
 				I1x <= 5483;
 				I2x <= 2147;
@@ -12925,7 +12925,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000100:begin
+			10'b0001000100:begin
 				I0x <= 8192;
 				I1x <= 3607;
 				I2x <= 2546;
@@ -13115,7 +13115,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000101:begin
+			10'b0001000101:begin
 				I0x <= 7982;
 				I1x <= 4537;
 				I2x <= 16;
@@ -13305,7 +13305,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000110:begin
+			10'b0001000110:begin
 				I0x <= 8192;
 				I1x <= 2447;
 				I2x <= 725;
@@ -13495,7 +13495,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01000111:begin
+			10'b0001000111:begin
 				I0x <= 8192;
 				I1x <= 6837;
 				I2x <= 6284;
@@ -13685,7 +13685,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001000:begin
+			10'b0001001000:begin
 				I0x <= 7648;
 				I1x <= 6438;
 				I2x <= 5820;
@@ -13875,7 +13875,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001001:begin
+			10'b0001001001:begin
 				I0x <= 8192;
 				I1x <= 8034;
 				I2x <= 4899;
@@ -14065,7 +14065,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001010:begin
+			10'b0001001010:begin
 				I0x <= 7886;
 				I1x <= 2464;
 				I2x <= 686;
@@ -14255,7 +14255,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001011:begin
+			10'b0001001011:begin
 				I0x <= 8192;
 				I1x <= 8086;
 				I2x <= 1422;
@@ -14445,7 +14445,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001100:begin
+			10'b0001001100:begin
 				I0x <= 8192;
 				I1x <= 3512;
 				I2x <= 1172;
@@ -14635,7 +14635,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001101:begin
+			10'b0001001101:begin
 				I0x <= 8192;
 				I1x <= 4262;
 				I2x <= 1582;
@@ -14825,7 +14825,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001110:begin
+			10'b0001001110:begin
 				I0x <= 7389;
 				I1x <= 5229;
 				I2x <= 2555;
@@ -15015,7 +15015,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01001111:begin
+			10'b0001001111:begin
 				I0x <= 7598;
 				I1x <= 5174;
 				I2x <= 2658;
@@ -15205,7 +15205,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010000:begin
+			10'b0001010000:begin
 				I0x <= 8192;
 				I1x <= 4079;
 				I2x <= 1807;
@@ -15395,7 +15395,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010001:begin
+			10'b0001010001:begin
 				I0x <= 8192;
 				I1x <= 6153;
 				I2x <= 3917;
@@ -15585,7 +15585,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010010:begin
+			10'b0001010010:begin
 				I0x <= 8192;
 				I1x <= 6042;
 				I2x <= 1926;
@@ -15775,7 +15775,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010011:begin
+			10'b0001010011:begin
 				I0x <= 8192;
 				I1x <= 6978;
 				I2x <= 3800;
@@ -15965,7 +15965,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010100:begin
+			10'b0001010100:begin
 				I0x <= 8192;
 				I1x <= 3642;
 				I2x <= 593;
@@ -16155,7 +16155,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010101:begin
+			10'b0001010101:begin
 				I0x <= 8192;
 				I1x <= 3448;
 				I2x <= 2989;
@@ -16345,7 +16345,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010110:begin
+			10'b0001010110:begin
 				I0x <= 8192;
 				I1x <= 5736;
 				I2x <= 1112;
@@ -16535,7 +16535,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01010111:begin
+			10'b0001010111:begin
 				I0x <= 8192;
 				I1x <= 6411;
 				I2x <= 4661;
@@ -16725,7 +16725,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011000:begin
+			10'b0001011000:begin
 				I0x <= 8192;
 				I1x <= 2922;
 				I2x <= 1968;
@@ -16915,7 +16915,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011001:begin
+			10'b0001011001:begin
 				I0x <= 7672;
 				I1x <= 7623;
 				I2x <= 4370;
@@ -17105,7 +17105,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011010:begin
+			10'b0001011010:begin
 				I0x <= 7955;
 				I1x <= 4858;
 				I2x <= 1278;
@@ -17295,7 +17295,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011011:begin
+			10'b0001011011:begin
 				I0x <= 8192;
 				I1x <= 5302;
 				I2x <= 470;
@@ -17485,7 +17485,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011100:begin
+			10'b0001011100:begin
 				I0x <= 8192;
 				I1x <= 6107;
 				I2x <= 2368;
@@ -17675,7 +17675,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011101:begin
+			10'b0001011101:begin
 				I0x <= 8192;
 				I1x <= 5196;
 				I2x <= 1563;
@@ -17865,7 +17865,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011110:begin
+			10'b0001011110:begin
 				I0x <= 7568;
 				I1x <= 7310;
 				I2x <= 6369;
@@ -18055,7 +18055,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01011111:begin
+			10'b0001011111:begin
 				I0x <= 8192;
 				I1x <= 6685;
 				I2x <= 4599;
@@ -18245,7 +18245,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01100000:begin
+			10'b0001100000:begin
 				I0x <= 8192;
 				I1x <= 5427;
 				I2x <= 4265;
@@ -18435,7 +18435,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01100001:begin
+			10'b0001100001:begin
 				I0x <= 8128;
 				I1x <= 6098;
 				I2x <= 3079;
@@ -18625,7 +18625,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01100010:begin
+			10'b0001100010:begin
 				I0x <= 8192;
 				I1x <= 4973;
 				I2x <= 3703;
@@ -18815,7 +18815,7 @@ module rom_input(EN,data_add,I0x,I1x,I2x,I3x,I4x,I5x,I6x,I7x,I8x,I9x,I10x,I11x,I
 				I186x <= 0;
 			end
 
-			9b'0b01100011:begin
+			10'b0001100011:begin
 				I0x <= 8192;
 				I1x <= 7478;
 				I2x <= 7260;
