@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon Jun 01 21:21:58 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : Layer_1_test
+Top-level Entity Name : layertest
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 3953
+Total pins : 34
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 156
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0
