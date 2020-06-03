@@ -1,0 +1,22 @@
+Start Code gen ...
+Directory ./out exists.
+./out/layer1
+Layer 1 finished generate
+./out/layer2
+Layer 2 finished generate
+./out/layer3
+Layer 3 finished generate
+./out/layer4
+Layer 4 finished generate
+./out/layer5
+Layer 5 finished generate
+./out/layer6
+Layer 6 finished generate
+./out/layer7
+Layer 7 finished generate
+Paths made for ROM and SIM
+Generating Positive and Negative test case ROM verilog ... 
+Generating Random ROM for test purpose ... 
+Generating all layer test case simulation ... 
+ROM finished generate
+Exit bash without errors...

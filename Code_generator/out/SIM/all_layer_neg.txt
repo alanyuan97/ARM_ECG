@@ -1,0 +1,219 @@
+
+
+Test case path: /home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy 
+
+
+Result Simulation on layer-1 == >
+
+
+Node_1:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_2:0.1691306406;		Q3.13 format binary:0000010101101001
+
+Node_3:0.7398626498;		Q3.13 format binary:0001011110101100
+
+Node_4:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_5:0.0506941965;		Q3.13 format binary:0000000110011111
+
+****************End of layer-1********************* 
+
+
+Result Simulation on layer-2 == >
+
+
+Node_1:0.6181573670;		Q3.13 format binary:0001001111000111
+
+Node_2:0.6051208924;		Q3.13 format binary:0001001101011101
+
+Node_3:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_4:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_5:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_6:0.4855168283;		Q3.13 format binary:0000111110001001
+
+Node_7:0.4722739135;		Q3.13 format binary:0000111100011100
+
+Node_8:0.1755495747;		Q3.13 format binary:0000010110011110
+
+Node_9:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_10:0.7082911282;		Q3.13 format binary:0001011010101010
+
+****************End of layer-2********************* 
+
+
+Result Simulation on layer-3 == >
+
+
+Node_1:0.5880911779;		Q3.13 format binary:0001001011010001
+
+Node_2:1.0396538486;		Q3.13 format binary:0010000101000100
+
+Node_3:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_4:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_5:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_6:0.2966764083;		Q3.13 format binary:0000100101111110
+
+Node_7:0.8885714788;		Q3.13 format binary:0001110001101111
+
+Node_8:0.3900110889;		Q3.13 format binary:0000110001111010
+
+Node_9:0.3982498283;		Q3.13 format binary:0000110010111110
+
+Node_10:0.0720395344;		Q3.13 format binary:0000001001001110
+
+Node_11:0.8335012227;		Q3.13 format binary:0001101010101100
+
+Node_12:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_13:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_14:0.1269165303;		Q3.13 format binary:0000010000001111
+
+Node_15:0.0000000000;		Q3.13 format binary:0000000000000000
+
+****************End of layer-3********************* 
+
+
+Result Simulation on layer-4 == >
+
+
+Node_1:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_2:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_3:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_4:0.5952490793;		Q3.13 format binary:0001001100001100
+
+Node_5:1.9540959085;		Q3.13 format binary:0011111010000111
+
+Node_6:0.6816972985;		Q3.13 format binary:0001010111010000
+
+Node_7:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_8:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_9:0.2541266003;		Q3.13 format binary:0000100000100001
+
+Node_10:1.4817374495;		Q3.13 format binary:0010111101101010
+
+Node_11:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_12:0.4448580839;		Q3.13 format binary:0000111000111100
+
+Node_13:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_14:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_15:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_16:0.4556661552;		Q3.13 format binary:0000111010010100
+
+Node_17:0.0427138443;		Q3.13 format binary:0000000101011101
+
+Node_18:0.4168961688;		Q3.13 format binary:0000110101010111
+
+Node_19:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_20:0.6423567272;		Q3.13 format binary:0001010010001110
+
+Node_21:1.3036626901;		Q3.13 format binary:0010100110110111
+
+Node_22:0.2907213928;		Q3.13 format binary:0000100101001101
+
+Node_23:0.5013557536;		Q3.13 format binary:0001000000001011
+
+Node_24:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_25:0.2488189595;		Q3.13 format binary:0000011111110110
+
+Node_26:0.7634715044;		Q3.13 format binary:0001100001101110
+
+Node_27:1.4966053831;		Q3.13 format binary:0010111111100100
+
+Node_28:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_29:0.7409587223;		Q3.13 format binary:0001011110110101
+
+Node_30:0.0000000000;		Q3.13 format binary:0000000000000000
+
+****************End of layer-4********************* 
+
+
+Result Simulation on layer-5 == >
+
+
+Node_1:0.7628514371;		Q3.13 format binary:0001100001101001
+
+Node_2:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_3:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_4:0.2544333114;		Q3.13 format binary:0000100000100100
+
+Node_5:1.5764293734;		Q3.13 format binary:0011001001110010
+
+Node_6:3.0837685659;		Q3.13 format binary:0110001010101110
+
+Node_7:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_8:4.3295042313;		Q3.13 format binary:1000101010001011
+
+Node_9:2.0189407322;		Q3.13 format binary:0100000010011011
+
+Node_10:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_11:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_12:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_13:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_14:1.8657971615;		Q3.13 format binary:0011101110110100
+
+Node_15:1.2829281686;		Q3.13 format binary:0010100100001101
+
+****************End of layer-5********************* 
+
+
+Result Simulation on layer-6 == >
+
+
+Node_1:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_2:2.6857520059;		Q3.13 format binary:0101010111110001
+
+Node_3:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_4:0.4300702246;		Q3.13 format binary:0000110111000011
+
+Node_5:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_6:0.0245935685;		Q3.13 format binary:0000000011001001
+
+Node_7:0.0000000000;		Q3.13 format binary:0000000000000000
+
+Node_8:1.0854133356;		Q3.13 format binary:0010001010111011
+
+Node_9:3.1236636853;		Q3.13 format binary:0110001111110101
+
+Node_10:2.3687409441;		Q3.13 format binary:0100101111001100
+
+****************End of layer-6********************* 
+
+
+Result Simulation on layer-7 == >
+
+
+Node_1:0.0000000000;		Q3.13 format binary:0000000000000000
+
+****************End of layer-7********************* 
+
+
