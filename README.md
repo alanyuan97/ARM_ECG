@@ -1,13 +1,13 @@
 # ARM_ECG
-TODO
-## Keras simulation
-Performed Python simulation on a fully connected Neural Network (FCNN) using Keras. Detailed info can be found in the linked file below. 
-The overall training accuracy converges to 95%+ with a test accuracy of 90%+. The Total number of parameters used are approx. 2.2K. 
-Weights and Bias are extracted and imported to a Python script to automaticly generate Verilog code. 
 
-## Automated Verilog Code Generator + bash scipt command 
-A highly automated generator is desigend to reduce the coding time in QUARTUS. A bash script is provided to automate the process of generating mutiple layer-code. To further optimize the time performance on verilog, we introduced and designed a "binary tree" addition structure as the critical path for data propogation is minimized.
+## How to use
+Steps 1 to 3 were already done.
 
-## Description on Verilog code
-The file node1_1 is the neuron template which will be run in a python script to generate layers of neurons. It uses float_mult and float_adder to do floating point multiplication and addition. node1_1 is a Relu neuron. The sigmoid will be added soon. All the files like exp and float_add are used inside the float_adder so they are needed for instatiation.
+1 - open the link in simulation/Colab notebook and run the Colab notebook (change the saving directory to your google drive)
 
+2 - download biases_dictionary.npy, weights_dictionary.npy and outputs_dictionary.npy and extract in the Code_generator/simulation folder
+
+3 - cd to Code_generator/src and type in terminal "bash genall.sh". You are going to have to change the paths in the various files so that they match the paths in your machine. This step generates the Verilog files in the out folder.
+
+4 - add the folders in Code_generator/out as libraries to your Quartus project and set top.v as the top-level entity
+    
