@@ -2,6 +2,7 @@
 import numpy as np
 import sys
 from bitstring import Bits
+
 def main(argv):
     weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
     # bias = np.load("/home/alan/winDesktop/ARM_ECG/simulation/abias.npy",allow_pickle=True)
