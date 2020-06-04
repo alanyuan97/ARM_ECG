@@ -5,8 +5,8 @@ import struct
 import adjust_weights
 
 def main(argv):
-    w_d = np.load("/home/edoardo/Desktop/ARM_ECG/simulation/weight_dictionary.npy", allow_pickle=True).item()
-    b_d = np.load("/home/edoardo/Desktop/ARM_ECG/simulation/biases_dictionary.npy", allow_pickle=True).item()
+    w_d = np.load("./../simulation/weight_dictionary.npy", allow_pickle=True).item()
+    b_d = np.load("./../simulation/biases_dictionary.npy", allow_pickle=True).item()
 
     weights_dict = adjust_weights.adjust_w(w_d)
     biases_dict = adjust_weights.adjust_b(b_d)

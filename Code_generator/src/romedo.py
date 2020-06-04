@@ -4,7 +4,7 @@ import sys
 import adjust_weights
 
 def main(argv):
-    outs = np.load('/home/edoardo/Desktop/ARM_ECG/simulation/outputs_dictionary.npy',allow_pickle=True).item()
+    outs = np.load('./../simulation/outputs_dictionary.npy',allow_pickle=True).item()
     outs_adjusted = adjust_weights.adjust_o(outs)
     data = outs[list(outs_adjusted)[1]][18]
 

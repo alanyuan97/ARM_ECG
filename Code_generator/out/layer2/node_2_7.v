@@ -20,11 +20,11 @@ module node_2_7(clk,reset,N7x,A0x,A1x,A2x,A3x,A4x);
 	reg signed [22:0] sumout;
 
 	parameter signed [7:0] W0x=8'd62;
-	parameter signed [7:0] W1x=8'd12;
-	parameter signed [7:0] W2x=-8'd20;
-	parameter signed [7:0] W3x=8'd62;
-	parameter signed [7:0] W4x=-8'd62;
-	parameter [15:0] B0x=16'd512;
+	parameter signed [7:0] W1x=-8'd46;
+	parameter signed [7:0] W2x=-8'd50;
+	parameter signed [7:0] W3x=-8'd58;
+	parameter signed [7:0] W4x=8'd18;
+	parameter [15:0] B0x=-16'd512;
 
 
 	assign sum0x = A0x_c*W0x;

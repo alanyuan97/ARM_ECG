@@ -19,11 +19,11 @@ module node_2_3(clk,reset,N3x,A0x,A1x,A2x,A3x,A4x);
 	output reg [7:0] N3x;
 	reg signed [22:0] sumout;
 
-	parameter signed [7:0] W0x=8'd62;
-	parameter signed [7:0] W1x=8'd12;
-	parameter signed [7:0] W2x=8'd42;
-	parameter signed [7:0] W3x=8'd62;
-	parameter signed [7:0] W4x=8'd46;
+	parameter signed [7:0] W0x=8'd32;
+	parameter signed [7:0] W1x=8'd22;
+	parameter signed [7:0] W2x=8'd56;
+	parameter signed [7:0] W3x=-8'd36;
+	parameter signed [7:0] W4x=8'd58;
 	parameter [15:0] B0x=-16'd512;
 
 

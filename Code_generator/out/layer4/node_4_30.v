@@ -49,21 +49,21 @@ module node_4_30(clk,reset,N30x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11
 	output reg [7:0] N30x;
 	reg signed [22:0] sumout;
 
-	parameter signed [7:0] W0x=-8'd4;
-	parameter signed [7:0] W1x=-8'd18;
-	parameter signed [7:0] W2x=-8'd4;
-	parameter signed [7:0] W3x=8'd0;
-	parameter signed [7:0] W4x=8'd32;
-	parameter signed [7:0] W5x=8'd10;
-	parameter signed [7:0] W6x=8'd24;
-	parameter signed [7:0] W7x=-8'd18;
-	parameter signed [7:0] W8x=8'd54;
-	parameter signed [7:0] W9x=-8'd36;
-	parameter signed [7:0] W10x=-8'd10;
-	parameter signed [7:0] W11x=-8'd2;
-	parameter signed [7:0] W12x=-8'd12;
-	parameter signed [7:0] W13x=-8'd26;
-	parameter signed [7:0] W14x=-8'd30;
+	parameter signed [7:0] W0x=8'd17;
+	parameter signed [7:0] W1x=8'd31;
+	parameter signed [7:0] W2x=-8'd25;
+	parameter signed [7:0] W3x=-8'd7;
+	parameter signed [7:0] W4x=8'd12;
+	parameter signed [7:0] W5x=8'd5;
+	parameter signed [7:0] W6x=-8'd25;
+	parameter signed [7:0] W7x=8'd31;
+	parameter signed [7:0] W8x=8'd31;
+	parameter signed [7:0] W9x=-8'd15;
+	parameter signed [7:0] W10x=-8'd31;
+	parameter signed [7:0] W11x=8'd31;
+	parameter signed [7:0] W12x=-8'd31;
+	parameter signed [7:0] W13x=8'd31;
+	parameter signed [7:0] W14x=8'd31;
 	parameter [15:0] B0x=16'd0;
 
 
