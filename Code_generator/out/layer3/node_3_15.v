@@ -34,17 +34,17 @@ module node_3_15(clk,reset,N15x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 	output reg [7:0] N15x;
 	reg signed [22:0] sumout;
 
-	parameter signed [7:0] W0x=-8'd28;
-	parameter signed [7:0] W1x=-8'd14;
-	parameter signed [7:0] W2x=-8'd48;
-	parameter signed [7:0] W3x=8'd8;
-	parameter signed [7:0] W4x=8'd4;
-	parameter signed [7:0] W5x=-8'd12;
-	parameter signed [7:0] W6x=-8'd38;
-	parameter signed [7:0] W7x=8'd36;
-	parameter signed [7:0] W8x=-8'd4;
-	parameter signed [7:0] W9x=8'd58;
-	parameter [15:0] B0x=-16'd512;
+	parameter signed [7:0] W0x=8'd34;
+	parameter signed [7:0] W1x=8'd56;
+	parameter signed [7:0] W2x=-8'd22;
+	parameter signed [7:0] W3x=8'd54;
+	parameter signed [7:0] W4x=8'd44;
+	parameter signed [7:0] W5x=8'd60;
+	parameter signed [7:0] W6x=8'd14;
+	parameter signed [7:0] W7x=-8'd12;
+	parameter signed [7:0] W8x=-8'd30;
+	parameter signed [7:0] W9x=8'd16;
+	parameter [15:0] B0x=16'd0;
 
 
 	assign sum0x = A0x_c*W0x;
@@ -93,7 +93,7 @@ module node_3_15(clk,reset,N15x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 				if(sumout[21:13]!=9'b0)
 					N15x<=8'd127;
 				else
-					if(sumout[5]==1 && sumout[4:0]!=5'd0)
+					if(sumout[5]==1)
 						N15x<=sumout[13:6]+8'd1;
 					else
 						N15x<=sumout[13:6];

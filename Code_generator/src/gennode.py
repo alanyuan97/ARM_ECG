@@ -71,7 +71,7 @@ def main(argv):
         else:
             STRBUF += f"{{sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x}}+"
 
-    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tN{}x<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tif(sumout[5]==1 && sumout[4:0]!=5'd0)\n\t\t\t\t\t\tN{}x<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tN{}x<=sumout[13:6];\n\t\t\telse\n\t\t\t\tN{}x<=8'd0;\n\t\t\tend\n\t\tend\nendmodule".format(idx2,idx2,idx2,idx2)
+    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tN{}x<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tN{}x<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tN{}x<=sumout[13:6];\n\t\t\telse\n\t\t\t\tN{}x<=8'd0;\n\t\t\tend\n\t\tend\nendmodule".format(idx2,idx2,idx2,idx2)
     print(STRBUF)
 
 

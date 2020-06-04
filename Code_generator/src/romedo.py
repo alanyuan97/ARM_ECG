@@ -6,7 +6,7 @@ import adjust_weights
 def main(argv):
     outs = np.load('/home/edoardo/Desktop/ARM_ECG/simulation/outputs_dictionary.npy',allow_pickle=True).item()
     outs_adjusted = adjust_weights.adjust_o(outs)
-    data = outs[list(outs_adjusted)[1]][2]
+    data = outs[list(outs_adjusted)[1]][18]
 
     n_in = int(argv[0])
 

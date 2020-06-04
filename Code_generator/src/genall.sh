@@ -46,6 +46,7 @@ done
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
 python3 src/romedo.py $n_in > $MYPATH/ROM/rom_input.v
+python3 src/rom_init.py $n_in ? $MYPATH?ROM/rom_initialisation.mif
 echo "ROM finished generate"
 
 # generate top-level entity
