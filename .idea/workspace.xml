@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="deleted c++ layer generator file">
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/genall75.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/genall_win.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gentop2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/rom_init.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/out/ROM/rom_input.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/ROM/rom_input.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/layer_1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer1/layer_1.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_1.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_2.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_2.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_3.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_3.v" afterDir="false" />
@@ -113,13 +107,13 @@
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_8.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_8.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_9.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_9.v" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/layer7/node_7_1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer7/node_7_1.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/out/top.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/top.v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/src/genall.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/src/genall.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/src/genall75.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/src/genall75.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/src/gennode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/src/gennode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/src/romedo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/src/romedo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation/biases_dictionary.npy" beforeDir="false" afterPath="$PROJECT_DIR$/simulation/biases_dictionary.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation/outputs_dictionary.npy" beforeDir="false" afterPath="$PROJECT_DIR$/simulation/outputs_dictionary.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation/weight_dictionary.npy" beforeDir="false" afterPath="$PROJECT_DIR$/simulation/weight_dictionary.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/src/gentop2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/src/gentop2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/Colab notebook" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/biases_dictionary_187.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/outputs_dictionary_187.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/weight_dictionary_187.npy" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,6 +307,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886557" />
+    <state x="55" y="23" key="SettingsEditor" timestamp="1591276533357">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="55" y="23" key="SettingsEditor/0.0.1280.760/445.-1050.1680.1010@0.0.1280.760" timestamp="1591276533357" />
     <state x="466" y="274" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1591196695936">
       <screen x="62" y="27" width="1618" height="1023" />
     </state>

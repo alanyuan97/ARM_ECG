@@ -1,37 +1,25 @@
 module node_2_7(clk,reset,N7x,A0x,A1x,A2x,A3x,A4x);
 	input clk;
 	input reset;
-	input [7:0] A0x;
-	input [7:0] A1x;
-	input [7:0] A2x;
-	input [7:0] A3x;
-	input [7:0] A4x;
-	reg signed [7:0] A0x_c;
-	reg signed [7:0] A1x_c;
-	reg signed [7:0] A2x_c;
-	reg signed [7:0] A3x_c;
-	reg signed [7:0] A4x_c;
-	wire [15:0] sum0x;
-	wire [15:0] sum1x;
-	wire [15:0] sum2x;
-	wire [15:0] sum3x;
-	wire [15:0] sum4x;
+	input [7:0] A0x, A1x, A2x, A3x, A4x;
+	reg [7:0] A0x_c, A1x_c, A2x_c, A3x_c, A4x_c;
+	wire signed [15:0] sum0x, sum1x, sum2x, sum3x, sum4x;
 	output reg [7:0] N7x;
-	reg signed [22:0] sumout;
+	reg [22:0] sumout;
 
-	parameter signed [7:0] W0x=8'd62;
-	parameter signed [7:0] W1x=-8'd46;
-	parameter signed [7:0] W2x=-8'd50;
-	parameter signed [7:0] W3x=-8'd58;
-	parameter signed [7:0] W4x=8'd18;
-	parameter [15:0] B0x=-16'd512;
+	parameter [7:0] W0x=8'd62;
+	parameter [7:0] W1x=-8'd46;
+	parameter [7:0] W2x=-8'd50;
+	parameter [7:0] W3x=-8'd58;
+	parameter [7:0] W4x=8'd18;
+	parameter signed [15:0] B0x=-16'd512;
 
 
-	assign sum0x = A0x_c*W0x;
-	assign sum1x = A1x_c*W1x;
-	assign sum2x = A2x_c*W2x;
-	assign sum3x = A3x_c*W3x;
-	assign sum4x = A4x_c*W4x;
+	assign sum0x = {A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c}*{W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x};
+	assign sum1x = {A1x_c[7],A1x_c[7],A1x_c[7],A1x_c[7],A1x_c[7],A1x_c[7],A1x_c[7],A1x_c[7],A1x_c}*{W1x[7],W1x[7],W1x[7],W1x[7],W1x[7],W1x[7],W1x[7],W1x[7],W1x};
+	assign sum2x = {A2x_c[7],A2x_c[7],A2x_c[7],A2x_c[7],A2x_c[7],A2x_c[7],A2x_c[7],A2x_c[7],A2x_c}*{W2x[7],W2x[7],W2x[7],W2x[7],W2x[7],W2x[7],W2x[7],W2x[7],W2x};
+	assign sum3x = {A3x_c[7],A3x_c[7],A3x_c[7],A3x_c[7],A3x_c[7],A3x_c[7],A3x_c[7],A3x_c[7],A3x_c}*{W3x[7],W3x[7],W3x[7],W3x[7],W3x[7],W3x[7],W3x[7],W3x[7],W3x};
+	assign sum4x = {A4x_c[7],A4x_c[7],A4x_c[7],A4x_c[7],A4x_c[7],A4x_c[7],A4x_c[7],A4x_c[7],A4x_c}*{W4x[7],W4x[7],W4x[7],W4x[7],W4x[7],W4x[7],W4x[7],W4x[7],W4x};
 
 	always@(posedge clk) begin
 

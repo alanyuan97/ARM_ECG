@@ -4,7 +4,6 @@ NNnum="75 5 10 15 30 15 10 1"
 LAYER="5 10 15 30 15 10 1"
 n_in=75
 
-
 i=1
 MYPATH="out/"
 echo "Start Code gen ..."
@@ -42,7 +41,6 @@ for a in $LAYER;do
 done
 
 # generate rom
-
 mkdir $MYPATH/ROM
 mkdir $MYPATH/SIM
 python src/romedo.py $n_in > $MYPATH/ROM/rom_input.v

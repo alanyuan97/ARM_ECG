@@ -29,30 +29,34 @@ def main(argv):
     STRBUF += ");\n\tinput clk;\n\tinput reset;\n"
 
     # Start of input declare
-    for i in range(LISTSIZE):
-        STRBUF += "\tinput [7:0] A" + str(i) + "x;\n"
-    for i in range(LISTSIZE):
-        STRBUF += "\treg signed [7:0] A" + str(i) + "x_c;\n"
-    for i in range(LISTSIZE):
-        STRBUF += "\twire [15:0] sum" + str(i) + "x;\n"
+    STRBUF += "\tinput [7:0] A0x"
+    for i in range(1,LISTSIZE):
+        STRBUF += ", A" + str(i) + "x"
+    STRBUF += ";\n\treg [7:0] A0x_c"
+    for i in range(1,LISTSIZE):
+        STRBUF += ", A" + str(i) + "x_c"
+    STRBUF += ";\n\twire signed [15:0] sum0x"
+    for i in range(1,LISTSIZE):
+        STRBUF += ", sum" + str(i) + "x"
+    STRBUF += ";\n"
     STRBUF += f"\toutput reg [7:0] N{idx2}x;\n"
-    STRBUF += "\treg signed [22:0] sumout;\n\n"
+    STRBUF += "\treg [22:0] sumout;\n\n"
 
     # Weights and biases
     for i in range(LISTSIZE):
         if layerW[i, idx2 - 1] >= 0:
-            STRBUF += "\tparameter signed [7:0] W{0}x=8'd{1};\n".format(i, int(layerW[i, idx2 - 1]))
+            STRBUF += "\tparameter [7:0] W{0}x=8'd{1};\n".format(i, int(layerW[i, idx2 - 1]))
         else:
             tmp = -layerW[i, idx2 - 1]
-            STRBUF += "\tparameter signed [7:0] W{0}x=-8'd{1};\n".format(i, int(tmp))
+            STRBUF += "\tparameter [7:0] W{0}x=-8'd{1};\n".format(i, int(tmp))
     if layerB[idx2 - 1] >= 0:
-        STRBUF += "\tparameter [15:0] B{0}x=16'd{1};\n".format(0, int(layerB[idx2 - 1])) + "\n\n"
+        STRBUF += "\tparameter signed [15:0] B{0}x=16'd{1};\n".format(0, int(layerB[idx2 - 1])) + "\n\n"
     else:
         tmp = -layerB[idx2 - 1]
-        STRBUF += "\tparameter [15:0] B{0}x=-16'd{1};\n".format(0, int(tmp)) + "\n\n"
+        STRBUF += "\tparameter signed [15:0] B{0}x=-16'd{1};\n".format(0, int(tmp)) + "\n\n"
 
     for i in range(LISTSIZE):
-        STRBUF += "\tassign sum" + str(i) + "x = A" + str(i) + "x_c*W" + str(i) + "x;\n"
+        STRBUF += "\tassign sum" + str(i) + "x = {A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c}*{W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x};\n"
 
 
     STRBUF += f"\n\talways@(posedge clk) begin\n\n\t\tif(reset)\n\t\t\tbegin\n\t\t\tN{idx2}x<=8'd0;\n\t\t\tsumout<=16'd0;\n"

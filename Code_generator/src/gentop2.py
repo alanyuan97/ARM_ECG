@@ -24,7 +24,7 @@ def main(argv):
     STRINGBUF += "\n\n"
 
     #layers
-    STRINGBUF += "\tROM rom_in(.address(13'd0),.clock(clk),.q(l1));\n"
+    STRINGBUF += "\tROM rom_in(.address(1'd0),.clock(clk),.q(l1));\n"
     STRINGBUF += "\tlayer_1 layer1(reset, clk"
     for x in range(int(argv[1])):
         STRINGBUF += ", l{}_{}".format(2, x)
