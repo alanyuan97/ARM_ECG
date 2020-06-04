@@ -1,8 +1,9 @@
 #! /usr/bin/python3
 import numpy as np
-import struct
 import sys
 from bitstring import Bits
+from scipy.signal import resample
+
 def num2fixedbin(num,precision,BITS = 16 ):
     """
         INPUT: 
@@ -57,13 +58,18 @@ def num2fixedbin(num,precision,BITS = 16 ):
 # /home/alan/winDesktop/ARM_ECG/simulation/romtestcase.npy
 data = np.load(sys.argv[1],allow_pickle=True)
 ITERATIONS = int(data.shape[0]) # Read the number of iteration 
-if ITERATIONS >10:
-    ITERATIONS = 10
+# (100,187) -> resample to 75
+resample_data = np.zeros((100,75))
+for i in range(ITERATIONS):
+    resample_data[i,:] = resample(data[i,:],75)
+
+if ITERATIONS >8:
+    ITERATIONS = 8
 
 STRBUFF = "module rom_input(EN,data_add,"
 for i in range(75):
     STRBUFF+=f"I{i}x,"
-STRBUFF += "I74x);\n\tinput EN;\n\tinput [9:0]data_add;\n"
+STRBUFF += "I74x);\n\tinput EN;\n\tinput [2:0]data_add;\n"
 STRBUFF += "\toutput reg [31:0]"
 for i in range(75):
     STRBUFF += f"I{i}x,"
@@ -73,10 +79,10 @@ for i in range(75):
 STRBUFF += "I74x;\n\talways@(EN)\n\t\tbegin\n\t\tcase(data_add)\n"
 
 for ii in range(ITERATIONS):
-    with_scope_data = np.squeeze(data[ii,:])
-    STRBUFF += f"\t\t\t10'b{ii:010b}:begin\n"
+    with_scope_data = np.squeeze(resample_data[ii,:])
+    STRBUFF += f"\t\t\t3'b{ii:03b}:begin\n"
     for i in range(75):
-        STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],13,BITS=16)).int};\n"
+        STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],6,BITS=8)).int};\n"
     STRBUFF+="\t\t\tend\n\n"
 STRBUFF +="\t\tendcase\n\tend\nendmodule"
 print(STRBUFF)
