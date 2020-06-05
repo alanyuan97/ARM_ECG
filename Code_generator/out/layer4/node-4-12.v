@@ -1,71 +1,71 @@
 module node4_12(clk,reset,N12x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11x,A12x,A13x,A14x);
 	input clk;
 	input reset;
-	input [31:0] A0x;
-	input [31:0] A1x;
-	input [31:0] A2x;
-	input [31:0] A3x;
-	input [31:0] A4x;
-	input [31:0] A5x;
-	input [31:0] A6x;
-	input [31:0] A7x;
-	input [31:0] A8x;
-	input [31:0] A9x;
-	input [31:0] A10x;
-	input [31:0] A11x;
-	input [31:0] A12x;
-	input [31:0] A13x;
-	input [31:0] A14x;
-	output reg [31:0] N12x;
+	input [23:0] A0x;
+	input [23:0] A1x;
+	input [23:0] A2x;
+	input [23:0] A3x;
+	input [23:0] A4x;
+	input [23:0] A5x;
+	input [23:0] A6x;
+	input [23:0] A7x;
+	input [23:0] A8x;
+	input [23:0] A9x;
+	input [23:0] A10x;
+	input [23:0] A11x;
+	input [23:0] A12x;
+	input [23:0] A13x;
+	input [23:0] A14x;
+	output reg [23:0] N12x;
 
-	parameter [31:0] W0x=-1096;
-	parameter [31:0] W1x=1842;
-	parameter [31:0] W2x=3555;
-	parameter [31:0] W3x=1623;
-	parameter [31:0] W4x=746;
-	parameter [31:0] W5x=6618;
-	parameter [31:0] W6x=2853;
-	parameter [31:0] W7x=-3128;
-	parameter [31:0] W8x=-6094;
-	parameter [31:0] W9x=-5814;
-	parameter [31:0] W10x=1609;
-	parameter [31:0] W11x=-4356;
-	parameter [31:0] W12x=4568;
-	parameter [31:0] W13x=-3322;
-	parameter [31:0] W14x=-2157;
-	parameter [31:0] B0x=1020;
-	wire [31:0] in0x;
-	wire [31:0] in1x;
-	wire [31:0] in2x;
-	wire [31:0] in3x;
-	wire [31:0] in4x;
-	wire [31:0] in5x;
-	wire [31:0] in6x;
-	wire [31:0] in7x;
-	wire [31:0] in8x;
-	wire [31:0] in9x;
-	wire [31:0] in10x;
-	wire [31:0] in11x;
-	wire [31:0] in12x;
-	wire [31:0] in13x;
-	wire [31:0] in14x;
+	parameter [23:0] W0x=-4;
+	parameter [23:0] W1x=7;
+	parameter [23:0] W2x=13;
+	parameter [23:0] W3x=6;
+	parameter [23:0] W4x=2;
+	parameter [23:0] W5x=25;
+	parameter [23:0] W6x=11;
+	parameter [23:0] W7x=-12;
+	parameter [23:0] W8x=-23;
+	parameter [23:0] W9x=-22;
+	parameter [23:0] W10x=6;
+	parameter [23:0] W11x=-17;
+	parameter [23:0] W12x=17;
+	parameter [23:0] W13x=-12;
+	parameter [23:0] W14x=-8;
+	parameter [23:0] B0x=3;
+	wire [23:0] in0x;
+	wire [23:0] in1x;
+	wire [23:0] in2x;
+	wire [23:0] in3x;
+	wire [23:0] in4x;
+	wire [23:0] in5x;
+	wire [23:0] in6x;
+	wire [23:0] in7x;
+	wire [23:0] in8x;
+	wire [23:0] in9x;
+	wire [23:0] in10x;
+	wire [23:0] in11x;
+	wire [23:0] in12x;
+	wire [23:0] in13x;
+	wire [23:0] in14x;
 
-	reg [31:0] sumout;
-	reg [31:0] A0x_c;
-	reg [31:0] A1x_c;
-	reg [31:0] A2x_c;
-	reg [31:0] A3x_c;
-	reg [31:0] A4x_c;
-	reg [31:0] A5x_c;
-	reg [31:0] A6x_c;
-	reg [31:0] A7x_c;
-	reg [31:0] A8x_c;
-	reg [31:0] A9x_c;
-	reg [31:0] A10x_c;
-	reg [31:0] A11x_c;
-	reg [31:0] A12x_c;
-	reg [31:0] A13x_c;
-	reg [31:0] A14x_c;
+	reg [23:0] sumout;
+	reg [23:0] A0x_c;
+	reg [23:0] A1x_c;
+	reg [23:0] A2x_c;
+	reg [23:0] A3x_c;
+	reg [23:0] A4x_c;
+	reg [23:0] A5x_c;
+	reg [23:0] A6x_c;
+	reg [23:0] A7x_c;
+	reg [23:0] A8x_c;
+	reg [23:0] A9x_c;
+	reg [23:0] A10x_c;
+	reg [23:0] A11x_c;
+	reg [23:0] A12x_c;
+	reg [23:0] A13x_c;
+	reg [23:0] A14x_c;
 
 
 	assign in0x=A0x_c*W0x;
@@ -88,24 +88,24 @@ always@(posedge clk)
 	begin
 
 	if(reset) begin
-		N12x<=32'b0;
-		sumout<=32'b0;
-		A0x_c<=32'b0;
-		A1x_c<=32'b0;
-		A2x_c<=32'b0;
-		A3x_c<=32'b0;
-		A4x_c<=32'b0;
-		A5x_c<=32'b0;
-		A6x_c<=32'b0;
-		A7x_c<=32'b0;
-		A8x_c<=32'b0;
-		A9x_c<=32'b0;
-		A10x_c<=32'b0;
-		A11x_c<=32'b0;
-		A12x_c<=32'b0;
-		A13x_c<=32'b0;
-		A14x_c<=32'b0;
-		sumout<=32'b0;
+		N12x<=24'b0;
+		sumout<=24'b0;
+		A0x_c<=24'b0;
+		A1x_c<=24'b0;
+		A2x_c<=24'b0;
+		A3x_c<=24'b0;
+		A4x_c<=24'b0;
+		A5x_c<=24'b0;
+		A6x_c<=24'b0;
+		A7x_c<=24'b0;
+		A8x_c<=24'b0;
+		A9x_c<=24'b0;
+		A10x_c<=24'b0;
+		A11x_c<=24'b0;
+		A12x_c<=24'b0;
+		A13x_c<=24'b0;
+		A14x_c<=24'b0;
+		sumout<=24'b0;
 	end
 
 	A0x_c<=A0x;
@@ -125,13 +125,16 @@ always@(posedge clk)
 	A14x_c<=A14x;
 	sumout<=in0x+in1x+in2x+in3x+in4x+in5x+in6x+in7x+in8x+in9x+in10x+in11x+in12x+in13x+in14x+B0x;
 
-	if(sumout[31]==0)
+	if(sumout[23]==0)
 		begin
-		N12x<=sumout[28:13];
+		if(sumout>4096)
+			N12x<=8'b11111111;
+		else
+			N12x<=sumout[12:5];
 		end
 	else
 		begin
-		N12x<=32'd0;
+		N12x<=24'd0;
 		end
 	end
 endmodule

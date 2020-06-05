@@ -70,7 +70,7 @@ STRBUFF = "module rom_input(EN,data_add,"
 for i in range(75):
     STRBUFF+=f"I{i}x,"
 STRBUFF += "I74x);\n\tinput EN;\n\tinput [2:0]data_add;\n"
-STRBUFF += "\toutput reg [31:0]"
+STRBUFF += "\toutput reg [23:0]"
 for i in range(75):
     STRBUFF += f"I{i}x,"
 # STRBUFF += "I186x;\n\treg [31:0]"
@@ -82,7 +82,7 @@ for ii in range(ITERATIONS):
     with_scope_data = np.squeeze(resample_data[ii,:])
     STRBUFF += f"\t\t\t3'b{ii:03b}:begin\n"
     for i in range(75):
-        STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],6,BITS=8)).int};\n"
+        STRBUFF += f"\t\t\t\tI{i}x <= {Bits(bin=num2fixedbin(with_scope_data[i],5,BITS=8)).int};\n"
     STRBUFF+="\t\t\tend\n\n"
 STRBUFF +="\t\tendcase\n\tend\nendmodule"
 print(STRBUFF)
