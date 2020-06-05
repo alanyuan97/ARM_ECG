@@ -1,2 +1,4 @@
 # ARM_ECG
-Workspace for ECG group project
+## Leaflet 
+Neurocardiogram leaflet [here](./leaflet/draft.pdf) 
+
