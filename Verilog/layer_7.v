@@ -1,9 +1,9 @@
 module layer_7(reset,clk,N1x,R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x);
 	input reset, clk; 
-	output [7:0] N1x;
-	input [7:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x;
+	output [23:0] N1x;
+	input [23:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x;
 
-	node_7_1 node_7_1( 
+	node7_1 node7_1( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 

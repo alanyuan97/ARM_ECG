@@ -1,9 +1,9 @@
 module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x,R15x,R16x,R17x,R18x,R19x,R20x,R21x,R22x,R23x,R24x,R25x,R26x,R27x,R28x,R29x);
 	input reset, clk; 
-	output [7:0] N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x;
-	input [7:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x,R15x,R16x,R17x,R18x,R19x,R20x,R21x,R22x,R23x,R24x,R25x,R26x,R27x,R28x,R29x;
+	output [23:0] N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x;
+	input [23:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x,R15x,R16x,R17x,R18x,R19x,R20x,R21x,R22x,R23x,R24x,R25x,R26x,R27x,R28x,R29x;
 
-	node_5_1 node_5_1( 
+	node5_1 node5_1( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -38,7 +38,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N1x(N1x) 
 	); 
-	node_5_2 node_5_2( 
+	node5_2 node5_2( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -73,7 +73,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N2x(N2x) 
 	); 
-	node_5_3 node_5_3( 
+	node5_3 node5_3( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -108,7 +108,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N3x(N3x) 
 	); 
-	node_5_4 node_5_4( 
+	node5_4 node5_4( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -143,7 +143,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N4x(N4x) 
 	); 
-	node_5_5 node_5_5( 
+	node5_5 node5_5( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -178,7 +178,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N5x(N5x) 
 	); 
-	node_5_6 node_5_6( 
+	node5_6 node5_6( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -213,7 +213,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N6x(N6x) 
 	); 
-	node_5_7 node_5_7( 
+	node5_7 node5_7( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -248,7 +248,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N7x(N7x) 
 	); 
-	node_5_8 node_5_8( 
+	node5_8 node5_8( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -283,7 +283,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N8x(N8x) 
 	); 
-	node_5_9 node_5_9( 
+	node5_9 node5_9( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -318,7 +318,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N9x(N9x) 
 	); 
-	node_5_10 node_5_10( 
+	node5_10 node5_10( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -353,7 +353,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N10x(N10x) 
 	); 
-	node_5_11 node_5_11( 
+	node5_11 node5_11( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -388,7 +388,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N11x(N11x) 
 	); 
-	node_5_12 node_5_12( 
+	node5_12 node5_12( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -423,7 +423,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N12x(N12x) 
 	); 
-	node_5_13 node_5_13( 
+	node5_13 node5_13( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -458,7 +458,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N13x(N13x) 
 	); 
-	node_5_14 node_5_14( 
+	node5_14 node5_14( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -493,7 +493,7 @@ module layer_5(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N14x(N14x) 
 	); 
-	node_5_15 node_5_15( 
+	node5_15 node5_15( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 

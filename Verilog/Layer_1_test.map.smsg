@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at node-2-1.v(42): always construct contains both blocking and non-blocking assignments File: C:/quartus projects/testing layer_1/node-2-1.v Line: 42

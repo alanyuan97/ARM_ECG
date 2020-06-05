@@ -1,9 +1,9 @@
 module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,N16x,N17x,N18x,N19x,N20x,N21x,N22x,N23x,N24x,N25x,N26x,N27x,N28x,N29x,N30x,R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x);
 	input reset, clk; 
-	output [7:0] N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,N16x,N17x,N18x,N19x,N20x,N21x,N22x,N23x,N24x,N25x,N26x,N27x,N28x,N29x,N30x;
-	input [7:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x;
+	output [23:0] N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,N16x,N17x,N18x,N19x,N20x,N21x,N22x,N23x,N24x,N25x,N26x,N27x,N28x,N29x,N30x;
+	input [23:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x;
 
-	node_4_1 node_4_1( 
+	node4_1 node4_1( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -23,7 +23,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N1x(N1x) 
 	); 
-	node_4_2 node_4_2( 
+	node4_2 node4_2( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -43,7 +43,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N2x(N2x) 
 	); 
-	node_4_3 node_4_3( 
+	node4_3 node4_3( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -63,7 +63,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N3x(N3x) 
 	); 
-	node_4_4 node_4_4( 
+	node4_4 node4_4( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -83,7 +83,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N4x(N4x) 
 	); 
-	node_4_5 node_4_5( 
+	node4_5 node4_5( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -103,7 +103,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N5x(N5x) 
 	); 
-	node_4_6 node_4_6( 
+	node4_6 node4_6( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -123,7 +123,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N6x(N6x) 
 	); 
-	node_4_7 node_4_7( 
+	node4_7 node4_7( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -143,7 +143,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N7x(N7x) 
 	); 
-	node_4_8 node_4_8( 
+	node4_8 node4_8( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -163,7 +163,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N8x(N8x) 
 	); 
-	node_4_9 node_4_9( 
+	node4_9 node4_9( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -183,7 +183,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N9x(N9x) 
 	); 
-	node_4_10 node_4_10( 
+	node4_10 node4_10( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -203,7 +203,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N10x(N10x) 
 	); 
-	node_4_11 node_4_11( 
+	node4_11 node4_11( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -223,7 +223,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N11x(N11x) 
 	); 
-	node_4_12 node_4_12( 
+	node4_12 node4_12( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -243,7 +243,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N12x(N12x) 
 	); 
-	node_4_13 node_4_13( 
+	node4_13 node4_13( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -263,7 +263,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N13x(N13x) 
 	); 
-	node_4_14 node_4_14( 
+	node4_14 node4_14( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -283,7 +283,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N14x(N14x) 
 	); 
-	node_4_15 node_4_15( 
+	node4_15 node4_15( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -303,7 +303,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N15x(N15x) 
 	); 
-	node_4_16 node_4_16( 
+	node4_16 node4_16( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -323,7 +323,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N16x(N16x) 
 	); 
-	node_4_17 node_4_17( 
+	node4_17 node4_17( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -343,7 +343,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N17x(N17x) 
 	); 
-	node_4_18 node_4_18( 
+	node4_18 node4_18( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -363,7 +363,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N18x(N18x) 
 	); 
-	node_4_19 node_4_19( 
+	node4_19 node4_19( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -383,7 +383,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N19x(N19x) 
 	); 
-	node_4_20 node_4_20( 
+	node4_20 node4_20( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -403,7 +403,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N20x(N20x) 
 	); 
-	node_4_21 node_4_21( 
+	node4_21 node4_21( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -423,7 +423,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N21x(N21x) 
 	); 
-	node_4_22 node_4_22( 
+	node4_22 node4_22( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -443,7 +443,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N22x(N22x) 
 	); 
-	node_4_23 node_4_23( 
+	node4_23 node4_23( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -463,7 +463,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N23x(N23x) 
 	); 
-	node_4_24 node_4_24( 
+	node4_24 node4_24( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -483,7 +483,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N24x(N24x) 
 	); 
-	node_4_25 node_4_25( 
+	node4_25 node4_25( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -503,7 +503,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N25x(N25x) 
 	); 
-	node_4_26 node_4_26( 
+	node4_26 node4_26( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -523,7 +523,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N26x(N26x) 
 	); 
-	node_4_27 node_4_27( 
+	node4_27 node4_27( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -543,7 +543,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N27x(N27x) 
 	); 
-	node_4_28 node_4_28( 
+	node4_28 node4_28( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -563,7 +563,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N28x(N28x) 
 	); 
-	node_4_29 node_4_29( 
+	node4_29 node4_29( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
@@ -583,7 +583,7 @@ module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x
 		.reset(reset), 
 		.N29x(N29x) 
 	); 
-	node_4_30 node_4_30( 
+	node4_30 node4_30( 
 		.A0x(R0x), 
 		.A1x(R1x), 
 		.A2x(R2x), 
