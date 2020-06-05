@@ -127,7 +127,7 @@ always@(posedge clk)
 
 	if(sumout[23]==0)
 		begin
-		if(sumout>4096)
+		if(sumout>8192)
 			N23x<=8'b11111111;
 		else
 			N23x<=sumout[12:5];
