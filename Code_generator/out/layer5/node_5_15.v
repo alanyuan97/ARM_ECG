@@ -3,41 +3,41 @@ module node_5_15(clk,reset,N15x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11
 	input reset;
 	input [7:0] A0x, A1x, A2x, A3x, A4x, A5x, A6x, A7x, A8x, A9x, A10x, A11x, A12x, A13x, A14x, A15x, A16x, A17x, A18x, A19x, A20x, A21x, A22x, A23x, A24x, A25x, A26x, A27x, A28x, A29x;
 	reg [7:0] A0x_c, A1x_c, A2x_c, A3x_c, A4x_c, A5x_c, A6x_c, A7x_c, A8x_c, A9x_c, A10x_c, A11x_c, A12x_c, A13x_c, A14x_c, A15x_c, A16x_c, A17x_c, A18x_c, A19x_c, A20x_c, A21x_c, A22x_c, A23x_c, A24x_c, A25x_c, A26x_c, A27x_c, A28x_c, A29x_c;
-	wire signed [15:0] sum0x, sum1x, sum2x, sum3x, sum4x, sum5x, sum6x, sum7x, sum8x, sum9x, sum10x, sum11x, sum12x, sum13x, sum14x, sum15x, sum16x, sum17x, sum18x, sum19x, sum20x, sum21x, sum22x, sum23x, sum24x, sum25x, sum26x, sum27x, sum28x, sum29x;
+	wire [15:0] sum0x, sum1x, sum2x, sum3x, sum4x, sum5x, sum6x, sum7x, sum8x, sum9x, sum10x, sum11x, sum12x, sum13x, sum14x, sum15x, sum16x, sum17x, sum18x, sum19x, sum20x, sum21x, sum22x, sum23x, sum24x, sum25x, sum26x, sum27x, sum28x, sum29x;
 	output reg [7:0] N15x;
 	reg [22:0] sumout;
 
-	parameter [7:0] W0x=8'd18;
-	parameter [7:0] W1x=-8'd15;
-	parameter [7:0] W2x=8'd8;
-	parameter [7:0] W3x=-8'd18;
-	parameter [7:0] W4x=8'd16;
-	parameter [7:0] W5x=8'd15;
-	parameter [7:0] W6x=-8'd31;
-	parameter [7:0] W7x=-8'd8;
-	parameter [7:0] W8x=8'd28;
-	parameter [7:0] W9x=8'd15;
-	parameter [7:0] W10x=-8'd31;
-	parameter [7:0] W11x=8'd10;
-	parameter [7:0] W12x=8'd15;
-	parameter [7:0] W13x=8'd20;
-	parameter [7:0] W14x=8'd0;
-	parameter [7:0] W15x=-8'd25;
-	parameter [7:0] W16x=8'd17;
-	parameter [7:0] W17x=8'd0;
-	parameter [7:0] W18x=8'd1;
-	parameter [7:0] W19x=8'd0;
-	parameter [7:0] W20x=8'd2;
-	parameter [7:0] W21x=-8'd13;
-	parameter [7:0] W22x=8'd11;
-	parameter [7:0] W23x=-8'd21;
-	parameter [7:0] W24x=-8'd20;
-	parameter [7:0] W25x=8'd1;
-	parameter [7:0] W26x=8'd15;
-	parameter [7:0] W27x=-8'd7;
-	parameter [7:0] W28x=-8'd2;
-	parameter [7:0] W29x=-8'd16;
-	parameter signed [15:0] B0x=16'd512;
+	parameter [7:0] W0x=8'd11;
+	parameter [7:0] W1x=8'd3;
+	parameter [7:0] W2x=8'd4;
+	parameter [7:0] W3x=-8'd5;
+	parameter [7:0] W4x=8'd4;
+	parameter [7:0] W5x=-8'd8;
+	parameter [7:0] W6x=8'd22;
+	parameter [7:0] W7x=-8'd29;
+	parameter [7:0] W8x=-8'd31;
+	parameter [7:0] W9x=8'd20;
+	parameter [7:0] W10x=-8'd27;
+	parameter [7:0] W11x=-8'd28;
+	parameter [7:0] W12x=-8'd13;
+	parameter [7:0] W13x=8'd19;
+	parameter [7:0] W14x=8'd4;
+	parameter [7:0] W15x=-8'd5;
+	parameter [7:0] W16x=8'd14;
+	parameter [7:0] W17x=8'd6;
+	parameter [7:0] W18x=-8'd22;
+	parameter [7:0] W19x=8'd18;
+	parameter [7:0] W20x=8'd8;
+	parameter [7:0] W21x=8'd25;
+	parameter [7:0] W22x=-8'd25;
+	parameter [7:0] W23x=-8'd5;
+	parameter [7:0] W24x=-8'd19;
+	parameter [7:0] W25x=-8'd8;
+	parameter [7:0] W26x=8'd16;
+	parameter [7:0] W27x=-8'd16;
+	parameter [7:0] W28x=8'd10;
+	parameter [7:0] W29x=-8'd6;
+	parameter [15:0] B0x=16'd0;
 
 
 	assign sum0x = {A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c}*{W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x};
@@ -143,13 +143,17 @@ module node_5_15(clk,reset,N15x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x,A10x,A11
 			sumout<={sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x}+{sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x}+{sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x}+{sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x}+{sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x}+{sum5x[15],sum5x[15],sum5x[15],sum5x[15],sum5x[15],sum5x[15],sum5x[15],sum5x}+{sum6x[15],sum6x[15],sum6x[15],sum6x[15],sum6x[15],sum6x[15],sum6x[15],sum6x}+{sum7x[15],sum7x[15],sum7x[15],sum7x[15],sum7x[15],sum7x[15],sum7x[15],sum7x}+{sum8x[15],sum8x[15],sum8x[15],sum8x[15],sum8x[15],sum8x[15],sum8x[15],sum8x}+{sum9x[15],sum9x[15],sum9x[15],sum9x[15],sum9x[15],sum9x[15],sum9x[15],sum9x}+{sum10x[15],sum10x[15],sum10x[15],sum10x[15],sum10x[15],sum10x[15],sum10x[15],sum10x}+{sum11x[15],sum11x[15],sum11x[15],sum11x[15],sum11x[15],sum11x[15],sum11x[15],sum11x}+{sum12x[15],sum12x[15],sum12x[15],sum12x[15],sum12x[15],sum12x[15],sum12x[15],sum12x}+{sum13x[15],sum13x[15],sum13x[15],sum13x[15],sum13x[15],sum13x[15],sum13x[15],sum13x}+{sum14x[15],sum14x[15],sum14x[15],sum14x[15],sum14x[15],sum14x[15],sum14x[15],sum14x}+{sum15x[15],sum15x[15],sum15x[15],sum15x[15],sum15x[15],sum15x[15],sum15x[15],sum15x}+{sum16x[15],sum16x[15],sum16x[15],sum16x[15],sum16x[15],sum16x[15],sum16x[15],sum16x}+{sum17x[15],sum17x[15],sum17x[15],sum17x[15],sum17x[15],sum17x[15],sum17x[15],sum17x}+{sum18x[15],sum18x[15],sum18x[15],sum18x[15],sum18x[15],sum18x[15],sum18x[15],sum18x}+{sum19x[15],sum19x[15],sum19x[15],sum19x[15],sum19x[15],sum19x[15],sum19x[15],sum19x}+{sum20x[15],sum20x[15],sum20x[15],sum20x[15],sum20x[15],sum20x[15],sum20x[15],sum20x}+{sum21x[15],sum21x[15],sum21x[15],sum21x[15],sum21x[15],sum21x[15],sum21x[15],sum21x}+{sum22x[15],sum22x[15],sum22x[15],sum22x[15],sum22x[15],sum22x[15],sum22x[15],sum22x}+{sum23x[15],sum23x[15],sum23x[15],sum23x[15],sum23x[15],sum23x[15],sum23x[15],sum23x}+{sum24x[15],sum24x[15],sum24x[15],sum24x[15],sum24x[15],sum24x[15],sum24x[15],sum24x}+{sum25x[15],sum25x[15],sum25x[15],sum25x[15],sum25x[15],sum25x[15],sum25x[15],sum25x}+{sum26x[15],sum26x[15],sum26x[15],sum26x[15],sum26x[15],sum26x[15],sum26x[15],sum26x}+{sum27x[15],sum27x[15],sum27x[15],sum27x[15],sum27x[15],sum27x[15],sum27x[15],sum27x}+{sum28x[15],sum28x[15],sum28x[15],sum28x[15],sum28x[15],sum28x[15],sum28x[15],sum28x}+{sum29x[15],sum29x[15],sum29x[15],sum29x[15],sum29x[15],sum29x[15],sum29x[15],sum29x}+{B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x};
 
 			if(sumout[22]==0)
+				begin
 				if(sumout[21:13]!=9'b0)
 					N15x<=8'd127;
 				else
+					begin
 					if(sumout[5]==1)
 						N15x<=sumout[13:6]+8'd1;
 					else
 						N15x<=sumout[13:6];
+					end
+				end
 			else
 				N15x<=8'd0;
 			end

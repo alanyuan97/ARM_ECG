@@ -7,10 +7,10 @@ def dec2bin(n):
     out = ""
     if n < 0:
         out += "1"
-        n += 256
+        n += 128
     else:
         out += '0'
-    x = 128
+    x = 64
     for i in range(7):
         if n >= x:
             out += '1'
@@ -23,14 +23,17 @@ def dec2bin(n):
 def main(argv):
     outs = np.load('./../simulation/outputs_dictionary.npy',allow_pickle=True).item()
     outs_adjusted = adjust_weights.adjust_o(outs)
-    data = outs[list(outs_adjusted)[1]][18]
+    data = outs[list(outs_adjusted)[1]]
 
     n_in = int(argv[0])
 
-    STRBUFF = "DEPTH = 1;\nWIDTH = " + str(8*n_in) + ';\n\nADDRESS_RADIX = BIN;\nDATA_RADIX = BIN;\n\nCONTENT\nBEGIN\n0  :  '
-    for el in data:
-        STRBUFF += dec2bin(el)
-    STRBUFF += ";\nEND ;"
+    STRBUFF = "DEPTH = 64;\nWIDTH = " + str(8*n_in) + ';\n\nADDRESS_RADIX = DEC;\nDATA_RADIX = BIN;\n\nCONTENT\nBEGIN'
+    for i in range(64):
+        STRBUFF += '\n' + str(i) + '  :  '
+        for el in data[i]:
+            STRBUFF += dec2bin(el)
+        STRBUFF += ';'
+    STRBUFF += "\nEND ;"
     print(STRBUFF)
 
 if __name__ == "__main__":

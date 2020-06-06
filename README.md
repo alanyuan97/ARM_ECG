@@ -11,3 +11,4 @@ Steps 1 to 3 were already done.
 
 4 - add the folders in Code_generator/out as libraries to your Quartus project and set top.v as the top-level entity
     
+5 - remember to modify last layer

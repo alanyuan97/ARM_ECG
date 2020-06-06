@@ -35,7 +35,7 @@ def main(argv):
     STRBUF += ";\n\treg [7:0] A0x_c"
     for i in range(1,LISTSIZE):
         STRBUF += ", A" + str(i) + "x_c"
-    STRBUF += ";\n\twire signed [15:0] sum0x"
+    STRBUF += ";\n\twire [15:0] sum0x"
     for i in range(1,LISTSIZE):
         STRBUF += ", sum" + str(i) + "x"
     STRBUF += ";\n"
@@ -50,10 +50,10 @@ def main(argv):
             tmp = -layerW[i, idx2 - 1]
             STRBUF += "\tparameter [7:0] W{0}x=-8'd{1};\n".format(i, int(tmp))
     if layerB[idx2 - 1] >= 0:
-        STRBUF += "\tparameter signed [15:0] B{0}x=16'd{1};\n".format(0, int(layerB[idx2 - 1])) + "\n\n"
+        STRBUF += "\tparameter [15:0] B{0}x=16'd{1};\n".format(0, int(layerB[idx2 - 1])) + "\n\n"
     else:
         tmp = -layerB[idx2 - 1]
-        STRBUF += "\tparameter signed [15:0] B{0}x=-16'd{1};\n".format(0, int(tmp)) + "\n\n"
+        STRBUF += "\tparameter [15:0] B{0}x=-16'd{1};\n".format(0, int(tmp)) + "\n\n"
 
     for i in range(LISTSIZE):
         STRBUF += "\tassign sum" + str(i) + "x = {A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c[7],A" + str(i) + "x_c}*{W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x[7],W" + str(i) + "x};\n"
@@ -75,7 +75,7 @@ def main(argv):
         else:
             STRBUF += f"{{sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x}}+"
 
-    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tN{}x<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tN{}x<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tN{}x<=sumout[13:6];\n\t\t\telse\n\t\t\t\tN{}x<=8'd0;\n\t\t\tend\n\t\tend\nendmodule".format(idx2,idx2,idx2,idx2)
+    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tbegin\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tN{}x<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tbegin\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tN{}x<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tN{}x<=sumout[13:6];\n\t\t\t\t\tend\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tN{}x<=8'd0;\n\t\t\tend\n\t\tend\nendmodule".format(idx2,idx2,idx2,idx2)
     print(STRBUF)
 
 

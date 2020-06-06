@@ -3,16 +3,16 @@ module node_2_4(clk,reset,N4x,A0x,A1x,A2x,A3x,A4x);
 	input reset;
 	input [7:0] A0x, A1x, A2x, A3x, A4x;
 	reg [7:0] A0x_c, A1x_c, A2x_c, A3x_c, A4x_c;
-	wire signed [15:0] sum0x, sum1x, sum2x, sum3x, sum4x;
+	wire [15:0] sum0x, sum1x, sum2x, sum3x, sum4x;
 	output reg [7:0] N4x;
 	reg [22:0] sumout;
 
-	parameter [7:0] W0x=-8'd36;
-	parameter [7:0] W1x=-8'd68;
-	parameter [7:0] W2x=-8'd76;
-	parameter [7:0] W3x=8'd100;
-	parameter [7:0] W4x=-8'd8;
-	parameter signed [15:0] B0x=16'd1024;
+	parameter [7:0] W0x=-8'd62;
+	parameter [7:0] W1x=-8'd62;
+	parameter [7:0] W2x=8'd62;
+	parameter [7:0] W3x=-8'd32;
+	parameter [7:0] W4x=-8'd38;
+	parameter [15:0] B0x=16'd0;
 
 
 	assign sum0x = {A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c[7],A0x_c}*{W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x[7],W0x};
@@ -43,13 +43,17 @@ module node_2_4(clk,reset,N4x,A0x,A1x,A2x,A3x,A4x);
 			sumout<={sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x[15],sum0x}+{sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x[15],sum1x}+{sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x[15],sum2x}+{sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x[15],sum3x}+{sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x[15],sum4x}+{B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x[15],B0x};
 
 			if(sumout[22]==0)
+				begin
 				if(sumout[21:13]!=9'b0)
 					N4x<=8'd127;
 				else
+					begin
 					if(sumout[5]==1)
 						N4x<=sumout[13:6]+8'd1;
 					else
 						N4x<=sumout[13:6];
+					end
+				end
 			else
 				N4x<=8'd0;
 			end
