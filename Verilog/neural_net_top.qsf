@@ -1,0 +1,161 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2019  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+# Date created = 20:01:34  June 03, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		neural_net_top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY top_level
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:01:34  JUNE 03, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_AF9 -to dataadd[2]
+set_location_assignment PIN_AB12 -to dataadd[0]
+set_location_assignment PIN_AC12 -to dataadd[1]
+set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_AA14 -to EN
+set_location_assignment PIN_AA15 -to reset
+set_location_assignment PIN_V16 -to class
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name VERILOG_FILE ClkDivider.v
+set_global_assignment -name VERILOG_FILE rom_input.v
+set_global_assignment -name VERILOG_FILE rom_large.v
+set_global_assignment -name BDF_FILE layertest.bdf
+set_global_assignment -name VERILOG_FILE "node-7-1.v"
+set_global_assignment -name VERILOG_FILE "node-6-9.v"
+set_global_assignment -name VERILOG_FILE "node-6-8.v"
+set_global_assignment -name VERILOG_FILE "node-6-7.v"
+set_global_assignment -name VERILOG_FILE "node-6-6.v"
+set_global_assignment -name VERILOG_FILE "node-6-5.v"
+set_global_assignment -name VERILOG_FILE "node-6-4.v"
+set_global_assignment -name VERILOG_FILE "node-6-3.v"
+set_global_assignment -name VERILOG_FILE "node-6-2.v"
+set_global_assignment -name VERILOG_FILE "node-6-10.v"
+set_global_assignment -name VERILOG_FILE "node-6-1.v"
+set_global_assignment -name VERILOG_FILE "node-5-9.v"
+set_global_assignment -name VERILOG_FILE "node-5-8.v"
+set_global_assignment -name VERILOG_FILE "node-5-7.v"
+set_global_assignment -name VERILOG_FILE "node-5-6.v"
+set_global_assignment -name VERILOG_FILE "node-5-5.v"
+set_global_assignment -name VERILOG_FILE "node-5-4.v"
+set_global_assignment -name VERILOG_FILE "node-5-3.v"
+set_global_assignment -name VERILOG_FILE "node-5-2.v"
+set_global_assignment -name VERILOG_FILE "node-5-15.v"
+set_global_assignment -name VERILOG_FILE "node-5-14.v"
+set_global_assignment -name VERILOG_FILE "node-5-13.v"
+set_global_assignment -name VERILOG_FILE "node-5-12.v"
+set_global_assignment -name VERILOG_FILE "node-5-11.v"
+set_global_assignment -name VERILOG_FILE "node-5-10.v"
+set_global_assignment -name VERILOG_FILE "node-5-1.v"
+set_global_assignment -name VERILOG_FILE "node-4-9.v"
+set_global_assignment -name VERILOG_FILE "node-4-8.v"
+set_global_assignment -name VERILOG_FILE "node-4-7.v"
+set_global_assignment -name VERILOG_FILE "node-4-6.v"
+set_global_assignment -name VERILOG_FILE "node-4-5.v"
+set_global_assignment -name VERILOG_FILE "node-4-4.v"
+set_global_assignment -name VERILOG_FILE "node-4-30.v"
+set_global_assignment -name VERILOG_FILE "node-4-3.v"
+set_global_assignment -name VERILOG_FILE "node-4-29.v"
+set_global_assignment -name VERILOG_FILE "node-4-28.v"
+set_global_assignment -name VERILOG_FILE "node-4-27.v"
+set_global_assignment -name VERILOG_FILE "node-4-26.v"
+set_global_assignment -name VERILOG_FILE "node-4-25.v"
+set_global_assignment -name VERILOG_FILE "node-4-24.v"
+set_global_assignment -name VERILOG_FILE "node-4-23.v"
+set_global_assignment -name VERILOG_FILE "node-4-22.v"
+set_global_assignment -name VERILOG_FILE "node-4-21.v"
+set_global_assignment -name VERILOG_FILE "node-4-20.v"
+set_global_assignment -name VERILOG_FILE "node-4-2.v"
+set_global_assignment -name VERILOG_FILE "node-4-19.v"
+set_global_assignment -name VERILOG_FILE "node-4-18.v"
+set_global_assignment -name VERILOG_FILE "node-4-17.v"
+set_global_assignment -name VERILOG_FILE "node-4-16.v"
+set_global_assignment -name VERILOG_FILE "node-4-15.v"
+set_global_assignment -name VERILOG_FILE "node-4-14.v"
+set_global_assignment -name VERILOG_FILE "node-4-13.v"
+set_global_assignment -name VERILOG_FILE "node-4-12.v"
+set_global_assignment -name VERILOG_FILE "node-4-11.v"
+set_global_assignment -name VERILOG_FILE "node-4-10.v"
+set_global_assignment -name VERILOG_FILE "node-4-1.v"
+set_global_assignment -name VERILOG_FILE "node-3-9.v"
+set_global_assignment -name VERILOG_FILE "node-3-8.v"
+set_global_assignment -name VERILOG_FILE "node-3-7.v"
+set_global_assignment -name VERILOG_FILE "node-3-6.v"
+set_global_assignment -name VERILOG_FILE "node-3-5.v"
+set_global_assignment -name VERILOG_FILE "node-3-4.v"
+set_global_assignment -name VERILOG_FILE "node-3-3.v"
+set_global_assignment -name VERILOG_FILE "node-3-2.v"
+set_global_assignment -name VERILOG_FILE "node-3-15.v"
+set_global_assignment -name VERILOG_FILE "node-3-14.v"
+set_global_assignment -name VERILOG_FILE "node-3-13.v"
+set_global_assignment -name VERILOG_FILE "node-3-12.v"
+set_global_assignment -name VERILOG_FILE "node-3-11.v"
+set_global_assignment -name VERILOG_FILE "node-3-10.v"
+set_global_assignment -name VERILOG_FILE "node-3-1.v"
+set_global_assignment -name VERILOG_FILE "node-2-9.v"
+set_global_assignment -name VERILOG_FILE "node-2-8.v"
+set_global_assignment -name VERILOG_FILE "node-2-7.v"
+set_global_assignment -name VERILOG_FILE "node-2-6.v"
+set_global_assignment -name VERILOG_FILE "node-2-5.v"
+set_global_assignment -name VERILOG_FILE "node-2-4.v"
+set_global_assignment -name VERILOG_FILE "node-2-3.v"
+set_global_assignment -name VERILOG_FILE "node-2-2.v"
+set_global_assignment -name VERILOG_FILE "node-2-10.v"
+set_global_assignment -name VERILOG_FILE "node-2-1.v"
+set_global_assignment -name VERILOG_FILE "node-1-5.v"
+set_global_assignment -name VERILOG_FILE "node-1-4.v"
+set_global_assignment -name VERILOG_FILE "node-1-3.v"
+set_global_assignment -name VERILOG_FILE "node-1-2.v"
+set_global_assignment -name VERILOG_FILE "node-1-1.v"
+set_global_assignment -name VERILOG_FILE layer_7.v
+set_global_assignment -name VERILOG_FILE layer_6.v
+set_global_assignment -name VERILOG_FILE layer_5.v
+set_global_assignment -name VERILOG_FILE layer_4.v
+set_global_assignment -name VERILOG_FILE layer_3.v
+set_global_assignment -name VERILOG_FILE layer_2.v
+set_global_assignment -name VERILOG_FILE layer_1.v
+set_global_assignment -name VERILOG_FILE sig_out.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name BDF_FILE top_level.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
