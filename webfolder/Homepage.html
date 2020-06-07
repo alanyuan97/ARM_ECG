@@ -64,11 +64,48 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
 
 
       <div position=centre >
-        <h3>Now put on the device and clink in!<img src="down.jpg" width="50" height="50"></h3>
-        <!-- <img src="down.jpg"> -->
+        <h3>Input your ECG number<img src="down.jpg" width="50" height="50"></h3>
+        
+        <script>
+          function get_ecg(){
+            id=document.forms["ecg_form"]["id"].value
 
-        <a href="heart.html"><img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
-        <p class="shadow">Your Electrocardiogram and Analysis</p>
+            request=new XMLHttpRequest();
+            request.onreadystatechange = function() {
+              if (this.readyState == 4){
+                error_msg=""
+
+                if (this.status == 200){
+                  // Typical action to be performed when the document is ready:
+                  var myObj = JSON.parse(this.responseText);
+                  document.getElementById("heart_result").innerHTML ="The probablity of getting " +myObj.name+ " is "+ myObj.probability + "<br/> ( "+myObj.time+" ) ";
+                }else{
+                  error_msg="Unable to retrive data from server, get "+this.status
+                  document.getElementById("heart_result").innerHTML ='<img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">'
+                }
+
+                document.getElementById("ecg_form_error").innerHTML=error_msg
+              }
+            }
+
+
+            request.open("GET", "/api/"+id)
+            request.send();
+
+            return false; // prevent default form submission 
+          }
+        </script>
+
+        <form name="ecg_form" onsubmit="return get_ecg()">
+          <input type="text" name="id"/>
+          <input type="submit" value="submit">
+          <p id="ecg_form_error"></p>
+        </form>
+
+
+        <div id="heart_result">
+          <img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
       </div>
     </div>
   <!-- </div> -->
