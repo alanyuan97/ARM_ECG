@@ -1,8 +1,4 @@
-#! /usr/bin/python3
-import numpy as np
-import sys
 from bitstring import Bits
-
 def num2fixedbin(num,precision,BITS = 16 ):
     """
         INPUT: 
@@ -50,27 +46,4 @@ def num2fixedbin(num,precision,BITS = 16 ):
             res3 = res3[len(res3)-BITS:]
         return res3
     else:
-        if len(res)!= BITS:
-            res = res[len(res)-BITS:]
-        return res
-
-data = np.load(sys.argv[1],allow_pickle=True)
-# neg_data = np.load('/home/alan/winDesktop/ARM_ECG/simulation/testdata_neg.npy')
-print(f"\n\nTest case path: {sys.argv[1]} \n\n")
-weights = np.load("/home/alan/winDesktop/ARM_ECG/simulation/8bweights.npy",allow_pickle=True)
-inputM = np.transpose(np.array(data))
-
-# len(weights) = 14 checked
-
-for i in range(int(len(weights)/2)):
-    L1w = weights[2*i]
-    B1 = weights[2*i+1]
-    inputN = np.array(L1w)
-    output = np.matmul(inputM, inputN) + B1
-    print(f"Result Simulation on layer-{i+1} == >\n\n")
-    for j in range(len(output)):
-        if output[j]<0:
-            output[j]=0
-        print(f"Node_{j+1}:{output[j]:<.10f};\t\tQ3.5 format binary:{num2fixedbin(output[j],5,BITS =8)}\n")
-    inputM = output
-    print(f"****************End of layer-{i+1}********************* \n\n")
+        return str(res)
