@@ -12,7 +12,10 @@ body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
 <body>
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
@@ -79,6 +82,37 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
                   // Typical action to be performed when the document is ready:
                   var myObj = JSON.parse(this.responseText);
                   document.getElementById("heart_result").innerHTML ="The probablity of getting " +myObj.name+ " is "+ myObj.probability + "<br/> ( "+myObj.time+" ) ";
+                  var datastring = JSON.stringify(myObj.voltage),
+                    array = datastring.match(/\d+(?:\.\d+)?/g).map(Number)
+                  var list = [];
+                    for (var i = 0; i < array.length; i++) {
+                        list.push(i);
+                    }
+                  var data={
+                    labels: list,
+                    datasets: [{
+                      label: 'ECG',
+                      backgroundColor: 'transparent', //背景填充色
+                      borderColor: "#36A2EB", //路径颜色
+                      pointBackgroundColor: "#36A2EB", //数据点颜色
+                      pointBorderColor: "#36A2EB", //数据点边框颜色
+                      pointRadius:1,
+                      data: array //对应的值
+                    }]
+                  };
+                  console.log(list)
+                  var ctx = document.getElementById("myChart").getContext('2d');
+                  var myLineChart = new Chart(ctx, {
+                      type: 'line',
+                      data: data,
+                      options: {
+                          title: {
+                              display: true,
+                              text: "ECG Signal of INDEX:" + JSON.stringify(id) //标题
+                              
+                          }
+                      }
+                  });
                 }else{
                   error_msg="Unable to retrive data from server, get "+this.status
                   document.getElementById("heart_result").innerHTML ='<img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">'
@@ -86,9 +120,9 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
 
                 document.getElementById("ecg_form_error").innerHTML=error_msg
               }
+            
+           
             }
-
-
             request.open("GET", "/api/"+id)
             request.send();
 
@@ -102,6 +136,9 @@ The device can measure electrocardiogram (ECG) to enable medical professionals t
           <p id="ecg_form_error"></p>
         </form>
 
+        <div style="width: 500px position: centre">
+          <canvas id="myChart"></canvas>
+        </div>
 
         <div id="heart_result">
           <img src="heart_beat.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
