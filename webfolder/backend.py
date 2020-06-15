@@ -9,7 +9,6 @@ import datetime
 import mmap
 import struct
 import time
-import pandas as pd
 import numpy as np
 
 # LW_BRIDGE_BASE    = 0xFF200000 # absolute
@@ -39,8 +38,9 @@ import numpy as np
 #         self.map.write(struct.pack('<L', data))
 class DATAHANLDER():
     def __init__(self):
-        Y = pd.read_csv("/home/alan/winDesktop/ARM_ECG/simulation/ptbdb_abnormal.csv",header = None)
-        self.data = np.array(Y)[:10,:187]
+        # Y = pd.read_csv("/home/alan/winDesktop/ARM_ECG/simulation/ptbdb_abnormal.csv",header = None)
+        self.data = np.load("/home/alan/winDesktop/ARM_ECG/simulation/INPUT.npy",allow_pickle=True)
+        self.results = np.load("/home/alan/winDesktop/ARM_ECG/simulation/FINAL_RES.npy",allow_pickle=True)
 class HeartDiagnosis():
     LW_BRIDGE_BASE    = 0xFF200000 # absolute
     LEDR_RELATIVE_ADDR = 0x00000000  # relative to bridge
@@ -51,14 +51,14 @@ class HeartDiagnosis():
     def get_erasmia(self, id):
         # check id is valid
         if id=="": raise Exception("No ID given")
-        if int(id)>10 or int(id)<0: raise Exception("ID out ot range")
+        if int(id)>100 or int(id)<0: raise Exception("ID out ot range")
         
         # self.axi.write(self.LEDR_RELATIVE_ADDR,int(id))
 
         # make up data before interface with FPGA
         return {
             "name": "Arrhythmia",
-            "probability": 0.42,
+            "probability": str(100*(1-self.DATA.results[int(id)])),
             "voltage": list(self.DATA.data[int(id),:]),
             "time": datetime.datetime.now().strftime("%H:%M:%S")
         }
