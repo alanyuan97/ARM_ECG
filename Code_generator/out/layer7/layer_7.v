@@ -1,30 +1,21 @@
-module layer_7(reset,clk,out0,in0,in1,in2,in3,in4,in5,in6,in7,in8,in9);
+module layer_7(reset,clk,N1x,R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x);
 	input reset, clk; 
-	output reg [7:0] out0;
-	input [7:0] in0,in1,in2,in3,in4,in5,in6,in7,in8,in9;
-	wire [87:0] w;
-	wire [7:0] tmpout;
-	reg address;
-	reg [3:0] count;
+	output [7:0] N1x;
+	input [7:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x;
 
-	initial address = 1'b0;
-	initial count = 3'b000;
-
-	ROM_params_7 rom_params(.address(address),.clock(clk),.q(w));
-	node_7 node_in(clk,reset,tmpout,in0,in1,in2,in3,in4,in5,in6,in7,in8,in9,w[87:80],w[79:72],w[71:64],w[63:56],w[55:48],w[47:40],w[39:32],w[31:24],w[23:16],w[15:8],w[7:0]);
-
-	always @(posedge clk) begin
-		count <= count + 3'b001;
-		if (count == 3'b000) begin
-			if (address == 3'b100)
-				address <= 3'b000;
-			else
-				address <= address + 3'b001;
-		end
-
-		case (address)
-			3'd0  :  out0<=tmpout;
-			default :  out0<=tmpout;
-		endcase
-	end
+	node_7_1 node_7_1( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N1x(N1x) 
+	); 
 endmodule

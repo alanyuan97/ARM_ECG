@@ -1,59 +1,606 @@
-module layer_4(reset,clk,out0,out1,out2,out3,out4,out5,out6,out7,out8,out9,out10,out11,out12,out13,out14,out15,out16,out17,out18,out19,out20,out21,out22,out23,out24,out25,out26,out27,out28,out29,in0,in1,in2,in3,in4,in5,in6,in7,in8,in9,in10,in11,in12,in13,in14);
+module layer_4(reset,clk,N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,N16x,N17x,N18x,N19x,N20x,N21x,N22x,N23x,N24x,N25x,N26x,N27x,N28x,N29x,N30x,R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x);
 	input reset, clk; 
-	output reg [7:0] out0,out1,out2,out3,out4,out5,out6,out7,out8,out9,out10,out11,out12,out13,out14,out15,out16,out17,out18,out19,out20,out21,out22,out23,out24,out25,out26,out27,out28,out29;
-	input [7:0] in0,in1,in2,in3,in4,in5,in6,in7,in8,in9,in10,in11,in12,in13,in14;
-	wire [127:0] w;
-	wire [7:0] tmpout;
-	reg [4:0] address;
-	reg [3:0] count;
+	output [7:0] N1x,N2x,N3x,N4x,N5x,N6x,N7x,N8x,N9x,N10x,N11x,N12x,N13x,N14x,N15x,N16x,N17x,N18x,N19x,N20x,N21x,N22x,N23x,N24x,N25x,N26x,N27x,N28x,N29x,N30x;
+	input [7:0] R0x,R1x,R2x,R3x,R4x,R5x,R6x,R7x,R8x,R9x,R10x,R11x,R12x,R13x,R14x;
 
-	initial address = 5'b0;
-	initial count = 3'b000;
-
-	ROM_params_4 rom_params(.address(address),.clock(clk),.q(w));
-	node_4 node_in(clk,reset,tmpout,in0,in1,in2,in3,in4,in5,in6,in7,in8,in9,in10,in11,in12,in13,in14,w[127:120],w[119:112],w[111:104],w[103:96],w[95:88],w[87:80],w[79:72],w[71:64],w[63:56],w[55:48],w[47:40],w[39:32],w[31:24],w[23:16],w[15:8],w[7:0]);
-
-	always @(posedge clk) begin
-		count <= count + 3'b001;
-		if (count == 3'b000) begin
-			if (address == 3'b100)
-				address <= 3'b000;
-			else
-				address <= address + 3'b001;
-		end
-
-		case (address)
-			3'd0  :  out0<=tmpout;
-			3'd1  :  out1<=tmpout;
-			3'd2  :  out2<=tmpout;
-			3'd3  :  out3<=tmpout;
-			3'd4  :  out4<=tmpout;
-			3'd5  :  out5<=tmpout;
-			3'd6  :  out6<=tmpout;
-			3'd7  :  out7<=tmpout;
-			3'd8  :  out8<=tmpout;
-			3'd9  :  out9<=tmpout;
-			3'd10  :  out10<=tmpout;
-			3'd11  :  out11<=tmpout;
-			3'd12  :  out12<=tmpout;
-			3'd13  :  out13<=tmpout;
-			3'd14  :  out14<=tmpout;
-			3'd15  :  out15<=tmpout;
-			3'd16  :  out16<=tmpout;
-			3'd17  :  out17<=tmpout;
-			3'd18  :  out18<=tmpout;
-			3'd19  :  out19<=tmpout;
-			3'd20  :  out20<=tmpout;
-			3'd21  :  out21<=tmpout;
-			3'd22  :  out22<=tmpout;
-			3'd23  :  out23<=tmpout;
-			3'd24  :  out24<=tmpout;
-			3'd25  :  out25<=tmpout;
-			3'd26  :  out26<=tmpout;
-			3'd27  :  out27<=tmpout;
-			3'd28  :  out28<=tmpout;
-			3'd29  :  out29<=tmpout;
-			default :  out0<=tmpout;
-		endcase
-	end
+	node_4_1 node_4_1( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N1x(N1x) 
+	); 
+	node_4_2 node_4_2( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N2x(N2x) 
+	); 
+	node_4_3 node_4_3( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N3x(N3x) 
+	); 
+	node_4_4 node_4_4( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N4x(N4x) 
+	); 
+	node_4_5 node_4_5( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N5x(N5x) 
+	); 
+	node_4_6 node_4_6( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N6x(N6x) 
+	); 
+	node_4_7 node_4_7( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N7x(N7x) 
+	); 
+	node_4_8 node_4_8( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N8x(N8x) 
+	); 
+	node_4_9 node_4_9( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N9x(N9x) 
+	); 
+	node_4_10 node_4_10( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N10x(N10x) 
+	); 
+	node_4_11 node_4_11( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N11x(N11x) 
+	); 
+	node_4_12 node_4_12( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N12x(N12x) 
+	); 
+	node_4_13 node_4_13( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N13x(N13x) 
+	); 
+	node_4_14 node_4_14( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N14x(N14x) 
+	); 
+	node_4_15 node_4_15( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N15x(N15x) 
+	); 
+	node_4_16 node_4_16( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N16x(N16x) 
+	); 
+	node_4_17 node_4_17( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N17x(N17x) 
+	); 
+	node_4_18 node_4_18( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N18x(N18x) 
+	); 
+	node_4_19 node_4_19( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N19x(N19x) 
+	); 
+	node_4_20 node_4_20( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N20x(N20x) 
+	); 
+	node_4_21 node_4_21( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N21x(N21x) 
+	); 
+	node_4_22 node_4_22( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N22x(N22x) 
+	); 
+	node_4_23 node_4_23( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N23x(N23x) 
+	); 
+	node_4_24 node_4_24( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N24x(N24x) 
+	); 
+	node_4_25 node_4_25( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N25x(N25x) 
+	); 
+	node_4_26 node_4_26( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N26x(N26x) 
+	); 
+	node_4_27 node_4_27( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N27x(N27x) 
+	); 
+	node_4_28 node_4_28( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N28x(N28x) 
+	); 
+	node_4_29 node_4_29( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N29x(N29x) 
+	); 
+	node_4_30 node_4_30( 
+		.A0x(R0x), 
+		.A1x(R1x), 
+		.A2x(R2x), 
+		.A3x(R3x), 
+		.A4x(R4x), 
+		.A5x(R5x), 
+		.A6x(R6x), 
+		.A7x(R7x), 
+		.A8x(R8x), 
+		.A9x(R9x), 
+		.A10x(R10x), 
+		.A11x(R11x), 
+		.A12x(R12x), 
+		.A13x(R13x), 
+		.A14x(R14x), 
+		.clk(clk), 
+		.reset(reset), 
+		.N30x(N30x) 
+	); 
 endmodule
