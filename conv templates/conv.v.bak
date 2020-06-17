@@ -1,0 +1,11 @@
+module conv(en, clk, out, w0, ..., w_kernel-1, in0, ..., in_kernel-1)
+	input en, clk;
+	input [7:0] w0, ..., w_kernel-1, in0, ..., in_kernel-1;
+	output [7:0] out;
+	wire [15:0] pr0, ..., pr_kernel-1;
+	
+	//THINK I HAVE TO ADD REGISTER COPY OF INPUTS LIKE IN THE DENSE NODES
+	assign pr0 = in0*w0;
+	...
+	assign prkernel-1 = inkernel-1*wkernel-1;
+endmodule
