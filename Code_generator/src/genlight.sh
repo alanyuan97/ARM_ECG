@@ -3,7 +3,6 @@
 NNnum="187 5 10 15 30 15 10 1"
 LAYER="5 10 15 30 15 10 1"
 n_in=187
-n_layers=7
 
 
 i=1
@@ -31,12 +30,7 @@ for a in $LAYER;do
     # echo $N
 
     # generate nodes
-    if [ $i == $n_layers ]
-    then
-      python src/gennode_light.py $i 1 > $CURRENTPATH/node_${i}.v
-    else
-      python src/gennode_light.py $i 0 > $CURRENTPATH/node_${i}.v
-    fi
+    python src/gennode_light.py $i > $CURRENTPATH/node_${i}.v
     python src/params_rom_init.py $i $N $N2 > $CURRENTPATH/params_${i}.mif
 
     # generate layer

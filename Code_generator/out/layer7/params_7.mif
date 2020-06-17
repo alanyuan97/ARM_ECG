@@ -1,4 +1,4 @@
-DEPTH = 2;
+DEPTH = 1;
 WIDTH = 88;
 
 ADDRESS_RADIX = DEC;

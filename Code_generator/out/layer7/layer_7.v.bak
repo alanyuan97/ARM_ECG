@@ -7,7 +7,7 @@ module layer_7(reset,clk,out0,in0,in1,in2,in3,in4,in5,in6,in7,in8,in9);
 	reg address;
 	reg [3:0] count;
 
-	initial address = 1'b0;
+	initial address = 0'b0;
 	initial count = 3'b000;
 
 	ROM_params_7 rom_params(.address(address),.clock(clk),.q(w));
