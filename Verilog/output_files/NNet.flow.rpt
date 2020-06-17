@@ -1,0 +1,134 @@
+Flow report for NNet
+Wed Jun 17 15:27:28 2020
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Wed Jun 17 15:25:46 2020       ;
+; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                   ; NNet                                        ;
+; Top-level Entity Name           ; top                                         ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 26,410 / 32,070 ( 82 % )                    ;
+; Total registers                 ; 4339                                        ;
+; Total pins                      ; 25 / 457 ( 5 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 149,600 / 4,065,280 ( 4 % )                 ;
+; Total DSP Blocks                ; 87 / 87 ( 100 % )                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/17/2020 15:13:31 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; NNet                ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 5416811744043.159240321024340          ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; ROM.bsf                                ; --            ; --          ; --         ;
+; MISC_FILE                           ; ROM_inst.v                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; ROM_bb.v                               ; --            ; --          ; --         ;
+; MISC_FILE                           ; ROM.inc                                ; --            ; --          ; --         ;
+; MISC_FILE                           ; ROM.cmp                                ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; top         ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; top                                    ; NNet          ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:32     ; 1.0                     ; 5706 MB             ; 00:01:38                           ;
+; Fitter               ; 00:09:51     ; 1.4                     ; 7357 MB             ; 00:27:57                           ;
+; Assembler            ; 00:00:28     ; 1.0                     ; 5257 MB             ; 00:00:24                           ;
+; Timing Analyzer      ; 00:01:40     ; 3.4                     ; 5856 MB             ; 00:05:08                           ;
+; Total                ; 00:13:31     ; --                      ; --                  ; 00:35:07                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; LAPTOP-2BTPV2RU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LAPTOP-2BTPV2RU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LAPTOP-2BTPV2RU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LAPTOP-2BTPV2RU  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off NNet -c NNet
+quartus_fit --read_settings_files=off --write_settings_files=off NNet -c NNet
+quartus_asm --read_settings_files=off --write_settings_files=off NNet -c NNet
+quartus_sta NNet -c NNet
+
+
+

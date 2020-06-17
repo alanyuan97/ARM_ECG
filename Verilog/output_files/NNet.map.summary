@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Jun 17 15:15:09 2020
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : NNet
+Top-level Entity Name : top
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 4379
+Total pins : 25
+Total virtual pins : 0
+Total block memory bits : 149,600
+Total DSP Blocks : 174
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0
