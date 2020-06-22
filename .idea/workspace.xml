@@ -20,11 +20,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="deleted c++ layer generator file">
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv_layer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv_node.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code_generator/src/genlayer_light.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code_generator/src/genlight.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code_generator/src/gennode_light.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code_generator/src/params_rom_init.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/layer_1.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer1/layer_1.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer1/node_1_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/layer_2.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer2/layer_2.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_10.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_6.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_7.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_8.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer2/node_2_9.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/layer_3.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer3/layer_3.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_10.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_11.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_12.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_13.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_14.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_15.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_6.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_7.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_8.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer3/node_3_9.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/layer_4.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer4/layer_4.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_10.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_11.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_12.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_13.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_14.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_15.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_16.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_17.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_18.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_19.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_20.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_21.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_22.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_23.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_24.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_25.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_26.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_27.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_28.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_29.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_30.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_6.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_7.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_8.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer4/node_4_9.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/layer_5.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer5/layer_5.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_10.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_11.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_12.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_13.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_14.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_15.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_6.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_7.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_8.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer5/node_5_9.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/layer_6.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer6/layer_6.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_1.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_10.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_2.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_3.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_4.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_5.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_6.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_7.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_8.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer6/node_6_9.v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer7/layer_7.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/layer7/layer_7.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/layer7/node_7_1.v" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/top.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/top.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code_generator/out/top.v.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conv templates/conv.v" beforeDir="false" afterPath="$PROJECT_DIR$/conv templates/conv.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conv templates/conv_layer.v" beforeDir="false" afterPath="$PROJECT_DIR$/conv templates/conv_layer.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conv templates/conv_node.v" beforeDir="false" afterPath="$PROJECT_DIR$/conv templates/conv_node.v" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +153,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/simulation/params_rom_init.mif" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.load_data">
@@ -202,6 +301,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="15" key="#pan-tompkins/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870803096" />
+    <state x="421" y="135" key="FileChooserDialogImpl" timestamp="1591696487931">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760/445.-1050.1680.1010@0.0.1280.760" timestamp="1591696487931" />
     <state width="1259" height="212" key="GridCell.Tab.0.bottom" timestamp="1588930886559">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
