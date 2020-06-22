@@ -1,11 +1,6 @@
 from scipy.io import loadmat
 
 def dec2bin(n):
-    #if n > 1.99902344:
-    #    n = 1.99902344
-    #if n < -2:
-    #    n = -2
-    #n = n * (2**10)
     out = ""
     if n < 0:
         out += "1"

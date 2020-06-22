@@ -1,0 +1,5 @@
+- to generate the unfolded design, open a bash terminal and type:
+    bash src/genall_win.sh
+
+- to generate the folded design, open a bash terminal and type:
+    bash src/genlight.sh
