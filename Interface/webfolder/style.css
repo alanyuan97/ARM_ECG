@@ -1,0 +1,12 @@
+<style>
+.middle{
+    background-color:grey;
+}
+.shadow{
+    text-shadow:1.5px 1.5px grey;
+}
+a.ecg:link{color:blue;}
+a.ecg:visited{color: grey;}
+a.ecg:hover{color:green;}
+a.ecg:active{color:blue;}
+</style>
