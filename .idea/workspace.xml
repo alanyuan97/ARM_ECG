@@ -20,26 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="deleted c++ layer generator file">
-      <change afterPath="$PROJECT_DIR$/Code_generator/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Preprocessing/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conv templates/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pan-tompkins/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Keras models" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/src/genall.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/src/genall75.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/NNet.qpf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM.bsf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM.cmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM.inc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM.qip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM_bb.qip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM_bb.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/ROM_inst.v" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/Waveform.vwf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/top.bsf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quartus Project/top.qsf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pan-tompkins/pan_tomp-rom.py" beforeDir="false" afterPath="$PROJECT_DIR$/pan-tompkins/pan_tomp-rom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,10 +214,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Modified rounding up in gennode.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592833330896">
+    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592837892099">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.760@0.0.1280.760" timestamp="1592833330896" />
+    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.760@0.0.1280.760" timestamp="1592837892099" />
     <state x="570" y="340" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/62.27.1618.1023@62.27.1618.1023" timestamp="1591195614879" />
     <state x="337" y="15" key="#example_physionet" timestamp="1588870916948">
       <screen x="0" y="0" width="1280" height="800" />
