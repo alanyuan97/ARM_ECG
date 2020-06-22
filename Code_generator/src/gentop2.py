@@ -4,12 +4,13 @@ import sys
 
 def main(argv):
     #module declaration
-    STRINGBUF = "module top(EN, clk, reset, out0"
+    STRINGBUF = "module top(EN, clk, reset, out0, addr"
     for i in range(1,int(argv[-1])):
         STRINGBUF += ", out" + str(i)
     STRINGBUF += ");\n\tinput EN, clk, reset;\n\toutput [7:0] out0"
     for i in range(1,int(argv[-1])):
         STRINGBUF += ", out" + str(i)
+    STRINGBUF += "; \n\tinput [5:0] addr"
     STRINGBUF += ";\n\n\twire ["
 
     #connecting wires
@@ -24,7 +25,7 @@ def main(argv):
     STRINGBUF += "\n\n"
 
     #layers
-    STRINGBUF += "\tROM rom_in(.address(1'd0),.clock(clk),.q(l1));\n"
+    STRINGBUF += "\tROM rom_in(.address(addr),.clock(clk),.q(l1));\n"
     STRINGBUF += "\tlayer_1 layer1(reset, clk"
     for x in range(int(argv[1])):
         STRINGBUF += ", l{}_{}".format(2, x)

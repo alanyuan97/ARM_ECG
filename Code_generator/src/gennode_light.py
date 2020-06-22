@@ -15,6 +15,7 @@ def main(argv):
     layerW = weights_dict[list(weights_dict)[idx1-1]]
     #layerB = biases_dict[list(biases_dict)[idx1-1]]
     LISTSIZE = layerW.shape[0]
+    last_layer = int(argv[1])
 
     # Start of module
     STRBUF = "module node_" + str(idx1) + f"(clk,reset,out,"
@@ -67,7 +68,12 @@ def main(argv):
         else:
             STRBUF += f"{{sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x[15],sum{i}x}}+"
 
-    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tbegin\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tout<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tbegin\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tout<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tout<=sumout[13:6];\n\t\t\t\t\tend\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tout<=8'd0;\n\t\t\tend\n\t\tend\nendmodule"
+    STRBUF += "\n\t\t\tif(sumout[22]==0)\n\t\t\t\tbegin\n\t\t\t\tif(sumout[21:13]!=9'b0)\n\t\t\t\t\tout<=8'd127;\n\t\t\t\telse\n\t\t\t\t\tbegin\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tout<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tout<=sumout[13:6];\n\t\t\t\t\tend\n\t\t\t\tend\n\t\t\telse"
+    if last_layer == 1:
+        STRBUF += "\n\t\t\t\tbegin\n\t\t\t\tif(sumout[21:13]!=9'b1)\n\t\t\t\t\tout<=-8'd128;\n\t\t\t\telse\n\t\t\t\t\tbegin\n\t\t\t\t\tif(sumout[5]==1)\n\t\t\t\t\t\tout<=sumout[13:6]+8'd1;\n\t\t\t\t\telse\n\t\t\t\t\t\tout<=sumout[13:6];\n\t\t\t\t\tend\n\t\t\t\tend"
+    else:
+        STRBUF += "\n\t\t\t\tout<=8'd0;"
+    STRBUF += "\n\t\t\tend\n\t\tend\nendmodule"
     print(STRBUF)
 
 

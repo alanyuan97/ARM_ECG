@@ -33,7 +33,7 @@ def main(argv):
     biases_adjusted = adjust_weights.adjust_b(biases)
     datab = biases_adjusted[list(biases_adjusted)[layer_ind-1]]
 
-    STRBUFF = "DEPTH = {};\nWIDTH = {};\n\nADDRESS_RADIX = DEC;\nDATA_RADIX = BIN;\n\nCONTENT\nBEGIN".format(outputs, 8*inputs+8)
+    STRBUFF = "DEPTH = {};\nWIDTH = {};\n\nADDRESS_RADIX = DEC;\nDATA_RADIX = BIN;\n\nCONTENT\nBEGIN".format(max(2,outputs), 8*inputs+8)
     for i in range(outputs):
         STRBUFF += '\n' + str(i) + '  :  '
         for el in data:
