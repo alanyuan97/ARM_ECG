@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="deleted c++ layer generator file">
 <<<<<<< HEAD
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Code_generator/src/gennodeDSP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code_generator/out/ROM/rom_initialisation.mif" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/ROM/rom_initialisation.mif" afterDir="false" />
@@ -123,13 +122,6 @@
       <change beforePath="$PROJECT_DIR$/simulation/outputs_dictionary187.npy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/simulation/weight_dictionary.npy" beforeDir="false" afterPath="$PROJECT_DIR$/simulation/weight_dictionary.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulation/weight_dictionary187.npy" beforeDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv_layer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_generator/out/top.v" beforeDir="false" afterPath="$PROJECT_DIR$/Code_generator/out/top.v" afterDir="false" />
->>>>>>> parent of a764096... added light version
 =======
       <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Code_generator/src/gen_conv_layer.py" afterDir="false" />

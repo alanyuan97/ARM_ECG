@@ -64,7 +64,7 @@ module node_7_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 
 			if(sumout[22]==0)
 				begin
-				if(sumout[21:13]!=9'b0)
+				if(sumout[21:13]!=9'b000000000)
 					N1x<=8'd127;
 				else
 					begin
@@ -75,7 +75,17 @@ module node_7_1(clk,reset,N1x,A0x,A1x,A2x,A3x,A4x,A5x,A6x,A7x,A8x,A9x);
 					end
 				end
 			else
-				N1x<=8'd0;
+				begin
+				if(sumout[21:13]!=9'b111111111)
+					N1x<=-8'd128;
+				else
+					begin
+					if(sumout[5]==1)
+						N1x<=sumout[13:6]+8'd1;
+					else
+						N1x<=sumout[13:6];
+					end
+				end
 			end
 		end
 endmodule
