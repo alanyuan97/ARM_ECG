@@ -1,6 +1,0 @@
-Fully-connected model:
-    https://colab.research.google.com/drive/1ShvZ7SWdJUPO2KYOZ1rfdvGFL-FuSHn1?usp=sharing
-
-12-lead ResNet, superclass:
-    https://colab.research.google.com/drive/1Wlu85NdX7ubAeod_t48yV_FFP0bENAKo?usp=sharing
-(this network can be easily modified to use fewer leads, to use a resampled input or to predict classes or subclasses)
