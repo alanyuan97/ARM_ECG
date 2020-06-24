@@ -1,0 +1,5 @@
+module top(in,system1000,system1000_rstn,out);
+	input [11:0] input_0;
+	input system1000;
+	input system1000_rstn;
+	output [11:0] out;

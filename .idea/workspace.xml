@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="deleted c++ layer generator file">
+      <change afterPath="$PROJECT_DIR$/Keras models" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev/alan" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1baVQWbS8koJhuyuytd8vIs2MMm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pan-tompkins" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Edoardo\Desktop\ARM_ECG\pan-tompkins" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.pan_tomp-rom">
+    <configuration name="example_physionet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ARM_ECG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example_physionet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ARM_ECG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/load_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pan-tompkins" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ARM_ECG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pan-tompkins.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pan_tomp-rom" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ARM_ECG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pan-tompkins" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pan-tompkins/pan_tomp-rom.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.pan_tomp-rom" />
+        <item itemvalue="Python.pan-tompkins" />
+        <item itemvalue="Python.load_data" />
+        <item itemvalue="Python.example_physionet" />
+        <item itemvalue="Python.pan-tompkins" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fbff9e6d-a6b0-45cf-8da8-e0f5f4c666e1" name="Default Changelist" comment="" />
+      <created>1588870176201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588870176201</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Use xx.xxxxxx format, added rounding up, added ceiling, fixed lack of padding of terms of sumout (in nodes)">
+      <created>1591135556917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591135556917</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed weights, biases and outputs to follow weird format of the library">
+      <created>1591194477912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591194477912</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Tidy up">
+      <created>1591196673777</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591196673777</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.vhd" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Use xx.xxxxxx format, added rounding up, added ceiling, fixed lack of padding of terms of sumout (in nodes)" />
+    <MESSAGE value="Changed weights, biases and outputs to follow weird format of the library" />
+    <MESSAGE value="Tidy up" />
+    <MESSAGE value="Modified rounding up in gennode.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified rounding up in gennode.py" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592837892099">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="402" y="233" width="515" height="300" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.760@0.0.1280.760" timestamp="1592837892099" />
+    <state x="570" y="340" width="639" height="403" key="#com.intellij.fileTypes.FileTypeChooser/62.27.1618.1023@62.27.1618.1023" timestamp="1591195614879" />
+    <state x="337" y="15" key="#example_physionet" timestamp="1588870916948">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="337" y="15" key="#example_physionet/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870916948" />
+    <state x="337" y="15" key="#load_data" timestamp="1588885262371">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="337" y="15" key="#load_data/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588885262371" />
+    <state x="337" y="15" key="#pan-tompkins" timestamp="1588870803096">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="337" y="15" key="#pan-tompkins/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588870803096" />
+    <state x="378" y="139" key="FileChooserDialogImpl" timestamp="1592126904171">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760/445.-1050.1680.1010@0.0.1280.760" timestamp="1591696487931" />
+    <state x="378" y="139" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1592126904171" />
+    <state width="1260" height="190" key="GridCell.Tab.0.bottom" timestamp="1592162676639">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="190" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1592162676639" />
+    <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886559" />
+    <state width="1260" height="190" key="GridCell.Tab.0.center" timestamp="1592162676639">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="190" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1592162676639" />
+    <state width="1259" height="212" key="GridCell.Tab.0.center/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886556" />
+    <state width="1260" height="190" key="GridCell.Tab.0.left" timestamp="1592162676639">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="190" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1592162676639" />
+    <state width="1259" height="212" key="GridCell.Tab.0.left/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886555" />
+    <state width="1260" height="190" key="GridCell.Tab.0.right" timestamp="1592162676639">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="190" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1592162676639" />
+    <state width="1259" height="212" key="GridCell.Tab.0.right/0.0.1280.800/-201.-1050.1680.1050@0.0.1280.800" timestamp="1588930886557" />
+    <state x="55" y="23" key="SettingsEditor" timestamp="1592158154460">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="55" y="23" key="SettingsEditor/0.0.1280.760/445.-1050.1680.1010@0.0.1280.760" timestamp="1591276533357" />
+    <state x="55" y="23" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1592158154460" />
+    <state x="466" y="274" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1591196695936">
+      <screen x="62" y="27" width="1618" height="1023" />
+    </state>
+    <state x="466" y="274" width="800" height="535" key="Vcs.Push.Dialog.v2/62.27.1618.1023@62.27.1618.1023" timestamp="1591196695936" />
+    <state width="809" height="511" key="XDebugger.FullValuePopup" timestamp="1590952852458">
+      <screen x="62" y="27" width="1618" height="1023" />
+    </state>
+    <state width="809" height="511" key="XDebugger.FullValuePopup/62.27.1618.1023@62.27.1618.1023" timestamp="1590952852458" />
+    <state x="352" y="246" width="1027" height="591" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1591124491084">
+      <screen x="62" y="27" width="1618" height="1023" />
+    </state>
+    <state x="352" y="246" width="1027" height="591" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/62.27.1618.1023@62.27.1618.1023" timestamp="1591124491084" />
+    <state x="374" y="167" width="672" height="504" key="search.everywhere.popup" timestamp="1591615852250">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="374" y="167" width="672" height="504" key="search.everywhere.popup/0.0.1280.760/445.-1050.1680.1010@0.0.1280.760" timestamp="1591615852250" />
+    <state x="534" y="251" width="672" height="678" key="search.everywhere.popup/62.27.1618.1023@62.27.1618.1023" timestamp="1590951316871" />
+  </component>
+</project>

@@ -1,0 +1,2 @@
+This folder contains the files that were used to experiment with the pan-tompkins algorithm in Python.
+The initial plan was to then implement this in hardware but we then decided to focus on the Deep Learning approach instead.
