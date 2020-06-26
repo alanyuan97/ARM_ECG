@@ -16,4 +16,4 @@ Steps 1 to 3 were already done.
 Neurocardiogram leaflet [here](./leaflet/draft.pdf) 
 
 ## Documentation
-The documentation of the project can be found [here](./Documentation)
+The documentation of the project can be found [here](./Documentation.pdf)
